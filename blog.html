@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Inmobiliario Barcelona | Issam Benali · Asesor SAFTI</title>
+  <meta name="description"
+    content="Guías, consejos y análisis del mercado inmobiliario en Barcelona. Todo lo que necesitas saber antes de comprar, vender o alquilar — por Issam Benali, asesor SAFTI.">
+  <meta name="keywords"
+    content="blog inmobiliario Barcelona, consejos comprar piso Barcelona, mercado inmobiliario Barcelona 2025, asesor inmobiliario Barcelona, SAFTI Barcelona">
+  <link rel="canonical" href="https://issambenali.es/blog.html">
+  <meta property="og:title" content="Blog Inmobiliario Barcelona | Issam Benali">
+  <meta property="og:description"
+    content="Guías y análisis del mercado inmobiliario en Barcelona. Actualizado cada semana.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog Inmobiliario Barcelona — Issam Benali",
+    "description": "Guías y análisis del mercado inmobiliario en Barcelona.",
+    "url": "https://TU-DOMINIO.com/blog.html",
+    "author": {
+      "@type": "Person",
+      "name": "Issam Benali",
+      "url": "https://safti.es/tu-asesor-safti/issam-benali"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --orange: #E8530A;
+      --orange-light: #FF6B2B;
+      --orange-dark: #C4420A;
+      --black: #0A0A0A;
+      --dark: #111111;
+      --dark2: #1A1A1A;
+      --gray: #888888;
+      --light-gray: #F5F5F5;
+      --white: #FFFFFF;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--black);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ─────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--orange);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-badge {
+      background: var(--orange);
+      color: white;
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 2px;
+      padding: 6px 12px;
+      text-transform: uppercase;
+    }
+
+    .logo-divider {
+      width: 1px;
+      height: 32px;
+      background: #ddd;
+      margin: 0 14px;
+    }
+
+    .logo-name-block {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .logo-name-main {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .logo-name-sub {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--orange);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--black);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-dinero {
+      color: var(--orange) !important;
+      font-weight: 700 !important;
+    }
+
+    .nav-dinero:hover {
+      color: var(--orange-dark) !important;
+      border-bottom-color: var(--orange-dark) !important;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--orange);
+      border-bottom-color: var(--orange);
+    }
+
+    .nav-cta {
+      background: var(--orange) !important;
+      color: white !important;
+      padding: 10px 22px !important;
+      border-bottom: none !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--orange-dark) !important;
+    }
+
+    /* ── HERO DEL BLOG ───────────────────────── */
+    .blog-hero {
+      margin-top: 70px;
+      background: var(--dark);
+      padding: 36px 5% 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(80deg, rgba(0, 0, 0, 0.607) 0%, transparent 55%),
+        url('https://images.unsplash.com/photo-1739532827391-45e14eed59c3?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+      opacity: 0.5;
+    }
+
+    .blog-hero-layout {
+      position: relative;
+      z-index: 1;
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .blog-hero-inner {
+      max-width: 680px;
+    }
+
+    /* Profile card en el hero */
+    /* ═══════════════════════════════════════════════════════
+       TARJETA DE PERFIL EN EL HERO
+       ── Para cambiar el TAMAÑO de la tarjeta: modifica "width" aquí abajo
+       ── Para cambiar el TAMAÑO de la foto:    modifica "width" y "height" en .hero-profile-img
+       ── Para cambiar la FOTO:                 cambia el src del <img> en el HTML (línea ~1006)
+       ═══════════════════════════════════════════════════════ */
+    .hero-profile-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.235);
+      padding: 36px 28px 28px;
+      width: 300px;
+      /* ◄ ANCHO TOTAL DE LA TARJETA */
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .hero-profile-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--orange);
+    }
+
+    .hero-profile-img {
+      width: 200px;
+      /* ◄ TAMAÑO DE LA FOTO (mantener igual en width y height) */
+      height: 200px;
+      /* ◄ TAMAÑO DE LA FOTO */
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--orange);
+      margin-bottom: 18px;
+      flex-shrink: 0;
+      background: #1a1a1a;
+    }
+
+    .hero-profile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      /* ◄ contain respeta el círculo de la foto */
+      object-position: center center;
+      transform: scale(1.12);
+    }
+
+    .hero-profile-name {
+      font-family: var(--font-display);
+      font-size: 25px;
+      /* ◄ TAMAÑO DEL NOMBRE */
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .hero-profile-role {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .hero-profile-stats {
+      display: flex;
+      gap: 0;
+      width: 100%;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255, 115, 0, 0.304);
+    }
+
+    .hero-profile-stat {
+      flex: 1;
+      text-align: center;
+      padding: 10px 6px;
+      border-right: 1px solid rgba(255, 115, 0, 0.304);
+    }
+
+    .hero-profile-stat:last-child {
+      border-right: none;
+    }
+
+    .hero-profile-stat-num {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .hero-profile-stat-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: rgb(255, 255, 255);
+      text-transform: uppercase;
+    }
+
+    .hero-profile-langs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .hero-profile-langs span {
+      background: rgba(255, 255, 255, 0.145);
+      color: rgb(255, 255, 255);
+      font-size: 10px;
+      font-weight: 600;
+      padding: 4px 9px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-profile-cta {
+      display: block;
+      background: var(--orange);
+      color: white;
+      text-align: center;
+      padding: 13px 16px;
+      font-size: 12px;
+      /* ◄ TAMAÑO DEL BOTÓN */
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      width: 100%;
+      transition: background 0.2s;
+    }
+
+    .hero-profile-cta:hover {
+      background: var(--orange-dark);
+    }
+
+    /* Proporciones móvil: 65% portada / 35% perfil */
+    @media (max-width: 900px) {
+
+      /* Ocultar la tarjeta del hero desktop */
+      .hero-profile-card {
+        display: none;
+      }
+
+      /* Layout en columna única */
+      .blog-hero-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .blog-hero {
+        min-height: calc(65vh - 70px);
+        display: flex;
+        align-items: center;
+        padding: 28px 5%;
+      }
+
+      .blog-hero-layout {
+        width: 100%;
+      }
+
+      .hero-profile-card-mobile {
+        min-height: 35vh;
+        justify-content: center;
+        padding: 16px 5%;
+        gap: 0;
+      }
+
+      .hero-profile-card-mobile .hpc-photo {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 8px;
+      }
+
+      .hero-profile-card-mobile .hpc-name {
+        font-size: 16px;
+        margin-bottom: 2px;
+      }
+
+      .hero-profile-card-mobile .hpc-role {
+        font-size: 9px;
+        margin-bottom: 10px;
+      }
+
+      .hero-profile-card-mobile .hpc-stats {
+        margin-bottom: 8px;
+        gap: 8px;
+      }
+
+      .hero-profile-card-mobile .hpc-stat {
+        padding: 7px 10px;
+      }
+
+      .hero-profile-card-mobile .hpc-stat strong {
+        font-size: 14px;
+      }
+
+      .hero-profile-card-mobile .hpc-stat span {
+        font-size: 8px;
+      }
+
+      .hero-profile-card-mobile .hpc-langs {
+        margin-bottom: 12px;
+        gap: 5px;
+      }
+
+      .hero-profile-card-mobile .hpc-lang {
+        font-size: 9px;
+        padding: 4px 7px;
+      }
+
+      .hero-profile-card-mobile .hpc-btn {
+        padding: 11px;
+        font-size: 12px;
+      }
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--orange);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      margin-bottom: 24px;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: white;
+    }
+
+    .blog-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 900;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .blog-hero h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .blog-hero p {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.7;
+      font-weight: 300;
+      max-width: 540px;
+    }
+
+    /* ── FILTROS POR CATEGORÍA ───────────────── */
+    .filters {
+      background: var(--dark2);
+      padding: 0 5%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+    }
+
+    .filter-btn {
+      padding: 18px 22px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.87);
+      cursor: pointer;
+      border: none;
+      background: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+      font-family: var(--font-body);
+    }
+
+    .filter-btn:hover {
+      color: rgba(255, 98, 0, 0.876);
+    }
+
+    .filter-btn.active {
+      color: var(--orange);
+      border-bottom-color: var(--orange);
+    }
+
+    /* ── CONTENIDO PRINCIPAL ─────────────────── */
+    .blog-main {
+      padding: 70px 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Artículo DESTACADO (el más reciente, ocupa todo el ancho) */
+    .featured-post {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 0;
+      margin-bottom: 40px;
+      border: 1px solid #ffffffe6;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: grid;
+    }
+
+    .featured-post:hover {
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.495);
+      transform: translateY(-4px);
+    }
+
+    .featured-img {
+      overflow: hidden;
+      position: relative;
+      min-height: 380px;
+    }
+
+    .featured-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.5s;
+    }
+
+    .featured-post:hover .featured-img img {
+      transform: scale(1.1);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: 24px;
+      left: 0;
+      background: var(--orange);
+      color: rgb(255, 255, 255);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 7px 16px;
+    }
+
+    .featured-content {
+      background: var(--dark);
+      padding: 48px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-cat {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+
+    .featured-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.5vw, 28px);
+      font-weight: 900;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .featured-content p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.4);
+      flex-wrap: wrap;
+    }
+
+    .featured-read {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: white;
+      padding: 12px 24px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 24px;
+      align-self: flex-start;
+      transition: background 0.2s;
+    }
+
+    .featured-read:hover {
+      background: var(--orange-dark);
+    }
+
+    /* Separador sección */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .section-divider h2 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--black);
+      white-space: nowrap;
+    }
+
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: var(--orange);
+    }
+
+    .section-divider .orange-line {
+      width: 40px;
+      height: 3px;
+      background: var(--orange);
+      flex-shrink: 0;
+    }
+
+    /* Grid de artículos */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .post-card {
+      background: white;
+      border: 1px solid #E8E8E8;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post-card:hover {
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+      transform: translateY(-3px);
+    }
+
+    .post-card-img {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .post-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .post-card:hover .post-card-img img {
+      transform: scale(1.06);
+    }
+
+    .post-card-tag {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: var(--orange);
+      color: white;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+    }
+
+    .post-card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post-card-cat {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+
+    .post-card-body h3 {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.35;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+
+    .post-card-body p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .post-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid #F0F0F0;
+      margin-top: auto;
+    }
+
+    .post-card-date {
+      font-size: 12px;
+      color: var(--gray);
+    }
+
+    .post-card-read {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Paginación */
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 20px 0 40px;
+    }
+
+    .page-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #E8E8E8;
+      background: white;
+      font-size: 13px;
+      font-weight: 600;
+      color: #555;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font-body);
+      text-decoration: none;
+    }
+
+    .page-btn:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .page-btn.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: white;
+    }
+
+    .page-btn.arrow {
+      font-size: 18px;
+      color: #999;
+    }
+
+    /* Barra lateral newsletter/contacto */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .blog-posts-col {
+      min-width: 0;
+    }
+
+    .blog-sidebar-col {
+      position: sticky;
+      top: 90px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .sidebar-widget {
+      background: var(--light-gray);
+      padding: 28px;
+      border-top: 4px solid var(--orange);
+    }
+
+    .sidebar-widget h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+
+    .sidebar-widget p {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-widget-dark {
+      background: var(--dark);
+      padding: 28px;
+    }
+
+    .sidebar-widget-dark h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-widget-dark p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .btn-sidebar {
+      display: block;
+      background: var(--orange);
+      color: white;
+      padding: 13px 20px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: background 0.2s;
+    }
+
+    .btn-sidebar:hover {
+      background: var(--orange-dark);
+    }
+
+    .btn-sidebar.outline {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .btn-sidebar.outline:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .categories-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .categories-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .categories-list li:last-child {
+      border-bottom: none;
+    }
+
+    .categories-list li:hover span:first-child {
+      color: var(--orange);
+    }
+
+    .categories-list li span:first-child {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .categories-list li .count {
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+    }
+
+    /* ── SIDEBAR PROFILE WIDGET ─────────────── */
+    .sidebar-profile {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .sidebar-profile-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--orange);
+      flex-shrink: 0;
+    }
+
+    .sidebar-profile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .sidebar-profile-info {}
+
+    .sidebar-profile-name {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+
+    .sidebar-profile-role {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+
+    .sidebar-profile-facts {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .sidebar-profile-fact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .sidebar-profile-fact strong {
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .sidebar-profile-fact-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--orange);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── CTA BANNER ──────────────────────────── */
+    .cta-strip {
+      background: var(--orange);
+      padding: 60px 5%;
+      text-align: center;
+    }
+
+    .cta-strip h2 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.5vw, 42px);
+      font-weight: 900;
+      color: white;
+      margin-bottom: 14px;
+    }
+
+    .cta-strip p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 520px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+
+    .btn-white {
+      display: inline-block;
+      background: white;
+      color: var(--orange);
+      padding: 15px 36px;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-white:hover {
+      background: var(--black);
+      color: white;
+    }
+
+    /* ── FOOTER ──────────────────────────────── */
+    footer {
+      background: var(--black);
+      border-top: 3px solid var(--orange);
+      padding: 40px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .footer-back {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 13px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .footer-back:hover {
+      color: var(--orange);
+    }
+
+    .footer-back svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ── REVEAL ──────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 1200px) {
+      .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .blog-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .blog-sidebar-col {
+        position: static;
+      }
+
+      .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .featured-post {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-img {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .posts-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-left {
+      background: #111;
+      padding: 80px 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-left .section-tag {
+      color: var(--orange);
+    }
+
+    .contact-left h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 900;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .contact-left p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contact-item-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-item-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      line-height: 1.5;
+    }
+
+    .contact-item a:hover {
+      color: var(--orange);
+    }
+
+    .contact-right {
+      background: #f4f4f0;
+      padding: 80px 8%;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #444;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 14px 16px;
+      border: 2px solid #E0E0E0;
+      background: white;
+      font-size: 14px;
+      color: #111;
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--orange);
+    }
+
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      background: var(--orange);
+      color: white;
+      padding: 16px 32px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+    }
+
+    .form-submit:hover {
+      background: #c94400;
+    }
+
+    .footer-full {
+      background: #111;
+      padding: 60px 8% 30px;
+      border-top: 3px solid var(--orange);
+    }
+
+    .footer-full-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-full-brand p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.8;
+      margin-top: 20px;
+      max-width: 320px;
+    }
+
+    .footer-full-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    .footer-full-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-full-col ul li a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-full-col ul li a:hover {
+      color: var(--orange);
+    }
+
+    .footer-full-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 28px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    @media (max-width: 900px) {
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-full-top {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    html {
+      overflow-x: hidden;
+    }
+
+    /* ── HAMBURGER & MOBILE MENU ─────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1100;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--black);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .nav-hamburger.is-open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-hamburger.is-open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .nav-hamburger.is-open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: white;
+      border-top: 2px solid var(--orange);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+      flex-direction: column;
+      padding: 8px 0 16px;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      pointer-events: none;
+    }
+
+    .mobile-menu.is-open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    .mobile-link {
+      display: block;
+      padding: 14px 6%;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+      letter-spacing: 0.3px;
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .mobile-link:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-link:hover {
+      color: var(--orange);
+      background: #fff8f5;
+    }
+
+    .mobile-link--active {
+      color: var(--orange);
+    }
+
+    .mobile-link--dinero {
+      color: var(--orange);
+    }
+
+    .mobile-link--cta {
+      margin: 8px 6% 0;
+      background: var(--orange);
+      color: white !important;
+      text-align: center;
+      border-bottom: none !important;
+      padding: 14px 20px;
+    }
+
+    .mobile-link--cta:hover {
+      background: var(--orange-dark);
+    }
+
+    /* Tarjeta de perfil en móvil — debajo del hero */
+    .hero-profile-card-mobile {
+      display: none;
+      background: rgb(57, 40, 34) !important;
+      isolation: isolate;
+      padding: 28px 5%;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      border-top: 3px solid var(--orange);
+    }
+
+    .hero-profile-card-mobile .hpc-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--orange);
+      margin-bottom: 14px;
+      background: #1a1a1a;
+    }
+
+    .hero-profile-card-mobile .hpc-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: scale(1.12);
+    }
+
+    .hero-profile-card-mobile .hpc-name {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .hero-profile-card-mobile .hpc-role {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+
+    .hero-profile-card-mobile .hpc-stats {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .hero-profile-card-mobile .hpc-stat {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(175, 76, 0, 0.707);
+      padding: 10px 14px;
+      text-align: center;
+      flex: 1;
+    }
+
+    .hero-profile-card-mobile .hpc-stat strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 800;
+      color: white;
+    }
+
+    .hero-profile-card-mobile .hpc-stat span {
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .hero-profile-card-mobile .hpc-langs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero-profile-card-mobile .hpc-lang {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(175, 76, 0, 0.707);
+      color: rgb(255, 255, 255);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 10px;
+      letter-spacing: 1px;
+    }
+
+    .hero-profile-card-mobile .hpc-btn {
+      display: block;
+      width: 100%;
+      background: var(--orange);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 14px;
+      transition: background 0.2s;
+    }
+
+    .hero-profile-card-mobile .hpc-btn:hover {
+      background: var(--orange-dark);
+    }
+
+    @media (max-width: 900px) {
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .mobile-menu {
+        display: flex;
+      }
+
+      .hero-profile-card-mobile {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVEGACIÓN — igual que tu web principal -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-badge">SAFTI</div>
+      <div class="logo-divider"></div>
+      <div class="logo-name-block">
+        <span class="logo-name-main">Issam Benali</span>
+        <span class="logo-name-sub">Asesor Independiente</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#servicios">Servicios</a></li>
+      <li><a href="index.html#propiedades">Inmuebles</a></li>
+      <li><a href="index.html#que-es-safti">¿Qué es SAFTI?</a></li>
+      <li><a href="index.html#gana-dinero" class="nav-dinero">¡Gana dinero!</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MENÚ MÓVIL DESPLEGABLE -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="mobile-link" data-menu>Inicio</a>
+    <a href="index.html#servicios" class="mobile-link" data-menu>Servicios</a>
+    <a href="index.html#propiedades" class="mobile-link" data-menu>Inmuebles</a>
+    <a href="index.html#que-es-safti" class="mobile-link" data-menu>¿Qué es SAFTI?</a>
+    <a href="index.html#gana-dinero" class="mobile-link mobile-link--dinero" data-menu>¡Gana dinero!</a>
+    <a href="blog.html" class="mobile-link mobile-link--active" data-menu>Blog</a>
+    <a href="#contacto" class="mobile-link mobile-link--cta" data-menu>Contactar</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="blog-hero">
+    <div class="blog-hero-layout">
+      <div class="blog-hero-inner">
+        <div class="hero-tag">Blog inmobiliario</div>
+        <h1>Todo lo que necesitas<br>saber para <em>decidir bien</em></h1>
+        <p>Guías prácticas, análisis del mercado barcelonés y consejos reales de un asesor independiente. Sin
+          publicidad,
+          sin letra pequeña.</p>
+      </div>
+      <!-- FOTO DE PERFIL -->
+      <div class="hero-profile-card">
+        <div class="hero-profile-img">
+          <img src="imagenes/Foto-perfil-issam-benali-asesor-safti.png" alt="Issam Benali — Asesor SAFTI Barcelona">
+        </div>
+        <div class="hero-profile-name">Issam Benali</div>
+        <div class="hero-profile-role">Asesor SAFTI · Barcelona</div>
+        <div class="hero-profile-stats">
+          <div class="hero-profile-stat">
+            <div class="hero-profile-stat-num">3 %</div>
+            <div class="hero-profile-stat-label">Honorarios</div>
+          </div>
+          <div class="hero-profile-stat">
+            <div class="hero-profile-stat-num">+150</div>
+            <div class="hero-profile-stat-label">Portales</div>
+          </div>
+          <div class="hero-profile-stat">
+            <div class="hero-profile-stat-num">5</div>
+            <div class="hero-profile-stat-label">Idiomas</div>
+          </div>
+        </div>
+        <div class="hero-profile-langs">
+          <span>ES</span><span>FR</span><span>EN</span><span>AR</span><span>CA</span>
+        </div>
+        <a href="https://wa.me/34614615790" target="_blank" class="hero-profile-cta">WhatsApp →</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- TARJETA PERFIL MÓVIL (solo visible en ≤900px) -->
+  <div class="hero-profile-card-mobile">
+    <div class="hpc-photo">
+      <img src="imagenes/Foto-perfil-issam-benali-asesor-safti.png" alt="Issam Benali — Asesor SAFTI Barcelona">
+    </div>
+    <div class="hpc-name">Issam Benali</div>
+    <div class="hpc-role">Asesor SAFTI · Barcelona</div>
+    <div class="hpc-stats">
+      <div class="hpc-stat"><strong>3%</strong><span>Honorarios</span></div>
+      <div class="hpc-stat"><strong>+150</strong><span>Portales</span></div>
+      <div class="hpc-stat"><strong>5</strong><span>Idiomas</span></div>
+    </div>
+    <div class="hpc-langs">
+      <span class="hpc-lang">ES</span>
+      <span class="hpc-lang">FR</span>
+      <span class="hpc-lang">EN</span>
+      <span class="hpc-lang">AR</span>
+      <span class="hpc-lang">CA</span>
+    </div>
+    <a href="https://wa.me/34614615790" target="_blank" class="hpc-btn">WhatsApp →</a>
+  </div>
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterPosts('todos')">Todos</button>
+    <button class="filter-btn" onclick="filterPosts('mercado')">Mercado</button>
+    <button class="filter-btn" onclick="filterPosts('compra')">Compra</button>
+    <button class="filter-btn" onclick="filterPosts('venta')">Venta</button>
+    <button class="filter-btn" onclick="filterPosts('alquiler')">Alquiler</button>
+    <button class="filter-btn" onclick="filterPosts('inversion')">Inversión</button>
+    <button class="filter-btn" onclick="filterPosts('legal')">Legal y fiscal</button>
+  </div>
+
+  <!-- CUERPO PRINCIPAL -->
+  <div class="blog-main">
+    <div class="blog-layout">
+
+      <!-- COLUMNA DE ARTÍCULOS -->
+      <div class="blog-posts-col">
+
+        <!-- ══════════════════════════════════════════════════
+        ✏️ ARTÍCULO DESTACADO (el más reciente)
+        Cambia: href, src de la imagen, categoría, título, descripción, fecha
+        ══════════════════════════════════════════════════ -->
+        <a href="articulo-alquiler-seguro-barcelona-2026.html" class="featured-post reveal" data-cat="alquiler">
+          <div class="featured-img">
+            <img
+              src="https://images.unsplash.com/photo-1554768804-50c1e2b50a6e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Alquiler seguro Barcelona — contrato, fianza y seguro de impago">
+            <div class="featured-badge">⭐ Artículo destacado</div>
+          </div>
+          <div class="featured-content">
+            <div class="featured-cat">Alquiler</div>
+            <h2>Alquila tu vivienda en Barcelona con seguridad: contrato, fianza y seguro de impago</h2>
+            <p>Todo lo que necesitas saber como propietario antes de poner tu piso en alquiler en 2026: qué debe incluir
+              el contrato, cuánta fianza puedes pedir, cómo depositarla correctamente en Cataluña y si merece la pena
+              contratar un seguro de impago.</p>
+            <div class="featured-meta">
+              <span>📅 Mayo 2026</span>
+              <span>⏱ 8 min de lectura</span>
+            </div>
+            <span class="featured-read">Leer artículo →</span>
+          </div>
+        </a>
+
+        <!-- Separador -->
+        <div class="section-divider reveal">
+          <div class="orange-line"></div>
+          <h2>Todos los artículos</h2>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+        ✏️ GRID DE ARTÍCULOS
+        Para AÑADIR un artículo nuevo: copia uno de estos bloques
+        <a href="..." class="post-card ..."> ... </a>
+        y pégalo al principio del grid (después de la etiqueta <div class="posts-grid">)
+        Para ELIMINAR un artículo: borra el bloque entero desde <a href... hasta </a>
+        ══════════════════════════════════════════════════ -->
+        <div class="posts-grid" id="posts-grid">
+
+          <!-- ARTÍCULO 1 — Guía fiscal comprador Barcelona 2026 -->
+          <a href="articulo-fiscal-comprador-vivienda-cataluña.html" class="post-card reveal" data-cat="legal">
+            <div class="post-card-img">
+              <img
+                src="https://images.unsplash.com/photo-1728825445493-1a6e89164511?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Guía fiscal comprador Barcelona 2026">
+              <div class="post-card-tag">Legal y Fiscal</div>
+            </div>
+            <div class="post-card-body">
+              <div class="post-card-cat">Legal y Fiscal</div>
+              <h3>Guía fiscal del comprador en Barcelona 2026: todos los impuestos y gastos explicados.</h3>
+              <p>ITP, notaría, registro y el Valor de Referencia del Catastro — explicados sin letra pequeña por un
+                asesor independiente.</p>
+              <div class="post-card-footer">
+                <span class="post-card-date">Mayo 2026</span>
+                <span class="post-card-read">Leer →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- ARTÍCULO 2 — Guía para extranjeros no residentes -->
+          <a href="articulo-extranjeros-no-residentes-barcelona-2026.html" class="post-card reveal"
+            data-cat="inversion">
+            <div class="post-card-img">
+              <img
+                src="https://images.unsplash.com/photo-1767216427262-ce74ba565c3c?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Guía extranjeros no residentes comprar vivienda Barcelona">
+              <div class="post-card-tag">Inversión</div>
+            </div>
+            <div class="post-card-body">
+              <div class="post-card-cat">Inversión</div>
+              <h3>Guía para extranjeros no residentes que compran vivienda en Barcelona 2026</h3>
+              <p>NIE, ITP, IRNR, representante fiscal e hipoteca — todo lo que un no residente necesita saber antes de
+                comprar un piso en Barcelona.</p>
+              <div class="post-card-footer">
+                <span class="post-card-date">Mayo 2026</span>
+                <span class="post-card-read">Leer →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- ARTÍCULO 3 — honorarios agencias - cambia href, imagen, categoría, título, descripción, fecha -->
+          <a href="articulo-honorarios-agencia-inmobiliaria-barcelona.html" class="post-card reveal" data-cat="legal">
+            <div class="post-card-img">
+              <img src="imagenes/agencia-fisica-inmobiliaria-barcelona-nou-barris.jpg"
+                alt="Honorarios agencias Barcelona">
+              <div class="post-card-tag">Legal</div>
+            </div>
+            <div class="post-card-body">
+              <div class="post-card-cat">Legal</div>
+              <h3>¿Cuánto cobra realmente una agencia en Barcelona? Lo que no te cuentan</h3>
+              <p>Descubre por qué muchas agencias cobran el 6% cuando en Cataluña está prohibido cobrar al comprador.
+              </p>
+              <div class="post-card-footer">
+                <span class="post-card-date">Mayo 2026</span>
+                <span class="post-card-read">Leer →</span>
+              </div>
+            </div>
+          </a>
+          <!-- ARTÍCULO 4 — VPO Barcelona 2026 - cambia href, imagen, categoría, título, descripción, fecha -->
+          <a href="articulo-obra-nueva-vpo-barcelona-2026.html" class="post-card reveal" data-cat="Mercado">
+            <div class="post-card-img">
+              <img
+                src="https://images.unsplash.com/photo-1769339315180-0ee64c94114c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Acceder obra nueva y VPO Barcelona 2026">
+              <div class="post-card-tag">Mercado</div>
+            </div>
+            <div class="post-card-body">
+              <div class="post-card-cat">Mercado</div>
+              <h3>Obra Nueva y VPO en Barcelona 2026: guía completa para compradores</h3>
+              <p>¿Quieres comprar obra nueva o VPO en Barcelona en 2026? Precios actualizados, zonas con nuevas
+                promociones, requisitos de acceso a protección oficial y qué impuestos pagas.
+              </p>
+              <div class="post-card-footer">
+                <span class="post-card-date">Mayo 2026</span>
+                <span class="post-card-read">Leer →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- ══ COPIA ESTE BLOQUE PARA AÑADIR MÁS ARTÍCULOS ══
+          <a href="blog-articulo-XX.html" class="post-card reveal" data-cat="CATEGORIA">
+            <div class="post-card-img">
+              <img src="imagenes/blog-portada-XX.jpg" alt="descripción imagen">
+              <div class="post-card-tag">Categoría</div>
+            </div>
+            <div class="post-card-body">
+              <div class="post-card-cat">Categoría</div>
+              <h3>Título del artículo</h3>
+              <p>Breve descripción de 1-2 frases.</p>
+              <div class="post-card-footer">
+                <span class="post-card-date">Mes Año</span>
+                <span class="post-card-read">Leer →</span>
+              </div>
+            </div>
+          </a>
+          ══════════════════════════════════════════════════ -->
+
+        </div><!-- fin posts-grid -->
+
+        <!-- PAGINACIÓN — aparece cuando tienes muchos artículos -->
+        <div class="pagination reveal">
+          <a href="javascript:void(0)" class="page-btn arrow">‹</a>
+          <a href="#" class="page-btn active">1</a>
+          <a href="javascript:void(0)" class="page-btn arrow">›</a>
+        </div>
+
+      </div><!-- fin blog-posts-col -->
+
+      <!-- ══ SIDEBAR LATERAL ══ -->
+      <aside class="blog-sidebar-col">
+
+        <!-- Categorías -->
+        <div class="sidebar-widget-dark reveal">
+          <h3>Categorías</h3>
+          <ul class="categories-list">
+            <li onclick="filterPosts('mercado')"><span>Mercado Barcelona</span><span class="count">3</span></li>
+            <li onclick="filterPosts('compra')"><span>Compra de pisos</span><span class="count">4</span></li>
+            <li onclick="filterPosts('venta')"><span>Venta</span><span class="count">3</span></li>
+            <li onclick="filterPosts('alquiler')"><span>Alquiler</span><span class="count">5</span></li>
+            <li onclick="filterPosts('inversion')"><span>Inversión</span><span class="count">2</span></li>
+            <li onclick="filterPosts('legal')"><span>Legal y fiscal</span><span class="count">4</span></li>
+          </ul>
+        </div>
+
+        <!-- Issam — widget unificado -->
+        <div class="sidebar-widget-dark reveal">
+          <div class="sidebar-profile">
+            <div class="sidebar-profile-img">
+              <img src="imagenes/Foto-perfil-issam-benali-asesor-safti.PNG" alt="Issam Benali">
+            </div>
+            <div class="sidebar-profile-info">
+              <div class="sidebar-profile-name">Issam Benali</div>
+              <div class="sidebar-profile-role">Asesor SAFTI</div>
+            </div>
+          </div>
+          <div class="sidebar-profile-facts">
+            <div class="sidebar-profile-fact">
+              <div class="sidebar-profile-fact-dot"></div>
+              <span>Solo <strong>3%</strong> de honorarios</span>
+            </div>
+            <div class="sidebar-profile-fact">
+              <div class="sidebar-profile-fact-dot"></div>
+              <span>Difusión en <strong>+150 portales</strong></span>
+            </div>
+            <div class="sidebar-profile-fact">
+              <div class="sidebar-profile-fact-dot"></div>
+              <span>Atención en <strong>5 idiomas</strong></span>
+            </div>
+            <div class="sidebar-profile-fact">
+              <div class="sidebar-profile-fact-dot"></div>
+              <span>Asesoría <strong>gratuita y sin compromiso</strong></span>
+            </div>
+          </div>
+          <a href="https://wa.me/34614615790" target="_blank" class="btn-sidebar">WhatsApp directo</a>
+          <a href="index.html#contacto" class="btn-sidebar outline">Formulario de contacto</a>
+        </div>
+
+      </aside>
+    </div><!-- fin blog-layout -->
+  </div><!-- fin blog-main -->
+
+  <!-- CTA FINAL -->
+  <div class="cta-strip">
+    <h2>¿Tienes una pregunta concreta?</h2>
+    <p>No hace falta que leas todos los artículos. Llámame directamente y te resuelvo cualquier duda sobre compra, venta
+      o alquiler en Barcelona — gratis y sin compromiso.</p>
+    <a href="index.html#contacto" class="btn-white">Hablar con Issam →</a>
+  </div>
+
+  <section class="contact" id="contacto">
+    <div class="contact-left">
+      <div class="section-tag">Ponte en contacto</div>
+      <h2>Hablemos de<br>tu operación</h2>
+      <p>Disponible todos los días para resolver tus dudas, realizar visitas y acompañarte en cualquier operación
+        inmobiliaria en Barcelona y área metropolitana.</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7 12.8 12.8 0 00.7 2.8 2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4 12.8 12.8 0 002.8.7 2 2 0 011.7 2z" />
+            </svg>
+          </div>
+          <a href="tel:+34614615790">+34 614-615-790</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
+              <path fill-rule="evenodd"
+                d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+          <a href="https://www.instagram.com/issam.benali.safti/" target="_blank" rel="noopener">Sígueme en
+            Instagram</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M17.834 6.166a8.25 8.25 0 1 0 0 11.668.75.75 0 0 1 1.06 1.06c-3.807 3.808-9.98 3.808-13.788 0-3.808-3.807-3.808-9.98 0-13.788 3.807-3.808 9.98-3.808 13.788 0A9.722 9.722 0 0 1 21.75 12c0 .975-.296 1.887-.809 2.571-.514.685-1.28 1.179-2.191 1.179-.904 0-1.666-.487-2.18-1.164a5.25 5.25 0 1 1-.82-6.26V8.25a.75.75 0 0 1 1.5 0V12c0 .682.208 1.27.509 1.671.3.401.659.579.991.579.332 0 .69-.178.991-.579.3-.4.509-.99.509-1.671a8.222 8.222 0 0 0-2.416-5.834Z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+          <a href="mailto:issam.benali@safti.es">issam.benali@safti.es</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 2H3v16h5l3 3 3-3h7V2zM9 9h6M9 13h4" />
+            </svg>
+          </div>
+          <a href="https://wa.me/34614615790">WhatsApp disponible</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z" />
+            </svg>
+          </div>
+          <span>Barcelona y área metropolitana</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <div class="section-tag" style="color:var(--orange)">Formulario de contacto</div>
+      <h2 style="font-family:var(--font-display); font-size:28px; font-weight:900; color:#111; margin-bottom:28px;">
+        Solicita tu consulta gratuita</h2>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre *</label>
+            <input type="text" placeholder="Tu nombre completo" required>
+          </div>
+          <div class="form-group">
+            <label>Teléfono *</label>
+            <input type="tel" placeholder="+34 000 000 000" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="tu@email.com">
+        </div>
+        <div class="form-group">
+          <label>¿Qué necesitas?</label>
+          <select>
+            <option value="">Selecciona una opción...</option>
+            <option>Quiero vender mi propiedad</option>
+            <option>Quiero comprar una propiedad</option>
+            <option>Quiero alquilar mi propiedad</option>
+            <option>Busco piso de alquiler</option>
+            <option>Quiero una valoración gratuita</option>
+            <option>Inversión inmobiliaria</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea
+            placeholder="Cuéntame más sobre lo que necesitas — zona de interés, presupuesto, tipo de propiedad..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Enviar consulta gratuita →</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer-full">
+    <div class="footer-full-top">
+      <div class="footer-full-brand">
+        <div style="display:flex; align-items:center; gap:0;">
+          <div class="logo-badge">SAFTI</div>
+          <div class="logo-divider" style="background:rgba(255,255,255,0.2)"></div>
+          <div class="logo-name-block">
+            <span style="font-family:var(--font-display); font-size:18px; font-weight:700; color:white;">Issam
+              Benali</span>
+            <span
+              style="font-size:10px; font-weight:500; color:var(--orange); letter-spacing:1px; text-transform:uppercase;">Asesor
+              Independiente</span>
+          </div>
+        </div>
+        <p>Asesor inmobiliario independiente asociado a SAFTI en Barcelona. Compra, venta y alquiler con honorarios
+          justos, transparencia total y atención personalizada en 5 idiomas.</p>
+      </div>
+      <div class="footer-full-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="index.html#servicios">Compra de vivienda</a></li>
+          <li><a href="index.html#servicios">Venta al mejor precio</a></li>
+          <li><a href="index.html#servicios">Alquiler seguro</a></li>
+          <li><a href="index.html#servicios">Inversión inmobiliaria</a></li>
+          <li><a href="index.html#servicios">Valoración gratuita</a></li>
+        </ul>
+      </div>
+      <div class="footer-full-col">
+        <h4>Más información</h4>
+        <ul>
+          <li><a href="index.html#que-es-safti">¿Qué es SAFTI?</a></li>
+          <li><a href="index.html#gana-dinero">Sistema de referidos</a></li>
+          <li><a href="index.html#unete">Únete al equipo</a></li>
+          <li><a href="blog.html">Blog inmobiliario</a></li>
+          <li><a href="#contacto">Contacto directo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-full-bottom">
+      <span>© 2026 Issam Benali · Asesor Independiente SAFTI Barcelona · Todos los derechos reservados</span>
+      <span><a href="https://safti.es/tu-asesor-safti/issam-benali"
+          style="color:rgba(255,255,255,0.35); text-decoration:none;">safti.es/tu-asesor-safti/issam-benali</a></span>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = '✓ ¡Consulta enviada! Issam te contactará pronto';
+      btn.style.background = '#1a7a1a';
+      btn.disabled = true;
+    }
+
+
+    // Filtro por categoría
+    function filterPosts(cat) {
+      // Pasamos la categoría seleccionada a minúsculas para evitar errores
+      const catLower = cat.toLowerCase();
+
+      // 1. Actualizar los botones de la barra superior
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        // Verificamos si el onclick del botón contiene la categoría actual para marcarlo como activo
+        if (btn.getAttribute('onclick').includes(`('${catLower}')`)) {
+          btn.classList.add('active');
+        }
+      });
+
+      // 2. Filtrar las tarjetas de los artículos
+      const cards = document.querySelectorAll('.post-card');
+      cards.forEach(card => {
+        // Obtenemos la categoría de la tarjeta y la pasamos a minúsculas
+        const cardCat = card.getAttribute('data-cat') ? card.getAttribute('data-cat').toLowerCase() : '';
+
+        // Comparamos si es 'todos' o si coincide con la categoría seleccionada
+        if (catLower === 'todos' || cardCat === catLower) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Hamburger menu
+    const hamburger = document.getElementById('navHamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('is-open');
+      hamburger.classList.toggle('is-open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    document.querySelectorAll('[data-menu]').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('is-open');
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', false);
+      });
+    });
+    document.addEventListener('click', e => {
+      if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        mobileMenu.classList.remove('is-open');
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', false);
+      }
+    });
+
+    // Actualizador automático del contador de categorías
+    function updateCategoryCounts() {
+      // 1. Obtenemos todas las tarjetas de los artículos
+      const cards = document.querySelectorAll('.post-card');
+
+      // 2. Creamos un "diccionario" vacío para ir sumando
+      const counts = {};
+
+      // Contamos cuántos hay de cada uno
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-cat');
+        if (cat) {
+          const catLower = cat.toLowerCase(); // Convertimos a minúscula para evitar errores
+          counts[catLower] = (counts[catLower] || 0) + 1;
+        }
+      });
+
+      // 3. Buscamos la lista del sidebar y actualizamos los números
+      const categoryItems = document.querySelectorAll('.categories-list li');
+      categoryItems.forEach(item => {
+        const onclickAttr = item.getAttribute('onclick');
+        if (onclickAttr) {
+          // Extraemos el nombre de la categoría, ej: de onclick="filterPosts('inversion')" saca "inversion"
+          const match = onclickAttr.match(/'([^']+)'/);
+          if (match && match[1]) {
+            const catName = match[1].toLowerCase();
+            const countSpan = item.querySelector('.count');
+            if (countSpan) {
+              // Si la categoría tiene artículos, ponemos la cantidad. Si no, ponemos 0.
+              countSpan.textContent = counts[catName] || 0;
+            }
+          }
+        }
+      });
+    }
+
+    // Hacemos que se ejecute la función en cuanto la página termine de cargar
+    document.addEventListener('DOMContentLoaded', updateCategoryCounts);
+  </script>
+
+</body>
+
+</html>
