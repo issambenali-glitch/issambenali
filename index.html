@@ -3273,7 +3273,9 @@
         style="font-family:var(--font-display); font-size:28px; font-weight:900; color:var(--black); margin-bottom:28px;">
         Solicita tu consulta gratuita
       </h2>
-      <form class="contact-form" onsubmit="handleSubmit(event)">
+      <form class="contact-form" name="contacto" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="contacto">
+        <input type="hidden" name="bot-field" style="display:none">
         <div class="form-row">
           <div class="form-group">
             <label>Nombre *</label>
@@ -3420,13 +3422,34 @@
       });
     });
 
-    // Form submit
-    function handleSubmit(e) {
+    // Form submit — Netlify Forms (envío real por email)
+    async function handleSubmit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('.form-submit');
-      btn.textContent = '✓ ¡Consulta enviada! Issam te contactará pronto';
-      btn.style.background = '#1a7a1a';
+      const form = e.target;
+      const btn = form.querySelector('.form-submit');
+
+      btn.textContent = 'Enviando...';
       btn.disabled = true;
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        });
+
+        if (response.ok) {
+          btn.textContent = '✓ ¡Consulta enviada! Te contactaré pronto';
+          btn.style.background = '#1a7a1a';
+          form.reset();
+        } else {
+          throw new Error('Error en el servidor');
+        }
+      } catch (err) {
+        btn.textContent = '✗ Error al enviar — llámame al +34 614 615 790';
+        btn.style.background = '#cc0000';
+        btn.disabled = false;
+      }
     }
 
     // Blog card hover cursor
