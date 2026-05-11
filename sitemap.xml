@@ -1,91 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Página principal -->
   <url>
     <loc>https://issambenali.es/</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://issambenali.es/"/>
   </url>
 
-  <!-- Blog -->
   <url>
-    <loc>https://issambenali.es/blog</loc>
+    <loc>https://issambenali.es/blog.html</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Artículos -->
-  <url>
-    <loc>https://issambenali.es/blog/obras-barcelona-barrios-2026</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://issambenali.es/blog/proteger-vivienda-ocupacion-ilegal-barcelona-2026</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://issambenali.es/blog/alquilar-piso-barcelona-seguridad-2026</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://issambenali.es/blog/obra-nueva-vpo-barcelona-2026</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://issambenali.es/blog/cuanto-cobra-agencia-inmobiliaria-barcelona-2026</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://issambenali.es/blog/guia-fiscal-comprador-barcelona-2026</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://issambenali.es/blog/extranjeros-no-residentes-comprar-vivienda-barcelona-2026</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://issambenali.es/blog/vicios-ocultos-viviendas-anos-70-80-barcelona-2026</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://issambenali.es/blog/vender-piso-heredado-varios-herederos-2026</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://issambenali.es/blog/subasta-judicial-vivienda-como-funciona-2026</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://issambenali.es/blog.html"/>
   </url>
 
 </urlset>
