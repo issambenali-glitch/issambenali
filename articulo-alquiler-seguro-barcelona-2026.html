@@ -1041,6 +1041,50 @@
         text-align: center;
       }
     }
+
+    /* ── TEASER ARTÍCULO RELACIONADO ── */
+    .article-teaser {
+      border-left: 4px solid var(--orange);
+      background: #fff8f5;
+      padding: 20px 22px;
+      margin: 28px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .article-teaser .teaser-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .article-teaser .teaser-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 5px;
+    }
+    .article-teaser p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 10px !important;
+    }
+    .article-teaser a.teaser-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--orange);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(232,83,10,0.3);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+    .article-teaser a.teaser-link:hover { border-color: var(--orange); }
+
   </style>
 </head>
 
@@ -1177,6 +1221,37 @@
         buena parte de Barcelona—, desde 2024 existe la obligación adicional de incluir en el contrato la renta del
         contrato anterior si el propietario es gran tenedor.
       </p>
+
+      <div class="article-alert" style="margin-top:24px;">
+        <div class="alert-label">⚠️ Si tu vivienda está en zona de mercado tensionado</div>
+        <p>Toda la ciudad de Barcelona está declarada <strong>zona de mercado residencial tensionado</strong> desde 2024, en virtud de la Ley de Vivienda 12/2023. Esto tiene consecuencias directas sobre el precio que puedes pedir:</p>
+        <ul style="margin-top:10px; margin-bottom:0;">
+          <li>Si eres <strong>gran tenedor</strong> (5 o más propiedades en zona tensionada), la renta no puede superar el índice de referencia del <a href="https://serpavi.mivau.gob.es/" target="_blank" rel="noopener"><strong>SERPAVI</strong></a> para tu dirección concreta.</li>
+          <li>Si <strong>no eres gran tenedor</strong>, no puedes superar la renta del contrato anterior incrementada en el índice anual permitido — si hubiera contrato previo en los últimos 5 años.</li>
+          <li>Si el inmueble <strong>no ha estado alquilado en los últimos 5 años</strong>, tienes mayor libertad para fijar precio, aunque con matices importantes.</li>
+        </ul>
+      </div>
+
+      <h3 id="zona-tensionada">Cómo consultar tu precio de referencia con el SERPAVI</h3>
+      <p>
+        El <a href="https://serpavi.mivau.gob.es/" target="_blank" rel="noopener"><strong>SERPAVI</strong></a> (Sistema Estatal de Referencia del Precio del Alquiler de Vivienda) es la herramienta oficial del Ministerio de Vivienda que permite consultar, introduciendo la dirección exacta del inmueble, el índice de renta de referencia aplicable: superficie, año de construcción y características básicas determinan el rango orientativo.
+      </p>
+      <p>
+        Antes de fijar el precio de tu alquiler en Barcelona, consúltalo. No es vinculante del mismo modo para todos los propietarios, pero sí lo es si eres gran tenedor — y en cualquier caso, conocer ese índice te protege frente a reclamaciones del inquilino o de la administración.
+      </p>
+      <div class="article-tip" style="margin-top:0; margin-bottom:24px;">
+        <div class="tip-label">🔗 Acceso directo al SERPAVI</div>
+        <p>Consulta el índice de referencia de tu vivienda en <a href="https://serpavi.mivau.gob.es/" target="_blank" rel="noopener">serpavi.mivau.gob.es</a>. Necesitarás la dirección completa y la referencia catastral.</p>
+      </div>
+
+      <div class="article-teaser">
+        <div class="teaser-icon">📖</div>
+        <div>
+          <div class="teaser-label">Artículo relacionado</div>
+          <p>Las zonas tensionadas merecen un análisis propio. En otro artículo de este blog profundizo en qué implica exactamente la declaración de zona tensionada en Barcelona: cómo calcular el índice de referencia paso a paso, qué pasa si lo superas, y cómo gestionar la venta o el alquiler de una vivienda afectada sin cometer errores difíciles de corregir.</p>
+          <a href="articulo-zona-tensionada-barcelona.html" class="teaser-link">Leer: Cómo vender o alquilar una vivienda en zona tensionada en Barcelona →</a>
+        </div>
+      </div>
 
       <ul>
         <li><strong>Identificación completa de arrendador y arrendatario</strong> (nombre, DNI/NIE, domicilio a efectos
@@ -1440,6 +1515,13 @@
         en 2024 como sustituto del IPC para el alquiler. Consulta el valor vigente en el portal del INE antes de cada
         actualización para no incurrir en cobros indebidos.
       </p>
+      <p>
+        En Barcelona, al tratarse de zona de mercado tensionado, hay una capa adicional: incluso dentro del margen de 
+        actualización permitido, la renta resultante no puede superar el índice de referencia del <a href="https://serpavi.mivau.gob.es/" target="_blank" rel="noopener">SERPAVI</a> si eres gran 
+        tenedor. Para el resto de propietarios, el límite práctico es no superar la renta anterior más el índice anual 
+        permitido. Cualquier cobro que exceda estos límites puede ser reclamado por el inquilino y sancionado por la 
+        administración autonómica.
+      </p>
 
       <h3>¿Qué pasa si el inquilino se va antes de tiempo?</h3>
       <p>
@@ -1495,6 +1577,7 @@
           <li><a href="#garantias">Garantías adicionales: límites y formas</a></li>
           <li><a href="#seguro-impago">Seguro de impago: cobertura y coste</a></li>
           <li><a href="#seleccion">Cómo filtrar al inquilino</a></li>
+          <li><a href="#zona-tensionada">Zona tensionada y precio SERPAVI</a></li>
           <li><a href="#faq">Preguntas frecuentes</a></li>
         </ul>
       </div>
