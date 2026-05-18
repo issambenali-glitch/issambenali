@@ -9,7 +9,9 @@
     content="Guías, consejos y análisis del mercado inmobiliario en Barcelona. Todo lo que necesitas saber antes de comprar, vender o alquilar — por Issam Benali, asesor SAFTI.">
   <meta name="keywords"
     content="blog inmobiliario Barcelona, consejos comprar piso Barcelona, mercado inmobiliario Barcelona 2025, asesor inmobiliario Barcelona, SAFTI Barcelona">
-  <link rel="canonical" href="https://issambenali.es/blog.html">
+  <!-- ✅ FIX canonical: apunta a la URL exacta con la que Google indexa la página -->
+  <!-- Si tu servidor sirve /blog (sin .html), cambia blog.html → blog -->
+  <link rel="canonical" href="https://issambenali.es/blog">
   <meta property="og:title" content="Blog Inmobiliario Barcelona | Issam Benali">
   <meta property="og:description"
     content="Guías y análisis del mercado inmobiliario en Barcelona. Actualizado cada semana.">
@@ -22,7 +24,7 @@
     "@type": "Blog",
     "name": "Blog Inmobiliario Barcelona — Issam Benali",
     "description": "Guías y análisis del mercado inmobiliario en Barcelona.",
-    "url": "https://issambenali.es/blog.html",
+    "url": "https://issambenali.es/blog",
     "inLanguage": "es",
     "author": {
       "@type": "Person",
@@ -46,13 +48,13 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://issambenali.es"},
-        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://issambenali.es/blog.html"}
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://issambenali.es/blog"}
       ]
     }
   }
   </script>
 
-  <meta property="og:url" content="https://issambenali.es/blog.html">
+  <meta property="og:url" content="https://issambenali.es/blog">
   <meta property="og:image" content="https://issambenali.es/imagenes/foto-perfil-asesor-inmobiliario-Issam-Benali.PNG">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -64,6 +66,12 @@
     content="Guías y análisis del mercado inmobiliario en Barcelona. Actualizado cada semana.">
   <meta name="twitter:image" content="https://issambenali.es/imagenes/foto-perfil-asesor-inmobiliario-Issam-Benali.PNG">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <!--
+    ⚠️ FIX SPF RECORD (se configura en el DNS de tu dominio, NO aquí):
+    En el panel de tu proveedor DNS (ej. Hostinger, GoDaddy, Ionos…) añade este registro TXT:
+    Nombre: @   Tipo: TXT   Valor: v=spf1 include:_spf.google.com ~all
+    (ajusta "include:" según tu proveedor de email — si usas Gmail: _spf.google.com)
+  -->
 
   <!-- Geo / Local SEO -->
   <meta name="geo.region" content="ES-CT">
@@ -73,9 +81,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
+  <!-- ✅ FIX render-blocking: fuentes cargadas de forma no bloqueante -->
+  <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap">
+  </noscript>
 
   <style>
     :root {
@@ -737,6 +750,8 @@
     }
 
     .post-card-img {
+      /* ✅ FIX aspect-ratio: evita layout shift durante la carga */
+      aspect-ratio: 2 / 1;
       height: 200px;
       overflow: hidden;
       position: relative;
@@ -746,6 +761,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
+      /* ✅ FIX aspect-ratio: img respeta las dimensiones del contenedor */
+      display: block;
       transition: transform 0.4s;
     }
 
@@ -1655,6 +1673,16 @@
       }
     }
   </style>
+  <!-- ✅ FIX Google Analytics 4 — reemplaza G-XXXXXXXXXX con tu Measurement ID real -->
+  <!-- Para obtenerlo: analytics.google.com → Admin → Data Streams → tu web → Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-011M5HKWLR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-011M5HKWLR');
+  </script>
+
 </head>
 
 <body>
@@ -1707,7 +1735,11 @@
       <!-- FOTO DE PERFIL -->
       <div class="hero-profile-card">
         <div class="hero-profile-img">
-          <img src="imagenes/Foto-perfil-issam-benali-asesor-safti.png" alt="Issam Benali — Asesor SAFTI Barcelona">
+          <picture>
+            <source srcset="imagenes/Foto-perfil-issam-benali-asesor-safti.webp" type="image/webp">
+            <img src="imagenes/Foto-perfil-issam-benali-asesor-safti.png" alt="Issam Benali — Asesor SAFTI Barcelona"
+              width="200" height="200" fetchpriority="high">
+          </picture>
         </div>
         <div class="hero-profile-name">Issam Benali</div>
         <div class="hero-profile-role">Asesor SAFTI · Barcelona</div>
@@ -1728,7 +1760,8 @@
         <div class="hero-profile-langs">
           <span>ES</span><span>FR</span><span>EN</span><span>AR</span><span>CA</span>
         </div>
-        <a href="https://wa.me/34614615790" target="_blank" class="hero-profile-cta">WhatsApp →</a>
+        <a href="https://wa.me/34614615790" target="_blank" rel="noopener noreferrer" class="hero-profile-cta">WhatsApp
+          →</a>
       </div>
     </div>
   </header>
@@ -1736,7 +1769,11 @@
   <!-- TARJETA PERFIL MÓVIL (solo visible en ≤900px) -->
   <div class="hero-profile-card-mobile">
     <div class="hpc-photo">
-      <img src="imagenes/Foto-perfil-issam-benali-asesor-safti.png" alt="Issam Benali — Asesor SAFTI Barcelona">
+      <picture>
+        <source srcset="imagenes/Foto-perfil-issam-benali-asesor-safti.webp" type="image/webp">
+        <img src="imagenes/Foto-perfil-issam-benali-asesor-safti.png" alt="Issam Benali — Asesor SAFTI Barcelona"
+          width="200" height="200" fetchpriority="high">
+      </picture>
     </div>
     <div class="hpc-name">Issam Benali</div>
     <div class="hpc-role">Asesor SAFTI · Barcelona</div>
@@ -1752,7 +1789,7 @@
       <span class="hpc-lang">AR</span>
       <span class="hpc-lang">CA</span>
     </div>
-    <a href="https://wa.me/34614615790" target="_blank" class="hpc-btn">WhatsApp →</a>
+    <a href="https://wa.me/34614615790" target="_blank" rel="noopener noreferrer" class="hpc-btn">WhatsApp →</a>
   </div>
   <div class="filters">
     <button class="filter-btn active" onclick="filterPosts('todos')">Todos</button>
@@ -1777,8 +1814,12 @@
         ══════════════════════════════════════════════════ -->
         <a href="articulo-obras-barcelona-barrios-2026.html" class="featured-post reveal" data-cat="mercado">
           <div class="featured-img">
-            <img src="imagenes/imagen-antes-despues-meridiana-2030.png"
-              alt="obras Barcelona 2026, obras barrios Barcelona, transformación urbana Barcelona, obras Vallcarca 2026, obras La Rambla Barcelona, obras Meridiana Barcelona, prolongación L8 FGC Barcelona, impacto obras precio pisos Barcelona, urbanismo Barcelona 2027, inversión municipal Barcelona barrios">
+            <picture>
+              <source srcset="imagenes/imagen-antes-despues-meridiana-2030.webp" type="image/webp">
+              <img src="imagenes/imagen-antes-despues-meridiana-2030.png"
+                alt="obras Barcelona 2026, obras barrios Barcelona, transformación urbana Barcelona, obras Vallcarca 2026, obras La Rambla Barcelona, obras Meridiana Barcelona, prolongación L8 FGC Barcelona, impacto obras precio pisos Barcelona, urbanismo Barcelona 2027, inversión municipal Barcelona barrios"
+                width="760" height="380" fetchpriority="high">
+            </picture>
             <div class="featured-badge">⭐ Artículo destacado</div>
           </div>
           <div class="featured-content">
@@ -1813,8 +1854,9 @@
           <a href="articulo-alquiler-seguro-barcelona-2026.html" class="post-card reveal" data-cat="alquiler">
             <div class="post-card-img">
               <img
-                src="https://images.unsplash.com/photo-1554768804-50c1e2b50a6e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Alquiler seguro Barcelona — contrato, fianza y seguro de impago">
+                src="https://images.unsplash.com/photo-1554768804-50c1e2b50a6e?q=80&w=800&auto=format&fit=crop&fm=webp"
+                alt="Alquiler seguro Barcelona — contrato, fianza y seguro de impago" width="400" height="200"
+                loading="lazy">
               <div class="post-card-tag">Alquiler</div>
             </div>
             <div class="post-card-body">
@@ -1832,8 +1874,8 @@
           <a href="articulo-fiscal-comprador-vivienda-cataluna.html" class="post-card reveal" data-cat="legal">
             <div class="post-card-img">
               <img
-                src="https://images.unsplash.com/photo-1728825445493-1a6e89164511?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Guía fiscal comprador Barcelona 2026">
+                src="https://images.unsplash.com/photo-1728825445493-1a6e89164511?q=80&w=800&auto=format&fit=crop&fm=webp"
+                alt="Guía fiscal comprador Barcelona 2026" width="400" height="200" loading="lazy">
               <div class="post-card-tag">Legal y Fiscal</div>
             </div>
             <div class="post-card-body">
@@ -1853,8 +1895,8 @@
             data-cat="inversion">
             <div class="post-card-img">
               <img
-                src="https://images.unsplash.com/photo-1767216427262-ce74ba565c3c?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Guía extranjeros no residentes comprar vivienda Barcelona">
+                src="https://images.unsplash.com/photo-1767216427262-ce74ba565c3c?q=80&w=800&auto=format&fit=crop&fm=webp"
+                alt="Guía extranjeros no residentes comprar vivienda Barcelona" width="400" height="200" loading="lazy">
               <div class="post-card-tag">Inversión</div>
             </div>
             <div class="post-card-body">
@@ -1872,8 +1914,11 @@
           <!-- ARTÍCULO 3 — honorarios agencias - cambia href, imagen, categoría, título, descripción, fecha -->
           <a href="articulo-honorarios-agencia-inmobiliaria-barcelona.html" class="post-card reveal" data-cat="legal">
             <div class="post-card-img">
-              <img src="imagenes/agencia-fisica-inmobiliaria-barcelona-nou-barris.jpg"
-                alt="Honorarios agencias Barcelona">
+              <picture>
+                <source srcset="imagenes/agencia-fisica-inmobiliaria-barcelona-nou-barris.webp" type="image/webp">
+                <img src="imagenes/agencia-fisica-inmobiliaria-barcelona-nou-barris.jpg"
+                  alt="Honorarios agencias Barcelona" width="400" height="200" loading="lazy">
+              </picture>
               <div class="post-card-tag">Legal</div>
             </div>
             <div class="post-card-body">
@@ -1893,8 +1938,8 @@
           <a href="articulo-obra-nueva-vpo-barcelona-2026.html" class="post-card reveal" data-cat="Mercado">
             <div class="post-card-img">
               <img
-                src="https://images.unsplash.com/photo-1769339315180-0ee64c94114c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Acceder obra nueva y VPO Barcelona 2026">
+                src="https://images.unsplash.com/photo-1769339315180-0ee64c94114c?q=80&w=800&auto=format&fit=crop&fm=webp"
+                alt="Acceder obra nueva y VPO Barcelona 2026" width="400" height="200" loading="lazy">
               <div class="post-card-tag">Mercado</div>
             </div>
             <div class="post-card-body">
@@ -1913,8 +1958,9 @@
           <a href="articulo-vender-piso-heredado-varios-herederos-2026.html" class="post-card reveal" data-cat="Venta">
             <div class="post-card-img">
               <img
-                src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Vender piso heredado varios herederos desacuerdo 2026 — familia con documentos">
+                src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?q=80&w=800&auto=format&fit=crop&fm=webp"
+                alt="Vender piso heredado varios herederos desacuerdo 2026 — familia con documentos" width="400"
+                height="200" loading="lazy">
               <div class="post-card-tag">Venta</div>
             </div>
             <div class="post-card-body">
@@ -1932,8 +1978,10 @@
           <!-- ARTÍCULO 6 — ¿Qué es una subasta judicial de vivienda y cómo acceder en 2026? Guía completa paso a paso -->
           <a href="articulo-subasta-judicial-vivienda-2026.html" class="post-card reveal" data-cat="Inversión">
             <div class="post-card-img">
-              <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2340&auto=format&fit=crop"
-                alt="Subasta judicial vivienda España 2026 — mazo de juez y llaves de piso">
+              <img
+                src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop&fm=webp"
+                alt="Subasta judicial vivienda España 2026 — mazo de juez y llaves de piso" width="400" height="200"
+                loading="lazy">
               <div class="post-card-tag">Inversión</div>
             </div>
             <div class="post-card-body">
@@ -1954,8 +2002,9 @@
             data-cat="mercado">
             <div class="post-card-img">
               <img
-                src="https://images.unsplash.com/photo-1634586648651-f1fb9ec10d90?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Edificio antiguo deteriorado Barcelona años 70 vicios ocultos estructurales">
+                src="https://images.unsplash.com/photo-1634586648651-f1fb9ec10d90?q=80&w=800&auto=format&fit=crop&fm=webp"
+                alt="Edificio antiguo deteriorado Barcelona años 70 vicios ocultos estructurales" width="400"
+                height="200" loading="lazy">
               <div class="post-card-tag">Mercado</div>
             </div>
             <div class="post-card-body">
@@ -1975,8 +2024,12 @@
           <!-- ARTÍCULO 8 — Guía completa 2026 sobre okupación ilegal en Barcelona -->
           <a href="articulo-okupas-proteger-vivienda-barcelona-2026.html" class="post-card reveal" data-cat="Legal">
             <div class="post-card-img">
-              <img src="imagenes/Deshaucios-por-okupacion-ilegal.jpg"
-                alt="Guía completa 2026 sobre okupación ilegal en Barcelona: qué hacer si ocupan tu piso, pasos legales, nuevas sentencias">
+              <picture>
+                <source srcset="imagenes/Deshaucios-por-okupacion-ilegal.webp" type="image/webp">
+                <img src="imagenes/Deshaucios-por-okupacion-ilegal.jpg"
+                  alt="Guía completa 2026 sobre okupación ilegal en Barcelona: qué hacer si ocupan tu piso, pasos legales, nuevas sentencias"
+                  width="400" height="200" loading="lazy">
+              </picture>
               <div class="post-card-tag">Legal</div>
             </div>
             <div class="post-card-body">
@@ -1996,8 +2049,12 @@
           <!-- ARTÍCULO 9 — Guía completa de las grandes obras de Barcelona 2024–2027 -->
           <a href="articulo-obras-barcelona-barrios-2026.html" class="post-card reveal" data-cat="Mercado">
             <div class="post-card-img">
-              <img src="imagenes/imagen-antes-despues-meridiana-2030.png"
-                alt="obras Barcelona 2026, obras barrios Barcelona, transformación urbana Barcelona, obras Vallcarca 2026, obras La Rambla Barcelona, obras Meridiana Barcelona, prolongación L8 FGC Barcelona, impacto obras precio pisos Barcelona, urbanismo Barcelona 2027, inversión municipal Barcelona barrios">
+              <picture>
+                <source srcset="imagenes/imagen-antes-despues-meridiana-2030.webp" type="image/webp">
+                <img src="imagenes/imagen-antes-despues-meridiana-2030.png"
+                  alt="obras Barcelona 2026, obras barrios Barcelona, transformación urbana Barcelona, obras Vallcarca 2026, obras La Rambla Barcelona, obras Meridiana Barcelona, prolongación L8 FGC Barcelona, impacto obras precio pisos Barcelona, urbanismo Barcelona 2027, inversión municipal Barcelona barrios"
+                  width="400" height="200" loading="lazy">
+              </picture>
               <div class="post-card-tag">Mercado</div>
             </div>
             <div class="post-card-body">
@@ -2063,7 +2120,11 @@
         <div class="sidebar-widget-dark reveal">
           <div class="sidebar-profile">
             <div class="sidebar-profile-img">
-              <img src="imagenes/Foto-perfil-issam-benali-asesor-safti.PNG" alt="Issam Benali">
+              <picture>
+                <source srcset="imagenes/Foto-perfil-issam-benali-asesor-safti.webp" type="image/webp">
+                <img src="imagenes/Foto-perfil-issam-benali-asesor-safti.PNG" alt="Issam Benali" width="60" height="60"
+                  loading="lazy">
+              </picture>
             </div>
             <div class="sidebar-profile-info">
               <div class="sidebar-profile-name">Issam Benali</div>
@@ -2088,7 +2149,8 @@
               <span>Asesoría <strong>gratuita y sin compromiso</strong></span>
             </div>
           </div>
-          <a href="https://wa.me/34614615790" target="_blank" class="btn-sidebar">WhatsApp directo</a>
+          <a href="https://wa.me/34614615790" target="_blank" rel="noopener noreferrer" class="btn-sidebar">WhatsApp
+            directo</a>
           <a href="index.html#contacto" class="btn-sidebar outline">Formulario de contacto</a>
         </div>
 
@@ -2129,7 +2191,7 @@
                 clip-rule="evenodd" />
             </svg>
           </div>
-          <a href="https://www.instagram.com/issam.benali.safti/" target="_blank" rel="noopener">Sígueme en
+          <a href="https://www.instagram.com/issam.benali.safti/" target="_blank" rel="noopener noreferrer">Sígueme en
             Instagram</a>
         </div>
         <div class="contact-item">

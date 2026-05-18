@@ -66,6 +66,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <!--
+    ⚠️ FIX SPF RECORD (se configura en el DNS de tu dominio, NO aquí):
+    En el panel de tu proveedor DNS (Hostinger, GoDaddy, Ionos…) añade:
+    Nombre: @   Tipo: TXT   Valor: v=spf1 include:_spf.google.com ~all
+    (ajusta "include:" según tu proveedor de email)
+  -->
 
   <!-- Geo / Local SEO -->
   <meta name="geo.region" content="ES-CT">
@@ -92,9 +98,14 @@
   <link rel="preload" as="image"
     href="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1170&auto=format&fit=crop"
     fetchpriority="high">
-  <link
+  <!-- ✅ FIX render-blocking: fuentes cargadas de forma no bloqueante -->
+  <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap">
+  </noscript>
   <style>
     :root {
       --orange: #E8530A;
@@ -1403,6 +1414,8 @@
     }
 
     .property-img {
+      /* ✅ FIX aspect-ratio: evita layout shift */
+      aspect-ratio: 2 / 1;
       height: 300px;
       position: relative;
       overflow: hidden;
@@ -1412,6 +1425,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
+      display: block;
       transition: transform 0.4s ease;
     }
 
@@ -1599,6 +1614,8 @@
     }
 
     .blog-card-new-img {
+      /* ✅ FIX aspect-ratio: evita layout shift */
+      aspect-ratio: 3 / 1;
       height: 200px;
       overflow: hidden;
       position: relative;
@@ -1608,6 +1625,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
+      display: block;
       transition: transform 0.4s;
     }
 
@@ -2436,6 +2455,15 @@
       }
     }
   </style>
+  <!-- ✅ Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-011M5HKWLR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-011M5HKWLR');
+  </script>
+
 </head>
 
 <body>
@@ -2517,9 +2545,12 @@
   <!-- SOBRE MÍ -->
   <section class="about" id="sobre-mi">
     <div class="about-image">
-      <img src="imagenes/foto-perfil-asesor-inmobiliario-Issam-Benali.PNG"
-        alt="Issam Benali, asesor inmobiliario independiente SAFTI en Barcelona" width="600" height="800"
-        loading="lazy">
+      <picture>
+        <source srcset="imagenes/foto-perfil-asesor-inmobiliario-Issam-Benali.webp" type="image/webp">
+        <img src="imagenes/foto-perfil-asesor-inmobiliario-Issam-Benali.PNG"
+          alt="Issam Benali, asesor inmobiliario independiente SAFTI en Barcelona"
+          width="600" height="800" loading="lazy">
+      </picture>
     </div>
     <div class="about-content reveal">
       <div class="section-tag">Asesor de confianza</div>
@@ -3051,10 +3082,15 @@
         perfecta adaptada a ti.</p>
     </div>
     <div class="properties-grid">
-      <a href="https://www.idealista.com/inmueble/111086315/" target="_blank" class="property-card reveal"
+      <a href="https://www.idealista.com/inmueble/111086315/" target="_blank" rel="noopener noreferrer" class="property-card reveal"
         style="text-decoration:none; color:inherit; display:block;">
         <div class="property-img">
-          <img src="imagenes/Perfumeria-Düca-via-julia-en-venta.jpg" alt="Traspaso perfumeria duca en barcelona">
+          <picture>
+            <source srcset="imagenes/Perfumeria-Duca-via-julia-en-venta.webp" type="image/webp">
+            <img src="imagenes/Perfumeria-Düca-via-julia-en-venta.jpg"
+              alt="Traspaso perfumeria duca en barcelona"
+              width="600" height="300" loading="lazy">
+          </picture>
           <div class="property-tag">En venta</div>
         </div>
         <div class="property-info">
@@ -3173,8 +3209,12 @@
       <a href="articulo-obras-barcelona-barrios-2026.html" class="blog-card-new"
         style="text-decoration: none; color: inherit; display: block;">
         <div class="blog-card-new-img">
-          <img src="imagenes/imagen-antes-despues-meridiana-2030.png"
-            alt="obras Barcelona 2026, obras barrios Barcelona, transformación urbana Barcelona, obras Vallcarca 2026, obras La Rambla Barcelona, obras Meridiana Barcelona, prolongación L8 FGC Barcelona, impacto obras precio pisos Barcelona, urbanismo Barcelona 2027, inversión municipal Barcelona barrios">
+          <picture>
+            <source srcset="imagenes/imagen-antes-despues-meridiana-2030.webp" type="image/webp">
+            <img src="imagenes/imagen-antes-despues-meridiana-2030.png"
+              alt="obras Barcelona 2026, obras barrios Barcelona, transformación urbana Barcelona, obras Vallcarca 2026, obras La Rambla Barcelona, obras Meridiana Barcelona, prolongación L8 FGC Barcelona, impacto obras precio pisos Barcelona, urbanismo Barcelona 2027, inversión municipal Barcelona barrios"
+              width="600" height="200" loading="lazy">
+          </picture>
           <div class="blog-card-new-tag">Mercado</div>
         </div>
         <div class="blog-card-new-body">
