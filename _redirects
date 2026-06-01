@@ -2,23 +2,36 @@
 http://issambenali.es/*     https://issambenali.es/:splat     301!
 http://www.issambenali.es/* https://issambenali.es/:splat     301!
 
-# Redirecciones 301 SEO — issambenali.es
+# REGLA MAGICA: Forzar URLs limpias (quitar .html) en Netlify
+/blog                       /blog.html                        200
+/blog/articulo-fiscal-comprador-vivienda-cataluna           /blog/articulo-fiscal-comprador-vivienda-cataluna.html           200
+/blog/articulo-alquiler-seguro-barcelona-2026              /blog/articulo-alquiler-seguro-barcelona-2026.html              200
+/blog/articulo-obras-barcelona-barrios-2026                 /blog/articulo-obras-barcelona-barrios-2026.html                 200
+/blog/articulo-extranjeros-no-residentes-barcelona-2026    /blog/articulo-extranjeros-no-residentes-barcelona-2026.html    200
+/blog/articulo-honorarios-agencia-inmobiliaria-barcelona   /blog/articulo-honorarios-agencia-inmobiliaria-barcelona.html   200
+/blog/articulo-obra-nueva-vpo-barcelona-2026                /blog/articulo-obra-nueva-vpo-barcelona-2026.html                200
+/blog/articulo-vender-piso-heredado-varios-herederos-2026   /blog/articulo-vender-piso-heredado-varios-herederos-2026.html   200
+/blog/articulo-subasta-judicial-vivienda-2026               /blog/articulo-subasta-judicial-vivienda-2026.html               200
+/blog/articulo-vicios-ocultos-viviendas-70-80-barcelona-2026 /blog/articulo-vicios-ocultos-viviendas-70-80-barcelona-2026.html 200
+/blog/articulo-okupas-proteger-vivienda-barcelona-2026      /blog/articulo-okupas-proteger-vivienda-barcelona-2026.html      200
+/blog/articulo-zona-tensionada-barcelona-2026               /blog/articulo-zona-tensionada-barcelona-2026.html               200
 
-/blog/vicios-ocultos-viviendas-anos-70-80-barcelona-2026        /articulo-vicios-ocultos-viviendas-70-80-barcelona-2026.html        301
-/blog/vender-piso-heredado-varios-herederos-2026                /articulo-vender-piso-heredado-varios-herederos-2026.html           301
-/blog/subasta-judicial-vivienda-como-funciona-2026              /articulo-subasta-judicial-vivienda-2026.html                       301
-/blog/proteger-vivienda-ocupacion-ilegal-barcelona-2026         /articulo-okupas-proteger-vivienda-barcelona-2026.html              301
-/blog/obras-barcelona-barrios-2026                              /articulo-obras-barcelona-barrios-2026.html                         301
-/blog/obra-nueva-vpo-barcelona-2026                             /articulo-obra-nueva-vpo-barcelona-2026.html                        301
-/blog/cuanto-cobra-agencia-inmobiliaria-barcelona-2026          /articulo-honorarios-agencia-inmobiliaria-barcelona.html            301
-/blog/guia-fiscal-comprador-barcelona-2026                      /articulo-fiscal-comprador-vivienda-cataluna.html                   301
-/blog/extranjeros-no-residentes-comprar-vivienda-barcelona-2026 /articulo-extranjeros-no-residentes-barcelona-2026.html             301
-/blog/alquilar-piso-barcelona-seguridad-2026                    /articulo-alquiler-seguro-barcelona-2026.html                       301
+# Redirecciones de URLs antiguas o cortas hacia la nueva estructura limpia (301 SEO)
+/blog/vicios-ocultos-viviendas-anos-70-80-barcelona-2026        /blog/articulo-vicios-ocultos-viviendas-70-80-barcelona-2026        301
+/blog/vender-piso-heredado-varios-herederos-2026                /blog/articulo-vender-piso-heredado-varios-herederos-2026           301
+/blog/subasta-judicial-vivienda-como-funciona-2026              /blog/articulo-subasta-judicial-vivienda-2026                       301
+/blog/proteger-vivienda-ocupacion-ilegal-barcelona-2026         /blog/articulo-okupas-proteger-vivienda-barcelona-2026              301
+/blog/obras-barcelona-barrios-2026                              /blog/articulo-obras-barcelona-barrios-2026                         301
+/blog/obra-nueva-vpo-barcelona-2026                             /blog/articulo-obra-nueva-vpo-barcelona-2026                        301
+/blog/cuanto-cobra-agencia-inmobiliaria-barcelona-2026          /blog/articulo-honorarios-agencia-inmobiliaria-barcelona           301
+/blog/guia-fiscal-comprador-barcelona-2026                      /blog/articulo-fiscal-comprador-vivienda-cataluna                   301
+/blog/extranjeros-no-residentes-comprar-vivienda-barcelona-2026 /blog/articulo-extranjeros-no-residentes-barcelona-2026             301
+/blog/alquilar-piso-barcelona-seguridad-2026                    /blog/articulo-alquiler-seguro-barcelona-2026                       301
 
-# Artículo fiscal — capturar todas las variantes con ñ o codificada
-/articulo-fiscal-comprador-vivienda-catal%C3%B1a                /articulo-fiscal-comprador-vivienda-cataluna.html                   301
-/articulo-fiscal-comprador-vivienda-cataluña.html               /articulo-fiscal-comprador-vivienda-cataluna.html                   301
-/articulo-fiscal-comprador-vivienda-cataluna                    /articulo-fiscal-comprador-vivienda-cataluna.html                   301
+# Artículo fiscal — capturar variantes antiguas o erróneas
+/articulo-fiscal-comprador-vivienda-catal%C3%B1a                /blog/articulo-fiscal-comprador-vivienda-cataluna                   301
+/articulo-fiscal-comprador-vivienda-cataluña.html               /blog/articulo-fiscal-comprador-vivienda-cataluna                   301
+/articulo-fiscal-comprador-vivienda-cataluna                    /blog/articulo-fiscal-comprador-vivienda-cataluna                   301
 
 # Página de blog antigua
-/blog-articulo-3.html                                           /blog.html                                                          301
+/blog-articulo-3.html                                           /blog                                                               301
