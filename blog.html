@@ -599,50 +599,52 @@
     .rental-cta-banner {
       display: inline-flex;
       align-items: center;
-      gap: 18px;
-      background: rgba(0, 0, 0, 0.35);
+      gap: 0;
+      margin-top: 36px;
+      background: rgba(0,0,0,0.45);
       border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(8px);
-      padding: 14px 20px 14px 16px;
-      margin-top: 24px;
-      max-width: 480px;
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      max-width: 520px;
     }
 
-    .rental-cta-banner-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .rental-cta-banner-label {
+    .rental-cta-badge {
       font-size: 10px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
+      color: #2DCCB4;
+      background: rgba(45, 204, 180, 0.12);
+      border-right: 1px solid rgba(255,255,255,0.1);
+      padding: 16px 14px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      line-height: 1.3;
     }
 
     .rental-cta-banner-title {
-      font-family: var(--font-display);
-      font-size: 17px;
-      font-weight: 700;
-      color: white;
-      line-height: 1.2;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      padding: 16px 18px;
+      flex: 1;
+      line-height: 1.3;
     }
 
     .rental-cta-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       background: #2DCCB4;
       color: #0a0a0a;
-      padding: 13px 22px;
+      padding: 16px 20px;
       font-family: var(--font-body);
       font-size: 13px;
       font-weight: 800;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       text-decoration: none;
+      border: none;
       white-space: nowrap;
       transition: all 0.22s ease;
       flex-shrink: 0;
@@ -650,12 +652,11 @@
 
     .rental-cta-btn:hover {
       background: #24b89f;
-      transform: translateY(-1px);
     }
 
     .rental-cta-btn svg {
-      width: 14px;
-      height: 14px;
+      width: 13px;
+      height: 13px;
       fill: none;
       stroke: currentColor;
       stroke-width: 2.5;
@@ -668,16 +669,26 @@
       transform: translateX(3px);
     }
 
+    .rental-cta-divider { display: none; }
+
     @media (max-width: 600px) {
       .rental-cta-banner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 16px;
+        flex-wrap: wrap;
+        max-width: 100%;
+      }
+      .rental-cta-badge {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        padding: 10px 14px;
+      }
+      .rental-cta-banner-title {
+        padding: 12px 14px;
       }
       .rental-cta-btn {
         width: 100%;
         justify-content: center;
+        padding: 14px 20px;
       }
     }
 
@@ -1866,7 +1877,7 @@
       <li><a href="/#que-es-safti">¿Qué es SAFTI?</a></li>
       <li><a href="/#gana-dinero" class="nav-dinero">¡Gana dinero!</a></li>
       <li><a href="/blog" class="active">Blog</a></li>
-      <li><a href="https://issambenali.es/cazador-piso-barcelona" class="nav-rental">Busco alquiler <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="https://issambenali.es/busco-alquiler-por-ti" class="nav-rental">Busco alquiler <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></li>
       <li><a href="#contacto" class="nav-cta">Contactar</a></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false">
@@ -1882,7 +1893,7 @@
     <a href="/#que-es-safti" class="mobile-link" data-menu>¿Qué es SAFTI?</a>
     <a href="/#gana-dinero" class="mobile-link mobile-link--dinero" data-menu>¡Gana dinero!</a>
     <a href="/blog" class="mobile-link mobile-link--active" data-menu>Blog</a>
-    <a href="https://issambenali.es/cazador-piso-barcelona" class="mobile-link mobile-link--rental" data-menu>🔍 Busco piso de alquiler</a>
+    <a href="https://issambenali.es/busco-alquiler-por-ti" class="mobile-link mobile-link--rental" data-menu>🔍 Busco piso de alquiler</a>
     <a href="#contacto" class="mobile-link mobile-link--cta" data-menu>Contactar</a>
   </div>
 
@@ -1900,12 +1911,10 @@
         </p>
         <!-- RENTAL CTA BANNER -->
         <div class="rental-cta-banner">
-          <div class="rental-cta-banner-text">
-            <span class="rental-cta-banner-label">Nuevo servicio</span>
-            <span class="rental-cta-banner-title">¿Buscas piso de alquiler?</span>
-          </div>
-          <a href="https://issambenali.es/cazador-piso-barcelona" class="rental-cta-btn">
-            Te ayudo a encontrarlo
+          <span class="rental-cta-badge">Nuevo<br>servicio</span>
+          <span class="rental-cta-banner-title">¿Buscas piso de alquiler en Barcelona?</span>
+          <a href="https://issambenali.es/busco-alquiler-por-ti" class="rental-cta-btn">
+            Consíguelo ya
             <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
         </div>
