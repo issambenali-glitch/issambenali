@@ -259,6 +259,39 @@
       background: var(--orange-dark) !important;
     }
 
+    .nav-rental {
+      background: #2DCCB4 !important;
+      color: #0a0a0a !important;
+      padding: 10px 18px !important;
+      font-weight: 800 !important;
+      border-bottom: none !important;
+      transition: background 0.2s !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+    }
+
+    .nav-rental:hover {
+      background: #24b89f !important;
+      color: #0a0a0a !important;
+      border-bottom: none !important;
+    }
+
+    .nav-rental svg {
+      width: 13px;
+      height: 13px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.2s;
+    }
+
+    .nav-rental:hover svg {
+      transform: translateX(3px);
+    }
+
     /* ── HERO DEL BLOG ───────────────────────── */
     .blog-hero {
       margin-top: 70px;
@@ -560,6 +593,92 @@
       line-height: 1.7;
       font-weight: 300;
       max-width: 540px;
+    }
+
+    /* ── RENTAL CTA BANNER (hero) ───────────────────────────── */
+    .rental-cta-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      padding: 14px 20px 14px 16px;
+      margin-top: 24px;
+      max-width: 480px;
+    }
+
+    .rental-cta-banner-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .rental-cta-banner-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .rental-cta-banner-title {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+    }
+
+    .rental-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #2DCCB4;
+      color: #0a0a0a;
+      padding: 13px 22px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.22s ease;
+      flex-shrink: 0;
+    }
+
+    .rental-cta-btn:hover {
+      background: #24b89f;
+      transform: translateY(-1px);
+    }
+
+    .rental-cta-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.2s;
+    }
+
+    .rental-cta-btn:hover svg {
+      transform: translateX(3px);
+    }
+
+    @media (max-width: 600px) {
+      .rental-cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px;
+      }
+      .rental-cta-btn {
+        width: 100%;
+        justify-content: center;
+      }
     }
 
     /* ── FILTROS POR CATEGORÍA ───────────────── */
@@ -1572,6 +1691,20 @@
       background: var(--orange-dark);
     }
 
+    .mobile-link--rental {
+      margin: 8px 6% 0;
+      background: #2DCCB4;
+      color: #0a0a0a !important;
+      text-align: center;
+      border-bottom: none !important;
+      padding: 14px 20px;
+      font-weight: 800;
+    }
+
+    .mobile-link--rental:hover {
+      background: #24b89f;
+    }
+
     /* Tarjeta de perfil en móvil — debajo del hero */
     .hero-profile-card-mobile {
       display: none;
@@ -1733,6 +1866,7 @@
       <li><a href="/#que-es-safti">¿Qué es SAFTI?</a></li>
       <li><a href="/#gana-dinero" class="nav-dinero">¡Gana dinero!</a></li>
       <li><a href="/blog" class="active">Blog</a></li>
+      <li><a href="https://issambenali.es/cazador-piso-barcelona" class="nav-rental">Busco alquiler <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></li>
       <li><a href="#contacto" class="nav-cta">Contactar</a></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false">
@@ -1748,6 +1882,7 @@
     <a href="/#que-es-safti" class="mobile-link" data-menu>¿Qué es SAFTI?</a>
     <a href="/#gana-dinero" class="mobile-link mobile-link--dinero" data-menu>¡Gana dinero!</a>
     <a href="/blog" class="mobile-link mobile-link--active" data-menu>Blog</a>
+    <a href="https://issambenali.es/cazador-piso-barcelona" class="mobile-link mobile-link--rental" data-menu>🔍 Busco piso de alquiler</a>
     <a href="#contacto" class="mobile-link mobile-link--cta" data-menu>Contactar</a>
   </div>
 
@@ -1763,6 +1898,17 @@
         <p style="font-size:13px; color:rgba(255, 255, 255, 0.825); margin-top:10px; letter-spacing:0.3px;">
           📍 Con base en Nou Barris · Sant Andreu &nbsp;·&nbsp; Activo en toda Barcelona
         </p>
+        <!-- RENTAL CTA BANNER -->
+        <div class="rental-cta-banner">
+          <div class="rental-cta-banner-text">
+            <span class="rental-cta-banner-label">Nuevo servicio</span>
+            <span class="rental-cta-banner-title">¿Buscas piso de alquiler?</span>
+          </div>
+          <a href="https://issambenali.es/cazador-piso-barcelona" class="rental-cta-btn">
+            Te ayudo a encontrarlo
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
       </div>
       <!-- FOTO DE PERFIL -->
       <div class="hero-profile-card">
