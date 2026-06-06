@@ -507,6 +507,27 @@
       }
     }
 
+    /* En pantallas pequeñas la píldora de plazas comprime el hamburger — la ocultamos */
+    @media(max-width:560px) {
+      .ncta-plazas {
+        display: none !important;
+      }
+      nav {
+        padding: 0 4%;
+        gap: 8px;
+      }
+      /* Reducir un poco el botón CTA en nav para dar aire al hamburger */
+      .nav-cta-always {
+        padding: 9px 13px !important;
+        font-size: 13px !important;
+      }
+      /* Asegurar que el hamburger tenga siempre espacio */
+      .hbg {
+        flex-shrink: 0;
+        padding: 8px 4px 8px 8px;
+      }
+    }
+
     /* ─── HERO ─────────────────────────────────── */
     .hero {
       background: var(--ocean);
@@ -550,6 +571,7 @@
       letter-spacing: -1.5px;
       margin-bottom: 24px;
       max-width: 820px;
+      text-shadow: 0 2px 24px rgba(0,0,0,.55), 0 1px 6px rgba(0,0,0,.35);
     }
 
     .hero h1 em {
@@ -559,10 +581,11 @@
 
     .hero-sub {
       font-size: clamp(17px, 2vw, 21px);
-      color: rgba(255, 255, 255, .82);
+      color: rgba(255, 255, 255, .88);
       line-height: 1.7;
       max-width: 620px;
       margin-bottom: 10px;
+      text-shadow: 0 1px 12px rgba(0,0,0,.4);
     }
 
     .hero-nepq {
@@ -719,9 +742,23 @@
 
     /* ─── SHARED UTIL ─────────────────────────────── */
     .sec {
-      padding: 72px 5%;
+      padding: 88px 5% 80px;
     }
 
+    /* Separadores visuales entre secciones de mismo tono */
+    .sec-datos {
+      border-top: 3px solid transparent;
+      box-shadow: inset 0 3px 0 var(--teal);
+    }
+
+    /* Secciones claras que necesitan separador superior */
+    .sec-faq,
+    .sec-testis {
+      border-top: 3px solid transparent;
+      box-shadow: inset 0 3px 0 rgba(10,191,163,.35);
+    }
+
+    /* Etiqueta de sección: marca visual más fuerte en móvil */
     .lbl {
       display: inline-flex;
       align-items: center;
@@ -748,6 +785,12 @@
 
     .lbl.w::before {
       background: var(--teal);
+    }
+
+    @media(max-width:640px) {
+      .sec {
+        padding: 72px 5% 64px;
+      }
     }
 
     h2.ttl {
@@ -3929,17 +3972,15 @@
       style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1583422409516-2895a77efded?w=1920&q=80&auto=format&fit=crop') center/cover no-repeat;z-index:0;">
     </div>
     <div
-      style="position:absolute;inset:0;background:linear-gradient(to top,rgba(3,30,36,.98) 0%,rgba(3,30,36,.7) 45%,rgba(3,30,36,.3) 100%);z-index:1;">
+      style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(3,30,36,.93) 0%,rgba(3,30,36,.62) 38%,rgba(3,30,36,.88) 70%,rgba(3,30,36,.99) 100%);z-index:1;">
     </div>
     <div style="position:relative;z-index:2;width:100%;">
       <div class="badge">
         <div class="dot"></div>Barcelona · Máx. 5 plazas · 7 días / 7 · 5 Idiomas nativos
       </div>
-      <h1>Buscar piso en Barcelona no debería convertirse en un segundo trabajo.
-        <br><em>El problema no es tu perfil.</em> Es que los mejores pisos duran horas, no semanas.
-
+      <h1>Buscar piso en Barcelona<br>se ha convertido en un trabajo a tiempo completo.<br><em>Yo lo hago por ti.</em>
       </h1>
-      <p class="hero-sub">Por eso hago yo el trabajo por ti. <strong style="color:#fff;">Monitorizo cada portal las 24 horas y, en cuanto aparece un piso que encaja, soy el primero en llamar y reservar la visita a tu nombre.</strong> Si no puedes ir, voy yo: inspecciono el piso, te mando vídeo sin filtros y reviso cada línea del contrato para eliminar cláusulas ilegales antes de que firmes. <strong style="color:#fff;">200 € de tarifa fija, sin comisión. Si en 30 días no estás satisfecho, te devuelvo el 100 %.</strong></p>
+      <p class="hero-sub">Monitorizo todos los portales 24/7 y llamo en tu nombre en menos de 15&nbsp;minutos cuando aparece un anuncio. Si no puedes ir a la visita, voy yo: vídeo real, sin filtros. Reviso el contrato para eliminar cláusulas ilegales antes de que firmes. <strong style="color:#fff;">200&nbsp;€ tarifa fija · Garantía 100%&nbsp;a 30 días.</strong></p>
       <br>
 
 
