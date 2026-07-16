@@ -28,3 +28,14 @@
 # Cualquier otro /articulo-... antiguo que se nos haya escapado,
 # se redirige automáticamente a su equivalente en /blog.
 /articulo-*                                              /blog/articulo-:splat                                         301
+
+# ----- RED DE SEGURIDAD: slugs 'bonitos' que se usaron por error en canonicals -----
+# (por si algún enlace externo apunta a ellos; redirigen al artículo real)
+/blog/guia-fiscal-comprador-barcelona-2026                    /blog/articulo-fiscal-comprador-vivienda-cataluna              301
+/blog/extranjeros-no-residentes-comprar-vivienda-barcelona-2026 /blog/articulo-extranjeros-no-residentes-barcelona-2026       301
+/blog/cuanto-cobra-agencia-inmobiliaria-barcelona-2026        /blog/articulo-honorarios-agencia-inmobiliaria-barcelona       301
+/blog/alquilar-piso-barcelona-seguridad-2026                  /blog/articulo-alquiler-seguro-barcelona-2026                  301
+/blog/proteger-vivienda-ocupacion-ilegal-barcelona-2026       /blog/articulo-okupas-proteger-vivienda-barcelona-2026         301
+
+# ----- Normalización de barra final en /blog -----
+/blog/                                                         /blog                                                         301
