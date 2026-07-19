@@ -39,3 +39,16 @@
 
 # ----- Normalización de barra final en /blog -----
 /blog/                                                         /blog                                                         301
+
+# ----- SERVICIO RETIRADO: busca-alquiler para inquilinos (julio 2026) -----
+# La landing se ha eliminado. Redirigimos a la home para no romper los
+# enlaces ya compartidos en Facebook, Reddit, WhatsApp e Instagram.
+/busco-alquiler-por-ti          /   301
+/busco-alquiler-por-ti/         /   301
+/busco-alquiler-por-ti.html     /   301
+# Alternativa si prefieres que Google la borre del indice cuanto antes
+# en lugar de traspasar autoridad a la home (sustituye las 3 lineas de
+# arriba por estas y quien entre vera tu pagina 404):
+# /busco-alquiler-por-ti        /404.html   410
+# /busco-alquiler-por-ti/       /404.html   410
+# /busco-alquiler-por-ti.html   /404.html   410

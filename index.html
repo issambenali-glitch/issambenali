@@ -273,136 +273,6 @@
       border-bottom: none !important;
     }
 
-    .nav-rental {
-      background: #2DCCB4 !important;
-      color: #0a0a0a !important;
-      padding: 10px 18px !important;
-      font-weight: 800 !important;
-      border-bottom: none !important;
-      transition: background 0.2s !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 6px !important;
-    }
-
-    .nav-rental:hover {
-      background: #24b89f !important;
-      color: #0a0a0a !important;
-      border-bottom: none !important;
-    }
-
-    .nav-rental svg {
-      width: 13px;
-      height: 13px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      transition: transform 0.2s;
-    }
-
-    .nav-rental:hover svg {
-      transform: translateX(3px);
-    }
-
-    /* ── RENTAL CTA BANNER ──────────────────────────────────── */
-    .rental-cta-banner {
-      display: inline-flex;
-      align-items: center;
-      gap: 0;
-      margin-top: 36px;
-      background: rgba(0,0,0,0.45);
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(12px);
-      overflow: hidden;
-      max-width: 520px;
-    }
-
-    .rental-cta-badge {
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #2DCCB4;
-      background: rgba(45, 204, 180, 0.12);
-      border-right: 1px solid rgba(255,255,255,0.1);
-      padding: 16px 14px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      line-height: 1.3;
-    }
-
-    .rental-cta-banner-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.9);
-      padding: 16px 18px;
-      flex: 1;
-      line-height: 1.3;
-    }
-
-    .rental-cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: #2DCCB4;
-      color: #0a0a0a;
-      padding: 16px 20px;
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: none;
-      white-space: nowrap;
-      transition: all 0.22s ease;
-      flex-shrink: 0;
-    }
-
-    .rental-cta-btn:hover {
-      background: #24b89f;
-    }
-
-    .rental-cta-btn svg {
-      width: 13px;
-      height: 13px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      transition: transform 0.2s;
-    }
-
-    .rental-cta-btn:hover svg {
-      transform: translateX(3px);
-    }
-
-    .rental-cta-divider { display: none; }
-
-    @media (max-width: 600px) {
-      .rental-cta-banner {
-        flex-wrap: wrap;
-        max-width: 100%;
-      }
-      .rental-cta-badge {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        width: 100%;
-        padding: 10px 14px;
-      }
-      .rental-cta-banner-title {
-        padding: 12px 14px;
-      }
-      .rental-cta-btn {
-        width: 100%;
-        justify-content: center;
-        padding: 14px 20px;
-      }
-    }
-
     /* ── HERO ───────────────────────────────────────────────── */
     .hero {
       position: relative;
@@ -2762,20 +2632,6 @@
       background: var(--orange-dark);
     }
 
-    .mobile-link--rental {
-      margin: 8px 6% 0;
-      background: #2DCCB4;
-      color: #0a0a0a !important;
-      text-align: center;
-      border-bottom: none !important;
-      padding: 14px 20px;
-      font-weight: 800;
-    }
-
-    .mobile-link--rental:hover {
-      background: #24b89f;
-    }
-
     @media (max-width: 900px) {
       .nav-hamburger {
         display: flex;
@@ -2816,7 +2672,6 @@
       <li><a href="#que-es-safti">¿Qué es SAFTI?</a></li>
       <li><a href="#gana-dinero" class="nav-dinero">¡Gana dinero!</a></li>
       <li><a href="/blog">Blog</a></li>
-      <li><a href="https://issambenali.es/busco-alquiler-por-ti" class="nav-rental">Busco alquiler <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a></li>
       <li><a href="#contacto" class="nav-cta">Contactar</a></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false">
@@ -2832,7 +2687,6 @@
     <a href="#que-es-safti" class="mobile-link" data-menu>¿Qué es SAFTI?</a>
     <a href="#gana-dinero" class="mobile-link mobile-link--dinero" data-menu>¡Gana dinero!</a>
     <a href="/blog" class="mobile-link" data-menu>Blog</a>
-    <a href="https://issambenali.es/busco-alquiler-por-ti" class="mobile-link mobile-link--rental" data-menu>🔍 Busco piso de alquiler</a>
     <a href="#contacto" class="mobile-link mobile-link--cta" data-menu>Contactar</a>
   </div>
 
@@ -2850,15 +2704,6 @@
       <div class="hero-actions">
         <a href="#contacto" class="btn-primary">Solicitar valoración gratuita</a>
         <a href="#servicios" class="btn-outline">Mis servicios</a>
-      </div>
-      <!-- RENTAL CTA — rectangle -->
-      <div class="rental-cta-banner">
-        <span class="rental-cta-badge">Nuevo<br>servicio</span>
-        <span class="rental-cta-banner-title">¿Buscas piso de alquiler en Barcelona?</span>
-        <a href="https://issambenali.es/busco-alquiler-por-ti" class="rental-cta-btn">
-          Consíguelo ya
-          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-        </a>
       </div>
     </div>
     <div class="hero-stats">
