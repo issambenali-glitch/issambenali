@@ -310,6 +310,49 @@
     .pd-feats dt { color: var(--gray); }
     .pd-feats dd { font-weight: 500; text-align: right; }
 
+    /* ── CARRUSEL DE FOTOS (avance rápido, sin abrir una a una) ── */
+    .pd-filmstrip-wrap { position: relative; margin-top: 18px; }
+
+    .pd-filmstrip {
+      display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x proximity;
+      scroll-behavior: smooth; padding: 2px 2px 10px; -webkit-overflow-scrolling: touch;
+    }
+
+    .pd-filmstrip::-webkit-scrollbar { height: 6px; }
+    .pd-filmstrip::-webkit-scrollbar-thumb { background: #d6d6d6; border-radius: 99px; }
+
+    .pd-filmstrip button {
+      flex: 0 0 auto; width: 118px; height: 84px; padding: 0; border: 2px solid transparent;
+      border-radius: 5px; overflow: hidden; cursor: pointer; scroll-snap-align: start;
+      background: var(--light-gray); position: relative;
+    }
+
+    .pd-filmstrip button.is-active { border-color: var(--orange); }
+
+    .pd-filmstrip button img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    .pd-filmstrip-nav {
+      position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+      width: 34px; height: 34px; border-radius: 50%; border: 1px solid #e4e4e4;
+      background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.14); cursor: pointer;
+      display: flex; align-items: center; justify-content: center; font-size: 16px;
+    }
+
+    .pd-filmstrip-nav:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+    .pd-filmstrip-nav--prev { left: -14px; }
+    .pd-filmstrip-nav--next { right: -14px; }
+
+    .pd-filmstrip-hint {
+      font-size: 12.5px; color: #888; margin-top: 6px;
+    }
+
+    @media (max-width: 720px) {
+      .pd-filmstrip-nav { display: none; }
+      .pd-filmstrip button { width: 96px; height: 70px; }
+    }
+
     /* ── COMPARADOR ANTES / DESPUÉS  (elemento distintivo) ── */
     .pd-compare {
       position: relative; width: 100%; aspect-ratio: 3 / 2;
@@ -637,6 +680,14 @@
         <span class="pd-gallery-more">Ver las 28 fotos</span>
       </button>
     </div>
+
+    <!-- Carrusel: recorre las 28 fotos de un vistazo, sin abrirlas de una en una -->
+    <div class="pd-filmstrip-wrap">
+      <button type="button" class="pd-filmstrip-nav pd-filmstrip-nav--prev" id="fsPrev" aria-label="Desplazar miniaturas a la izquierda">‹</button>
+      <div class="pd-filmstrip" id="filmstrip" role="list" aria-label="Todas las fotos, en miniatura"></div>
+      <button type="button" class="pd-filmstrip-nav pd-filmstrip-nav--next" id="fsNext" aria-label="Desplazar miniaturas a la derecha">›</button>
+    </div>
+    <p class="pd-filmstrip-hint">Desliza o usa las flechas para recorrer las 28 fotos. Pulsa cualquiera para verla en grande.</p>
 
     <!-- [EDITAR] Datos clave -->
     <dl class="pd-keybar">
@@ -999,12 +1050,41 @@
       const count = document.getElementById('lbCount');
       let i = 0, lastFocus = null;
 
+      /* Carrusel de miniaturas: una por cada foto de PHOTOS, generado en JS
+         para no tener que mantener 28 líneas de HTML a mano */
+      const strip = document.getElementById('filmstrip');
+      const thumbs = PHOTOS.map((p, idx) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('role', 'listitem');
+        b.setAttribute('aria-label', p.alt);
+        const im = document.createElement('img');
+        im.src = p.src.replace(/\.jpg$/, '.webp');
+        im.onerror = function () { im.onerror = null; im.src = p.src; };
+        im.alt = '';
+        im.loading = 'lazy';
+        b.appendChild(im);
+        b.addEventListener('click', () => open(idx));
+        strip.appendChild(b);
+        return b;
+      });
+
+      document.getElementById('fsPrev').addEventListener('click', () => {
+        strip.scrollBy({ left: -strip.clientWidth * 0.8, behavior: 'smooth' });
+      });
+      document.getElementById('fsNext').addEventListener('click', () => {
+        strip.scrollBy({ left: strip.clientWidth * 0.8, behavior: 'smooth' });
+      });
+
       function show(n) {
         i = (n + PHOTOS.length) % PHOTOS.length;
         img.onerror = function () { img.onerror = null; img.src = PHOTOS[i].src; };
         img.src = PHOTOS[i].src.replace(/\.jpg$/, '.webp');
         img.alt = PHOTOS[i].alt;
         count.textContent = (i + 1) + ' / ' + PHOTOS.length;
+        thumbs.forEach((t, idx) => t.classList.toggle('is-active', idx === i));
+        const activo = thumbs[i];
+        if (activo) activo.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
       }
 
       function open(n) {
