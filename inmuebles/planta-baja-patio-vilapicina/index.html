@@ -84,9 +84,15 @@
       --font-body: 'DM Sans', sans-serif;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: var(--font-body);
@@ -96,7 +102,9 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+    }
 
     :focus-visible {
       outline: 3px solid var(--orange);
@@ -105,493 +113,1021 @@
 
     /* ── NAV ──────────────────────────────────────────────── */
     .pd-nav {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; padding: 14px 5vw;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 5vw;
       background: rgba(255, 255, 255, .94);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #ececec;
     }
 
-    .pd-logo { display: flex; align-items: center; gap: 0; text-decoration: none; }
+    .pd-logo {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      text-decoration: none;
+    }
 
     .pd-logo-badge {
-      background: var(--orange); color: #fff;
-      font-weight: 600; font-size: 13px; letter-spacing: 1.5px;
-      padding: 7px 11px; border-radius: 3px;
+      background: var(--orange);
+      color: #fff;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      padding: 7px 11px;
+      border-radius: 3px;
     }
 
     .pd-logo-name {
-      display: flex; flex-direction: column; line-height: 1.15; margin-left: 12px;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+      margin-left: 12px;
     }
 
-    .pd-logo-name b { font-family: var(--font-display); font-size: 17px; font-weight: 700; }
+    .pd-logo-name b {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+    }
 
     .pd-logo-name span {
-      font-size: 9px; font-weight: 500; color: var(--orange);
-      letter-spacing: 1.2px; text-transform: uppercase;
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--orange);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
     }
 
-    .pd-nav-actions { display: flex; align-items: center; gap: 10px; }
+    .pd-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
     .pd-nav-back {
-      font-size: 14px; color: var(--gray); text-decoration: none;
+      font-size: 14px;
+      color: var(--gray);
+      text-decoration: none;
     }
-    .pd-nav-back:hover { color: var(--black); }
+
+    .pd-nav-back:hover {
+      color: var(--black);
+    }
 
     .pd-btn {
-      display: inline-block; text-decoration: none; text-align: center;
-      font-family: var(--font-body); font-size: 15px; font-weight: 500;
-      padding: 13px 26px; border-radius: 4px; border: none; cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 13px 26px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
       transition: background .2s, transform .2s;
     }
 
-    .pd-btn--primary { background: var(--orange); color: #fff; }
-    .pd-btn--primary:hover { background: var(--orange-dark); }
+    .pd-btn--primary {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    .pd-btn--primary:hover {
+      background: var(--orange-dark);
+    }
 
     .pd-btn--ghost {
-      background: transparent; color: var(--black); border: 1px solid #d6d6d6;
+      background: transparent;
+      color: var(--black);
+      border: 1px solid #d6d6d6;
     }
-    .pd-btn--ghost:hover { border-color: var(--black); }
 
-    .pd-btn--sm { padding: 9px 18px; font-size: 14px; }
+    .pd-btn--ghost:hover {
+      border-color: var(--black);
+    }
+
+    .pd-btn--sm {
+      padding: 9px 18px;
+      font-size: 14px;
+    }
 
     /* ── LAYOUT ───────────────────────────────────────────── */
-    .pd-wrap { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
-
-    .pd-section { padding: 72px 0; }
-    .pd-section + .pd-section { border-top: 1px solid #ececec; }
-
-    .pd-eyebrow {
-      font-size: 11px; font-weight: 600; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--orange); margin-bottom: 14px;
+    .pd-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5vw;
     }
 
-    .pd-h2 {
-      font-family: var(--font-display); font-weight: 900;
-      font-size: clamp(26px, 3.4vw, 38px); line-height: 1.15;
+    .pd-section {
+      padding: 72px 0;
+    }
+
+    .pd-section+.pd-section {
+      border-top: 1px solid #ececec;
+    }
+
+    .pd-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
       margin-bottom: 14px;
     }
 
-    .pd-lead { color: #555; max-width: 62ch; }
+    .pd-h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(26px, 3.4vw, 38px);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .pd-lead {
+      color: #555;
+      max-width: 62ch;
+    }
 
     /* ── BREADCRUMB ───────────────────────────────────────── */
     .pd-crumb {
-      padding: 18px 0 0; font-size: 13px; color: var(--gray);
+      padding: 18px 0 0;
+      font-size: 13px;
+      color: var(--gray);
     }
-    .pd-crumb a { text-decoration: none; }
-    .pd-crumb a:hover { color: var(--orange); }
+
+    .pd-crumb a {
+      text-decoration: none;
+    }
+
+    .pd-crumb a:hover {
+      color: var(--orange);
+    }
 
     /* ── HERO ─────────────────────────────────────────────── */
-    .pd-hero { padding: 26px 0 0; }
+    .pd-hero {
+      padding: 26px 0 0;
+    }
 
-    .pd-hero-head { margin-bottom: 26px; }
+    .pd-hero-head {
+      margin-bottom: 26px;
+    }
 
     .pd-tag {
-      display: inline-block; background: var(--orange); color: #fff;
-      font-size: 11px; font-weight: 600; letter-spacing: 1.4px;
-      text-transform: uppercase; padding: 6px 12px; border-radius: 3px;
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 3px;
       margin-bottom: 16px;
     }
 
     .pd-h1 {
-      font-family: var(--font-display); font-weight: 900;
-      font-size: clamp(30px, 5vw, 52px); line-height: 1.08;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(30px, 5vw, 52px);
+      line-height: 1.08;
       margin-bottom: 10px;
     }
 
-    .pd-h1 em { font-style: italic; color: var(--orange); }
+    .pd-h1 em {
+      font-style: italic;
+      color: var(--orange);
+    }
 
-    .pd-loc { display: flex; align-items: center; gap: 7px; color: var(--gray); font-size: 15px; }
+    .pd-loc {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--gray);
+      font-size: 15px;
+    }
 
     /* Galería principal */
     .pd-gallery {
-      display: grid; gap: 8px;
+      display: grid;
+      gap: 8px;
       grid-template-columns: 2fr 1fr 1fr;
       grid-template-rows: 180px 180px;
     }
 
     .pd-gallery button {
-      border: 0; padding: 0; cursor: pointer; overflow: hidden;
-      border-radius: 4px; background: var(--light-gray); position: relative;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 4px;
+      background: var(--light-gray);
+      position: relative;
     }
 
-    .pd-gallery button:first-child { grid-row: span 2; }
+    .pd-gallery button:first-child {
+      grid-row: span 2;
+    }
 
-    .pd-gallery picture { display: contents; }
+    .pd-gallery picture {
+      display: contents;
+    }
 
-    .pd-compare picture { display: contents; }
+    .pd-compare picture {
+      display: contents;
+    }
 
     .pd-gallery img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
       transition: transform .5s ease;
     }
 
-    .pd-gallery button:hover img { transform: scale(1.04); }
+    .pd-gallery button:hover img {
+      transform: scale(1.04);
+    }
 
     .pd-gallery-more {
-      position: absolute; inset: 0; display: flex;
-      align-items: center; justify-content: center;
-      background: rgba(10, 10, 10, .55); color: #fff;
-      font-size: 15px; font-weight: 500;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10, 10, 10, .55);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
     }
 
     /* ── BARRA DE DATOS ───────────────────────────────────── */
     .pd-keybar {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1px; background: #ececec; border: 1px solid #ececec;
-      border-radius: 5px; overflow: hidden; margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1px;
+      background: #ececec;
+      border: 1px solid #ececec;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 26px;
     }
 
-    .pd-key { background: #fff; padding: 20px 22px; }
+    .pd-key {
+      background: #fff;
+      padding: 20px 22px;
+    }
 
     .pd-key dt {
-      font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase;
-      color: var(--gray); margin-bottom: 6px;
+      font-size: 11px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 6px;
     }
 
     .pd-key dd {
-      font-family: var(--font-display); font-size: 24px; font-weight: 700;
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
     }
 
-    .pd-key--price { background: var(--black); }
-    .pd-key--price dt { color: #9a9a9a; }
-    .pd-key--price dd { color: var(--orange); font-size: 28px; }
+    .pd-key--price {
+      background: var(--black);
+    }
+
+    .pd-key--price dt {
+      color: #9a9a9a;
+    }
+
+    .pd-key--price dd {
+      color: var(--orange);
+      font-size: 28px;
+    }
 
     /* ── DOS COLUMNAS ─────────────────────────────────────── */
-    .pd-cols { display: grid; grid-template-columns: 1fr 380px; gap: 56px; align-items: start; }
+    .pd-cols {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 56px;
+      align-items: start;
+    }
 
-    .pd-body p { margin-bottom: 18px; color: #444; }
-    .pd-body p:last-child { margin-bottom: 0; }
+    .pd-body p {
+      margin-bottom: 18px;
+      color: #444;
+    }
+
+    .pd-body p:last-child {
+      margin-bottom: 0;
+    }
 
     .pd-body h3 {
-      font-family: var(--font-display); font-size: 21px; font-weight: 700;
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-weight: 700;
       margin: 34px 0 12px;
     }
 
     /* Tarjeta lateral pegajosa */
     .pd-aside {
-      position: sticky; top: 88px;
-      border: 1px solid #e4e4e4; border-radius: 6px; padding: 26px;
+      position: sticky;
+      top: 88px;
+      border: 1px solid #e4e4e4;
+      border-radius: 6px;
+      padding: 26px;
       background: #fff;
     }
 
     .pd-aside h3 {
-      font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 6px;
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
     }
 
-    .pd-aside p { font-size: 14px; color: #666; margin-bottom: 18px; }
+    .pd-aside p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 18px;
+    }
 
-    .pd-aside .pd-btn { display: block; width: 100%; margin-bottom: 9px; }
+    .pd-aside .pd-btn {
+      display: block;
+      width: 100%;
+      margin-bottom: 9px;
+    }
 
     .pd-aside-agent {
-      display: flex; align-items: center; gap: 12px;
-      margin-top: 20px; padding-top: 18px; border-top: 1px solid #ececec;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid #ececec;
     }
 
     .pd-aside-agent img {
-      width: 46px; height: 46px; border-radius: 50%; object-fit: cover; background: var(--light-gray);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--light-gray);
     }
 
-    .pd-aside-agent b { display: block; font-size: 14px; }
-    .pd-aside-agent span { font-size: 12px; color: var(--gray); }
+    .pd-aside-agent b {
+      display: block;
+      font-size: 14px;
+    }
+
+    .pd-aside-agent span {
+      font-size: 12px;
+      color: var(--gray);
+    }
 
     /* ── CARACTERÍSTICAS ──────────────────────────────────── */
     .pd-feats {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 0 32px; margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0 32px;
+      margin-top: 28px;
     }
 
     .pd-feats div {
-      display: flex; justify-content: space-between; gap: 12px;
-      padding: 13px 0; border-bottom: 1px solid #ececec; font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid #ececec;
+      font-size: 15px;
     }
 
-    .pd-feats dt { color: var(--gray); }
-    .pd-feats dd { font-weight: 500; text-align: right; }
+    .pd-feats dt {
+      color: var(--gray);
+    }
+
+    .pd-feats dd {
+      font-weight: 500;
+      text-align: right;
+    }
 
     /* ── CARRUSEL DE FOTOS (avance rápido, sin abrir una a una) ── */
-    .pd-filmstrip-wrap { position: relative; margin-top: 18px; }
+    .pd-filmstrip-wrap {
+      position: relative;
+      margin-top: 18px;
+    }
 
     .pd-filmstrip {
-      display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x proximity;
-      scroll-behavior: smooth; padding: 2px 2px 10px; -webkit-overflow-scrolling: touch;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      scroll-behavior: smooth;
+      padding: 2px 2px 10px;
+      -webkit-overflow-scrolling: touch;
     }
 
-    .pd-filmstrip::-webkit-scrollbar { height: 6px; }
-    .pd-filmstrip::-webkit-scrollbar-thumb { background: #d6d6d6; border-radius: 99px; }
+    .pd-filmstrip::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .pd-filmstrip::-webkit-scrollbar-thumb {
+      background: #d6d6d6;
+      border-radius: 99px;
+    }
 
     .pd-filmstrip button {
-      flex: 0 0 auto; width: 118px; height: 84px; padding: 0; border: 2px solid transparent;
-      border-radius: 5px; overflow: hidden; cursor: pointer; scroll-snap-align: start;
-      background: var(--light-gray); position: relative;
+      flex: 0 0 auto;
+      width: 118px;
+      height: 84px;
+      padding: 0;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+      scroll-snap-align: start;
+      background: var(--light-gray);
+      position: relative;
     }
 
-    .pd-filmstrip button.is-active { border-color: var(--orange); }
+    .pd-filmstrip button.is-active {
+      border-color: var(--orange);
+    }
 
     .pd-filmstrip button img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .pd-filmstrip-nav {
-      position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
-      width: 34px; height: 34px; border-radius: 50%; border: 1px solid #e4e4e4;
-      background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.14); cursor: pointer;
-      display: flex; align-items: center; justify-content: center; font-size: 16px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid #e4e4e4;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .14);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
     }
 
-    .pd-filmstrip-nav:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
-    .pd-filmstrip-nav--prev { left: -14px; }
-    .pd-filmstrip-nav--next { right: -14px; }
+    .pd-filmstrip-nav:hover {
+      background: var(--orange);
+      color: #fff;
+      border-color: var(--orange);
+    }
+
+    .pd-filmstrip-nav--prev {
+      left: -14px;
+    }
+
+    .pd-filmstrip-nav--next {
+      right: -14px;
+    }
 
     .pd-filmstrip-hint {
-      font-size: 12.5px; color: #888; margin-top: 6px;
+      font-size: 12.5px;
+      color: #888;
+      margin-top: 6px;
     }
 
     @media (max-width: 720px) {
-      .pd-filmstrip-nav { display: none; }
-      .pd-filmstrip button { width: 96px; height: 70px; }
+      .pd-filmstrip-nav {
+        display: none;
+      }
+
+      .pd-filmstrip button {
+        width: 96px;
+        height: 70px;
+      }
     }
 
     /* ── COMPARADOR ANTES / DESPUÉS  (elemento distintivo) ── */
     .pd-compare {
-      position: relative; width: 100%; aspect-ratio: 3 / 2;
-      overflow: hidden; border-radius: 6px; background: var(--light-gray);
-      user-select: none; touch-action: pan-y;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+      border-radius: 6px;
+      background: var(--light-gray);
+      user-select: none;
+      touch-action: pan-y;
     }
 
     .pd-compare img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; object-fit: cover; display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .pd-compare-top { clip-path: inset(0 0 0 var(--pos, 50%)); }
+    .pd-compare-top {
+      clip-path: inset(0 0 0 var(--pos, 50%));
+    }
 
     .pd-compare-label {
-      position: absolute; bottom: 14px; z-index: 3;
-      font-size: 11px; font-weight: 600; letter-spacing: 1.3px; text-transform: uppercase;
-      color: #fff; padding: 7px 12px; border-radius: 3px;
+      position: absolute;
+      bottom: 14px;
+      z-index: 3;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      color: #fff;
+      padding: 7px 12px;
+      border-radius: 3px;
       background: rgba(10, 10, 10, .72);
     }
 
-    .pd-compare-label--a { left: 14px; }
-    .pd-compare-label--b { right: 14px; background: var(--orange); }
+    .pd-compare-label--a {
+      left: 14px;
+    }
+
+    .pd-compare-label--b {
+      right: 14px;
+      background: var(--orange);
+    }
 
     .pd-compare-handle {
-      position: absolute; top: 0; bottom: 0; z-index: 4;
-      left: var(--pos, 50%); width: 3px; background: #fff;
-      transform: translateX(-50%); pointer-events: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 4;
+      left: var(--pos, 50%);
+      width: 3px;
+      background: #fff;
+      transform: translateX(-50%);
+      pointer-events: none;
       box-shadow: 0 0 0 1px rgba(0, 0, 0, .18);
     }
 
     .pd-compare-handle::after {
-      content: '⇄'; position: absolute; top: 50%; left: 50%;
+      content: '⇄';
+      position: absolute;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
-      width: 42px; height: 42px; border-radius: 50%;
-      background: #fff; color: var(--black);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 17px; box-shadow: 0 3px 14px rgba(0, 0, 0, .22);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      box-shadow: 0 3px 14px rgba(0, 0, 0, .22);
     }
 
     .pd-compare-range {
-      position: absolute; inset: 0; z-index: 5;
-      width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize;
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+      cursor: ew-resize;
     }
 
     .pd-compare-caption {
-      margin-top: 12px; font-size: 13px; color: var(--gray);
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--gray);
     }
 
     /* ── TABLA DE COSTES ──────────────────────────────────── */
-    .pd-table-scroll { overflow-x: auto; margin-top: 28px; }
-
-    .pd-table {
-      width: 100%; border-collapse: collapse; min-width: 540px; font-size: 15px;
+    .pd-table-scroll {
+      overflow-x: auto;
+      margin-top: 28px;
     }
 
-    .pd-table th, .pd-table td {
-      padding: 15px 18px; text-align: left; border-bottom: 1px solid #ececec;
+    .pd-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 540px;
+      font-size: 15px;
+    }
+
+    .pd-table th,
+    .pd-table td {
+      padding: 15px 18px;
+      text-align: left;
+      border-bottom: 1px solid #ececec;
     }
 
     .pd-table thead th {
-      font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase;
-      color: var(--gray); font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--gray);
+      font-weight: 600;
     }
 
-    .pd-table td + td, .pd-table th + th { text-align: right; }
+    .pd-table td+td,
+    .pd-table th+th {
+      text-align: right;
+    }
 
     .pd-table tbody tr:last-child td {
-      border-bottom: 0; font-weight: 600; background: var(--light-gray);
+      border-bottom: 0;
+      font-weight: 600;
+      background: var(--light-gray);
     }
 
-    .pd-table .pd-win { color: var(--orange); font-weight: 600; }
+    .pd-table .pd-win {
+      color: var(--orange);
+      font-weight: 600;
+    }
 
     .pd-note {
-      margin-top: 20px; padding: 18px 20px;
-      border-left: 3px solid var(--orange); background: var(--light-gray);
-      font-size: 14px; color: #444; border-radius: 0 4px 4px 0;
+      margin-top: 20px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--orange);
+      background: var(--light-gray);
+      font-size: 14px;
+      color: #444;
+      border-radius: 0 4px 4px 0;
     }
 
     /* ── PLANO ────────────────────────────────────────────── */
     .pd-plan {
-      margin-top: 28px; text-align: center;
-      background: var(--light-gray); border-radius: 6px; padding: 24px;
+      margin-top: 28px;
+      text-align: center;
+      background: var(--light-gray);
+      border-radius: 6px;
+      padding: 24px;
     }
 
-    .pd-plan img { max-width: 100%; height: auto; border-radius: 4px; }
+    .pd-plan img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
 
     /* ── PLANOS: actual vs reforma ───────────────────────────── */
     .pd-planos-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 28px;
     }
 
     .pd-plano-card {
-      background: var(--light-gray); border-radius: 6px; padding: 20px; text-align: center;
+      background: var(--light-gray);
+      border-radius: 6px;
+      padding: 20px;
+      text-align: center;
     }
 
-    .pd-plano-card img { max-width: 100%; height: auto; border-radius: 4px; }
+    .pd-plano-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
 
     .pd-plano-tag {
-      display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 1.4px;
-      text-transform: uppercase; padding: 6px 12px; border-radius: 3px; margin-bottom: 14px;
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 3px;
+      margin-bottom: 14px;
     }
 
-    .pd-plano-tag--actual { background: #e4e4e4; color: #555; }
-    .pd-plano-tag--reforma { background: var(--orange); color: #fff; }
+    .pd-plano-tag--actual {
+      background: #e4e4e4;
+      color: #555;
+    }
+
+    .pd-plano-tag--reforma {
+      background: var(--orange);
+      color: #fff;
+    }
 
     @media (max-width: 720px) {
-      .pd-planos-grid { grid-template-columns: 1fr; }
+      .pd-planos-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ── FORMULARIO ───────────────────────────────────────── */
-    .pd-form-section { background: var(--light-gray); }
+    .pd-form-section {
+      background: var(--light-gray);
+    }
 
-    .pd-form-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: start; }
+    .pd-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 56px;
+      align-items: start;
+    }
 
     .pd-contact-item {
-      display: flex; gap: 13px; align-items: flex-start; margin-bottom: 20px;
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      margin-bottom: 20px;
     }
 
-    .pd-contact-item b { display: block; font-size: 13px; color: var(--gray); font-weight: 500; }
-    .pd-contact-item a { text-decoration: none; font-size: 16px; font-weight: 500; }
-    .pd-contact-item a:hover { color: var(--orange); }
+    .pd-contact-item b {
+      display: block;
+      font-size: 13px;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    .pd-contact-item a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .pd-contact-item a:hover {
+      color: var(--orange);
+    }
 
     .pd-form {
-      background: #fff; padding: 30px; border-radius: 6px; border: 1px solid #e4e4e4;
+      background: #fff;
+      padding: 30px;
+      border-radius: 6px;
+      border: 1px solid #e4e4e4;
     }
 
-    .pd-field { margin-bottom: 17px; }
-    .pd-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .pd-field {
+      margin-bottom: 17px;
+    }
+
+    .pd-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
 
     .pd-field label {
-      display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px;
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 6px;
     }
 
-    .pd-field input, .pd-field select, .pd-field textarea {
-      width: 100%; padding: 13px 15px; font-family: var(--font-body); font-size: 15px;
-      border: 1px solid #ddd; border-radius: 4px; background: #fff; color: var(--black);
+    .pd-field input,
+    .pd-field select,
+    .pd-field textarea {
+      width: 100%;
+      padding: 13px 15px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--black);
     }
 
-    .pd-field input:focus, .pd-field select:focus, .pd-field textarea:focus {
-      outline: none; border-color: var(--orange);
+    .pd-field input:focus,
+    .pd-field select:focus,
+    .pd-field textarea:focus {
+      outline: none;
+      border-color: var(--orange);
     }
 
-    .pd-field textarea { min-height: 110px; resize: vertical; }
+    .pd-field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
 
     .pd-consent {
-      display: flex; gap: 10px; align-items: flex-start;
-      font-size: 12.5px; color: #666; margin-bottom: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 12.5px;
+      color: #666;
+      margin-bottom: 20px;
     }
 
-    .pd-consent input { width: 17px; height: 17px; margin-top: 2px; flex-shrink: 0; }
+    .pd-consent input {
+      width: 17px;
+      height: 17px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
 
     .pd-submit {
-      width: 100%; background: var(--orange); color: #fff;
-      font-family: var(--font-body); font-size: 16px; font-weight: 500;
-      padding: 16px; border: 0; border-radius: 4px; cursor: pointer;
+      width: 100%;
+      background: var(--orange);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 500;
+      padding: 16px;
+      border: 0;
+      border-radius: 4px;
+      cursor: pointer;
       transition: background .2s;
     }
 
-    .pd-submit:hover { background: var(--orange-dark); }
-    .pd-submit:disabled { cursor: default; }
+    .pd-submit:hover {
+      background: var(--orange-dark);
+    }
+
+    .pd-submit:disabled {
+      cursor: default;
+    }
 
     /* ── BARRA MÓVIL FIJA ─────────────────────────────────── */
     .pd-sticky {
       display: none;
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
-      gap: 8px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      gap: 8px;
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
       background: rgba(255, 255, 255, .96);
       backdrop-filter: blur(10px);
       border-top: 1px solid #e4e4e4;
     }
 
-    .pd-sticky .pd-btn { flex: 1; }
+    .pd-sticky .pd-btn {
+      flex: 1;
+    }
 
     /* ── FOOTER ───────────────────────────────────────────── */
     .pd-footer {
-      background: var(--black); color: #9a9a9a; padding: 48px 5vw; font-size: 14px;
+      background: var(--black);
+      color: #9a9a9a;
+      padding: 48px 5vw;
+      font-size: 14px;
     }
 
     .pd-footer-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .pd-footer a { color: #d6d6d6; text-decoration: none; }
-    .pd-footer a:hover { color: var(--orange); }
+    .pd-footer a {
+      color: #d6d6d6;
+      text-decoration: none;
+    }
 
-    .pd-footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .pd-footer a:hover {
+      color: var(--orange);
+    }
+
+    .pd-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
     /* ── LIGHTBOX ─────────────────────────────────────────── */
     .pd-lightbox {
-      position: fixed; inset: 0; z-index: 200;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
       background: rgba(10, 10, 10, .95);
-      display: none; align-items: center; justify-content: center;
+      display: none;
+      align-items: center;
+      justify-content: center;
     }
 
-    .pd-lightbox[open], .pd-lightbox.is-open { display: flex; }
+    .pd-lightbox[open],
+    .pd-lightbox.is-open {
+      display: flex;
+    }
 
     .pd-lightbox img {
-      max-width: 92vw; max-height: 82vh; object-fit: contain; border-radius: 4px;
+      max-width: 92vw;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 4px;
     }
 
     .pd-lb-btn {
-      position: absolute; background: rgba(255, 255, 255, .14); color: #fff;
-      border: 0; width: 48px; height: 48px; border-radius: 50%;
-      font-size: 22px; cursor: pointer; display: flex;
-      align-items: center; justify-content: center;
+      position: absolute;
+      background: rgba(255, 255, 255, .14);
+      color: #fff;
+      border: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 22px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .pd-lb-btn:hover { background: rgba(255, 255, 255, .28); }
-    .pd-lb-prev { left: 3vw; }
-    .pd-lb-next { right: 3vw; }
-    .pd-lb-close { top: 3vh; right: 3vw; }
+    .pd-lb-btn:hover {
+      background: rgba(255, 255, 255, .28);
+    }
+
+    .pd-lb-prev {
+      left: 3vw;
+    }
+
+    .pd-lb-next {
+      right: 3vw;
+    }
+
+    .pd-lb-close {
+      top: 3vh;
+      right: 3vw;
+    }
 
     .pd-lb-count {
-      position: absolute; bottom: 4vh; left: 50%; transform: translateX(-50%);
-      color: #fff; font-size: 14px; letter-spacing: 1px;
+      position: absolute;
+      bottom: 4vh;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: 1px;
     }
 
     /* ── RESPONSIVE ───────────────────────────────────────── */
     @media (max-width: 960px) {
-      .pd-cols, .pd-form-grid { grid-template-columns: 1fr; gap: 36px; }
-      .pd-aside { position: static; }
+
+      .pd-cols,
+      .pd-form-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .pd-aside {
+        position: static;
+      }
     }
 
     @media (max-width: 720px) {
-      .pd-section { padding: 48px 0; }
-      .pd-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 110px; }
-      .pd-gallery button:first-child { grid-column: span 2; grid-row: auto; }
-      .pd-gallery button:nth-child(n+4) { display: none; }
-      .pd-nav-actions .pd-nav-back { display: none; }
-      .pd-row { grid-template-columns: 1fr; }
-      .pd-sticky { display: flex; }
-      body { padding-bottom: 74px; }
+      .pd-section {
+        padding: 48px 0;
+      }
+
+      .pd-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 110px;
+      }
+
+      .pd-gallery button:first-child {
+        grid-column: span 2;
+        grid-row: auto;
+      }
+
+      .pd-gallery button:nth-child(n+4) {
+        display: none;
+      }
+
+      .pd-nav-actions .pd-nav-back {
+        display: none;
+      }
+
+      .pd-row {
+        grid-template-columns: 1fr;
+      }
+
+      .pd-sticky {
+        display: flex;
+      }
+
+      body {
+        padding-bottom: 74px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { transition: none !important; animation: none !important; }
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
     }
   </style>
   <!-- ═══ ANALÍTICA CON CONSENTIMIENTO PREVIO (RGPD / LSSI) ═══
@@ -599,7 +1135,7 @@
        No toques nada de este bloque. -->
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag() {dataLayer.push(arguments);}
 
     function cargarAnalitica() {
       if (window.__ga_cargado) return;
@@ -609,7 +1145,7 @@
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-011M5HKWLR';
       document.head.appendChild(s);
       gtag('js', new Date());
-      gtag('config', 'G-011M5HKWLR', { anonymize_ip: true });
+      gtag('config', 'G-011M5HKWLR', {anonymize_ip: true});
     }
 
     if (localStorage.getItem('ib_cookies') === 'aceptadas') cargarAnalitica();
@@ -659,35 +1195,54 @@
     <!-- [EDITAR] Galería. Sustituye las rutas. El atributo data-full apunta a la imagen grande. -->
     <div class="pd-gallery" id="gallery">
       <button type="button" data-i="0">
-        <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/estado-01.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/estado-01.jpg"
-          alt="Salón comedor y cocina del piso en Vilapicina, estado actual" width="800" height="600"></picture>
+        <picture>
+          <source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/estado-01.webp" type="image/webp"><img
+            src="/imagenes/inmuebles/vilapicina-josep-romeu/estado-01.jpg"
+            alt="Salón comedor y cocina del piso en Vilapicina, estado actual" width="800" height="600">
+        </picture>
       </button>
       <button type="button" data-i="1">
-        <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.jpg"
-          alt="Render de propuesta de reforma del comedor, la sala de estar y la cocina" width="500" height="400" loading="lazy"></picture>
+        <picture>
+          <source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.webp" type="image/webp"><img
+            src="/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.jpg"
+            alt="Render de propuesta de reforma del comedor, la sala de estar y la cocina" width="500" height="400"
+            loading="lazy">
+        </picture>
       </button>
       <button type="button" data-i="3">
-        <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.jpg"
-          alt="Plano 3D de la distribución propuesta" width="500" height="400" loading="lazy"></picture>
+        <picture>
+          <source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.webp" type="image/webp"><img
+            src="/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.jpg" alt="Plano 3D de la distribución propuesta"
+            width="500" height="400" loading="lazy">
+        </picture>
       </button>
       <button type="button" data-i="10">
-        <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/estado-06.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/estado-06.jpg"
-          alt="Distribuidor, estado actual" width="500" height="400" loading="lazy"></picture>
+        <picture>
+          <source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/estado-06.webp" type="image/webp"><img
+            src="/imagenes/inmuebles/vilapicina-josep-romeu/estado-06.jpg" alt="Distribuidor, estado actual" width="500"
+            height="400" loading="lazy">
+        </picture>
       </button>
       <button type="button" data-i="7">
-        <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/render-cocina-detalle.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/render-cocina-detalle.jpg"
-          alt="Render de propuesta de reforma de la cocina" width="500" height="400" loading="lazy"></picture>
+        <picture>
+          <source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/render-cocina-detalle.webp" type="image/webp"><img
+            src="/imagenes/inmuebles/vilapicina-josep-romeu/render-cocina-detalle.jpg"
+            alt="Render de propuesta de reforma de la cocina" width="500" height="400" loading="lazy">
+        </picture>
         <span class="pd-gallery-more">Ver las 28 fotos</span>
       </button>
     </div>
 
     <!-- Carrusel: recorre las 28 fotos de un vistazo, sin abrirlas de una en una -->
     <div class="pd-filmstrip-wrap">
-      <button type="button" class="pd-filmstrip-nav pd-filmstrip-nav--prev" id="fsPrev" aria-label="Desplazar miniaturas a la izquierda">‹</button>
+      <button type="button" class="pd-filmstrip-nav pd-filmstrip-nav--prev" id="fsPrev"
+        aria-label="Desplazar miniaturas a la izquierda">‹</button>
       <div class="pd-filmstrip" id="filmstrip" role="list" aria-label="Todas las fotos, en miniatura"></div>
-      <button type="button" class="pd-filmstrip-nav pd-filmstrip-nav--next" id="fsNext" aria-label="Desplazar miniaturas a la derecha">›</button>
+      <button type="button" class="pd-filmstrip-nav pd-filmstrip-nav--next" id="fsNext"
+        aria-label="Desplazar miniaturas a la derecha">›</button>
     </div>
-    <p class="pd-filmstrip-hint">Desliza o usa las flechas para recorrer las 28 fotos. Pulsa cualquiera para verla en grande.</p>
+    <p class="pd-filmstrip-hint">Desliza o usa las flechas para recorrer las 28 fotos. Pulsa cualquiera para verla en
+      grande.</p>
 
     <!-- [EDITAR] Datos clave -->
     <dl class="pd-keybar">
@@ -776,9 +1331,15 @@
 
     <!-- [EDITAR] Par de imágenes -->
     <div class="pd-compare" id="compare" style="margin-top:28px">
-      <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/estado-01.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/estado-01.jpg" alt="Salón y cocina en su estado actual"></picture>
-      <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.webp" type="image/webp"><img class="pd-compare-top" src="/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.jpg"
-        alt="Render de propuesta de reforma del salón comedor con cocina"></picture>
+      <picture>
+        <source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/estado-01.webp" type="image/webp"><img
+          src="/imagenes/inmuebles/vilapicina-josep-romeu/estado-01.jpg" alt="Salón y cocina en su estado actual">
+      </picture>
+      <picture>
+        <source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.webp" type="image/webp"><img
+          class="pd-compare-top" src="/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.jpg"
+          alt="Render de propuesta de reforma del salón comedor con cocina">
+      </picture>
       <span class="pd-compare-label pd-compare-label--a">Estado actual</span>
       <span class="pd-compare-label pd-compare-label--b">Render: propuesta de reforma</span>
       <span class="pd-compare-handle" aria-hidden="true"></span>
@@ -796,25 +1357,64 @@
 
     <!-- [EDITAR] -->
     <dl class="pd-feats">
-      <div><dt>Superficie construida</dt><dd>88 m²</dd></div>
-      <div><dt>Planta</dt><dd>Baja</dd></div>
-      <div><dt>Habitaciones</dt><dd>2 dobles (hasta 3)</dd></div>
-      <div><dt>Baños</dt><dd>1 + aseo (en proyecto)</dd></div>
-      <div><dt>Exterior</dt><dd>Patio privativo</dd></div>
-      <div><dt>Estado</dt><dd>A reformar íntegramente</dd></div>
-      <div><dt>Distribución actual</dt><dd>Diáfana</dd></div>
-      <div><dt>Aire acondicionado</dt><dd>Instalado (a sustituir)</dd></div>
-      <div><dt>Ascensor</dt><dd>No aplica (planta baja)</dd></div>
-      <div><dt>Barrio</dt><dd>Vilapicina i la Torre Llobeta</dd></div>
-      <div><dt>Distrito</dt><dd>Nou Barris, Barcelona</dd></div>
-      <div><dt>Metro</dt><dd>L5 a pie</dd></div>
+      <div>
+        <dt>Superficie construida</dt>
+        <dd>88 m²</dd>
+      </div>
+      <div>
+        <dt>Planta</dt>
+        <dd>Baja</dd>
+      </div>
+      <div>
+        <dt>Habitaciones</dt>
+        <dd>2 dobles (hasta 3)</dd>
+      </div>
+      <div>
+        <dt>Baños</dt>
+        <dd>1 + aseo (en proyecto)</dd>
+      </div>
+      <div>
+        <dt>Exterior</dt>
+        <dd>Patio privativo</dd>
+      </div>
+      <div>
+        <dt>Estado</dt>
+        <dd>A reformar íntegramente</dd>
+      </div>
+      <div>
+        <dt>Distribución actual</dt>
+        <dd>Diáfana</dd>
+      </div>
+      <div>
+        <dt>Aire acondicionado</dt>
+        <dd>Instalado (a sustituir)</dd>
+      </div>
+      <div>
+        <dt>Ascensor</dt>
+        <dd>No aplica (planta baja)</dd>
+      </div>
+      <div>
+        <dt>Barrio</dt>
+        <dd>Vilapicina i la Torre Llobeta</dd>
+      </div>
+      <div>
+        <dt>Distrito</dt>
+        <dd>Nou Barris, Barcelona</dd>
+      </div>
+      <div>
+        <dt>Metro</dt>
+        <dd>L5 a pie</dd>
+      </div>
     </dl>
 
     <!-- [EDITAR] Plano -->
     <div class="pd-plan">
-      <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.jpg"
-        alt="Plano 3D amueblado con la distribución propuesta: salón-cocina, dos dormitorios, vestidor, despacho, baño y aseo"
-        width="900" height="1200" loading="lazy"></picture>
+      <picture>
+        <source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.webp" type="image/webp"><img
+          src="/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.jpg"
+          alt="Plano 3D amueblado con la distribución propuesta: salón-cocina, dos dormitorios, vestidor, despacho, baño y aseo"
+          width="900" height="1200" loading="lazy">
+      </picture>
       <p class="pd-compare-caption">Plano de la distribución propuesta tras la reforma.</p>
     </div>
   </section>
@@ -829,17 +1429,21 @@
     <div class="pd-planos-grid">
       <div class="pd-plano-card">
         <span class="pd-plano-tag pd-plano-tag--actual">Plano actual</span>
-        <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/plano-actual.webp" type="image/webp"><img
-          src="/imagenes/inmuebles/vilapicina-josep-romeu/plano-actual.jpg"
-          alt="Plano acotado del estado actual de la vivienda, con la superficie de cada estancia en m²"
-          width="900" height="1200" loading="lazy"></picture>
+        <picture>
+          <source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/plano-actual.webp" type="image/webp"><img
+            src="/imagenes/inmuebles/vilapicina-josep-romeu/plano-actual.jpg"
+            alt="Plano acotado del estado actual de la vivienda, con la superficie de cada estancia en m²" width="900"
+            height="1200" loading="lazy">
+        </picture>
       </div>
       <div class="pd-plano-card">
         <span class="pd-plano-tag pd-plano-tag--reforma">Plano reforma</span>
-        <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/plano-reforma-cotas.webp" type="image/webp"><img
-          src="/imagenes/inmuebles/vilapicina-josep-romeu/plano-reforma-cotas.jpg"
-          alt="Plano acotado de la propuesta de reforma, con la superficie de cada estancia en m²"
-          width="900" height="1200" loading="lazy"></picture>
+        <picture>
+          <source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/plano-reforma-cotas.webp" type="image/webp"><img
+            src="/imagenes/inmuebles/vilapicina-josep-romeu/plano-reforma-cotas.jpg"
+            alt="Plano acotado de la propuesta de reforma, con la superficie de cada estancia en m²" width="900"
+            height="1200" loading="lazy">
+        </picture>
       </div>
     </div>
     <p class="pd-compare-caption">Superficies orientativas sujetas a medición final de obra. El plano en 3D
@@ -864,11 +1468,31 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Precio de compra</td><td>230.000 €</td><td>300.000 €</td></tr>
-          <tr><td>ITP (10 % Cataluña)</td><td>23.000 €</td><td>30.000 €</td></tr>
-          <tr><td>Notaría, registro y gestoría</td><td>≈2.000 €</td><td>≈2.000 €</td></tr>
-          <tr><td>Reforma integral</td><td>≈50.000 €</td><td>—</td></tr>
-          <tr><td>Coste total</td><td class="pd-win">≈305.000 €</td><td>≈332.000 €</td></tr>
+          <tr>
+            <td>Precio de compra</td>
+            <td>230.000 €</td>
+            <td>300.000 €</td>
+          </tr>
+          <tr>
+            <td>ITP (10 % Cataluña)</td>
+            <td>23.000 €</td>
+            <td>30.000 €</td>
+          </tr>
+          <tr>
+            <td>Notaría, registro y gestoría</td>
+            <td>≈2.000 €</td>
+            <td>≈2.000 €</td>
+          </tr>
+          <tr>
+            <td>Reforma integral</td>
+            <td>≈50.000 €</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Coste total</td>
+            <td class="pd-win">≈305.000 €</td>
+            <td>≈332.000 €</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -918,8 +1542,7 @@
           <!-- [EDITAR] Identifica el inmueble en el email que te llega -->
           <input type="hidden" name="inmueble" value="Planta baja con patio · Vilapicina (Neus 72)">
           <input type="hidden" name="_subject" value="Consulta inmueble: Vilapicina — planta baja con patio">
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"
-            aria-hidden="true">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <div class="pd-row">
             <div class="pd-field">
@@ -929,8 +1552,7 @@
             </div>
             <div class="pd-field">
               <label for="f-tel">Teléfono *</label>
-              <input id="f-tel" type="tel" name="telefono" placeholder="+34 000 000 000" required
-                autocomplete="tel">
+              <input id="f-tel" type="tel" name="telefono" placeholder="+34 000 000 000" required autocomplete="tel">
             </div>
           </div>
 
@@ -1012,35 +1634,35 @@
        siguiendo el mismo patrón: estado-09.jpg, estado-10.jpg... */
     const PHOTOS = [
       // Intercaladas: estado actual y renders de la propuesta de reforma
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-01.jpg', alt: 'Salón, comedor y cocina — estado actual' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.jpg', alt: 'Render: propuesta de reforma del comedor, la sala de estar y la cocina' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-02.jpg', alt: 'Salón y cocina — estado actual' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.jpg', alt: 'Plano 3D de la distribución propuesta' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-03.jpg', alt: 'Salón y cocina — estado actual' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-dormitorio-principal.jpg', alt: 'Render: propuesta de reforma del dormitorio principal' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-04.jpg', alt: 'Dormitorio — estado actual' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-cocina-detalle.jpg', alt: 'Render: propuesta de reforma de la cocina, detalle' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-05.jpg', alt: 'Dormitorio con baño — estado actual' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-bano.jpg', alt: 'Render: propuesta de reforma del baño' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-06.jpg', alt: 'Distribuidor — estado actual' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-sala-estar.jpg', alt: 'Render: propuesta de reforma de la sala de estar' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-07.jpg', alt: 'Dormitorio con acceso al patio — estado actual' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-dormitorio-secundario.jpg', alt: 'Render: propuesta de reforma del dormitorio secundario' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-08.jpg', alt: 'Baño — estado actual' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-vestidor.jpg', alt: 'Render: propuesta de reforma del vestidor' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-09.jpg', alt: 'Salón y cocina — estado actual' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-oficina.jpg', alt: 'Render: propuesta de reforma del despacho' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-10.jpg', alt: 'Estado actual de la vivienda' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-patio.jpg', alt: 'Render: propuesta de reforma del patio' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-11.jpg', alt: 'Patio privativo — estado actual' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-12.jpg', alt: 'Patio privativo — estado actual' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-13.jpg', alt: 'Estado actual de la vivienda' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-14.jpg', alt: 'Baño — estado actual' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-15.jpg', alt: 'Estado actual de la vivienda' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-16.jpg', alt: 'Baño — estado actual' },
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-02.jpg', alt: 'Salón y cocina — estado actual'},
+
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-01.jpg', alt: 'Salón, comedor y cocina — estado actual'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.jpg', alt: 'Plano 3D de la distribución propuesta'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-03.jpg', alt: 'Salón y cocina — estado actual'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-dormitorio-principal.jpg', alt: 'Render: propuesta de reforma del dormitorio principal'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-04.jpg', alt: 'Dormitorio — estado actual'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-cocina-detalle.jpg', alt: 'Render: propuesta de reforma de la cocina, detalle'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-05.jpg', alt: 'Dormitorio con baño — estado actual'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-bano.jpg', alt: 'Render: propuesta de reforma del baño'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-06.jpg', alt: 'Distribuidor — estado actual'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-sala-estar.jpg', alt: 'Render: propuesta de reforma de la sala de estar'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-07.jpg', alt: 'Dormitorio con acceso al patio — estado actual'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-dormitorio-secundario.jpg', alt: 'Render: propuesta de reforma del dormitorio secundario'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-08.jpg', alt: 'Baño — estado actual'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-vestidor.jpg', alt: 'Render: propuesta de reforma del vestidor'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-09.jpg', alt: 'Salón y cocina — estado actual'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-oficina.jpg', alt: 'Render: propuesta de reforma del despacho'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-10.jpg', alt: 'Estado actual de la vivienda'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-patio.jpg', alt: 'Render: propuesta de reforma del patio'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-11.jpg', alt: 'Patio privativo — estado actual'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-12.jpg', alt: 'Patio privativo — estado actual'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-13.jpg', alt: 'Estado actual de la vivienda'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-14.jpg', alt: 'Baño — estado actual'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-15.jpg', alt: 'Estado actual de la vivienda'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-16.jpg', alt: 'Baño — estado actual'},
       // Planos técnicos acotados
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/plano-actual.jpg', alt: 'Plano acotado del estado actual, con m² por estancia' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/plano-reforma-cotas.jpg', alt: 'Plano acotado de la propuesta de reforma, con m² por estancia' }
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/plano-actual.jpg', alt: 'Plano acotado del estado actual, con m² por estancia'},
+      {src: '/imagenes/inmuebles/vilapicina-josep-romeu/plano-reforma-cotas.jpg', alt: 'Plano acotado de la propuesta de reforma, con m² por estancia'}
     ];
 
     /* ── Lightbox ── */
@@ -1060,7 +1682,7 @@
         b.setAttribute('aria-label', p.alt);
         const im = document.createElement('img');
         im.src = p.src.replace(/\.jpg$/, '.webp');
-        im.onerror = function () { im.onerror = null; im.src = p.src; };
+        im.onerror = function () {im.onerror = null; im.src = p.src;};
         im.alt = '';
         im.loading = 'lazy';
         b.appendChild(im);
@@ -1070,21 +1692,21 @@
       });
 
       document.getElementById('fsPrev').addEventListener('click', () => {
-        strip.scrollBy({ left: -strip.clientWidth * 0.8, behavior: 'smooth' });
+        strip.scrollBy({left: -strip.clientWidth * 0.8, behavior: 'smooth'});
       });
       document.getElementById('fsNext').addEventListener('click', () => {
-        strip.scrollBy({ left: strip.clientWidth * 0.8, behavior: 'smooth' });
+        strip.scrollBy({left: strip.clientWidth * 0.8, behavior: 'smooth'});
       });
 
       function show(n) {
         i = (n + PHOTOS.length) % PHOTOS.length;
-        img.onerror = function () { img.onerror = null; img.src = PHOTOS[i].src; };
+        img.onerror = function () {img.onerror = null; img.src = PHOTOS[i].src;};
         img.src = PHOTOS[i].src.replace(/\.jpg$/, '.webp');
         img.alt = PHOTOS[i].alt;
         count.textContent = (i + 1) + ' / ' + PHOTOS.length;
         thumbs.forEach((t, idx) => t.classList.toggle('is-active', idx === i));
         const activo = thumbs[i];
-        if (activo) activo.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        if (activo) activo.scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'});
       }
 
       function open(n) {
@@ -1108,7 +1730,7 @@
       document.getElementById('lbClose').addEventListener('click', close);
       document.getElementById('lbPrev').addEventListener('click', () => show(i - 1));
       document.getElementById('lbNext').addEventListener('click', () => show(i + 1));
-      box.addEventListener('click', e => { if (e.target === box) close(); });
+      box.addEventListener('click', e => {if (e.target === box) close();});
 
       document.addEventListener('keydown', e => {
         if (!box.classList.contains('is-open')) return;
@@ -1141,7 +1763,7 @@
       try {
         const res = await fetch('https://formspree.io/f/mjgllvgg', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
           body: JSON.stringify(Object.fromEntries(new FormData(form)))
         });
 
@@ -1163,8 +1785,7 @@
   </script>
 
   <!-- ═══ AVISO DE COOKIES ═══ -->
-  <div id="cookieBanner" class="ck-banner" role="dialog" aria-live="polite"
-    aria-label="Aviso de cookies" hidden>
+  <div id="cookieBanner" class="ck-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
     <p class="ck-text">
       Uso cookies propias necesarias para que la web funcione y cookies de analítica
       para saber qué páginas se visitan. Las de analítica solo se activan si las aceptas.
@@ -1178,29 +1799,87 @@
 
   <style>
     .ck-banner {
-      position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 300;
-      max-width: 760px; margin: 0 auto;
-      display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
-      padding: 20px 22px; background: #fff; color: #0A0A0A;
-      border: 1px solid #e0e0e0; border-radius: 8px;
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 300;
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 22px;
+      background: #fff;
+      color: #0A0A0A;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
       box-shadow: 0 12px 40px rgba(0, 0, 0, .16);
       font-family: 'DM Sans', sans-serif;
     }
-    .ck-text { flex: 1 1 320px; font-size: 13.5px; line-height: 1.55; color: #444; margin: 0; }
-    .ck-text a { color: #E8530A; }
-    .ck-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-    .ck-btn {
-      font-family: inherit; font-size: 14px; font-weight: 500;
-      padding: 11px 18px; border-radius: 4px; cursor: pointer; border: 1px solid transparent;
+
+    .ck-text {
+      flex: 1 1 320px;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: #444;
+      margin: 0;
     }
-    .ck-btn--accept { background: #E8530A; color: #fff; }
-    .ck-btn--accept:hover { background: #C4420A; }
-    .ck-btn--ghost { background: #fff; color: #0A0A0A; border-color: #d6d6d6; }
-    .ck-btn--ghost:hover { border-color: #0A0A0A; }
-    .ck-btn:focus-visible { outline: 3px solid #E8530A; outline-offset: 2px; }
+
+    .ck-text a {
+      color: #E8530A;
+    }
+
+    .ck-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .ck-btn {
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 11px 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .ck-btn--accept {
+      background: #E8530A;
+      color: #fff;
+    }
+
+    .ck-btn--accept:hover {
+      background: #C4420A;
+    }
+
+    .ck-btn--ghost {
+      background: #fff;
+      color: #0A0A0A;
+      border-color: #d6d6d6;
+    }
+
+    .ck-btn--ghost:hover {
+      border-color: #0A0A0A;
+    }
+
+    .ck-btn:focus-visible {
+      outline: 3px solid #E8530A;
+      outline-offset: 2px;
+    }
+
     @media (max-width: 560px) {
-      .ck-actions { width: 100%; }
-      .ck-btn { flex: 1; }
+      .ck-actions {
+        width: 100%;
+      }
+
+      .ck-btn {
+        flex: 1;
+      }
     }
   </style>
 
@@ -1215,8 +1894,8 @@
         if (valor === 'aceptadas' && typeof cargarAnalitica === 'function') cargarAnalitica();
       }
 
-      document.getElementById('ckAccept').addEventListener('click', function () { decidir('aceptadas'); });
-      document.getElementById('ckReject').addEventListener('click', function () { decidir('rechazadas'); });
+      document.getElementById('ckAccept').addEventListener('click', function () {decidir('aceptadas');});
+      document.getElementById('ckReject').addEventListener('click', function () {decidir('rechazadas');});
     })();
   </script>
 
