@@ -1505,6 +1505,42 @@
       line-height: 1.6;
     }
 
+    /* ── ACCESO A LA CALCULADORA ─────────────────────────────── */
+    .calc-cta {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 28px; margin-top: 48px; padding: 34px 38px;
+      background: var(--light-gray); border-radius: 10px;
+      border-left: 4px solid var(--orange);
+    }
+
+    .calc-cta-txt { flex: 1 1 420px; }
+
+    .calc-cta-tag {
+      display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 1.6px;
+      text-transform: uppercase; color: var(--orange); margin-bottom: 10px;
+    }
+
+    .calc-cta h3 {
+      font-family: var(--font-display); font-size: 24px; font-weight: 700;
+      color: var(--black); margin-bottom: 8px;
+    }
+
+    .calc-cta p { color: #555; font-size: 15px; margin: 0; max-width: 56ch; }
+
+    .calc-cta-btn {
+      flex-shrink: 0; display: inline-block; text-decoration: none;
+      background: var(--orange); color: #fff;
+      font-family: var(--font-body); font-size: 15px; font-weight: 500;
+      padding: 15px 28px; border-radius: 4px; transition: background .2s;
+    }
+
+    .calc-cta-btn:hover { background: var(--orange-dark); }
+
+    @media (max-width: 640px) {
+      .calc-cta { padding: 26px 24px; }
+      .calc-cta-btn { width: 100%; text-align: center; }
+    }
+
     /* ── PROPIEDADES ─────────────────────────────────────────── */
     .properties {
       padding: 100px 8%;
@@ -2643,12 +2679,25 @@
     }
   </style>
   <!-- ✅ Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-011M5HKWLR"></script>
+  <!-- ═══ ANALÍTICA CON CONSENTIMIENTO PREVIO (RGPD / LSSI) ═══
+       Google Analytics NO se carga hasta que el visitante acepta.
+       No toques nada de este bloque. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-011M5HKWLR');
+
+    function cargarAnalitica() {
+      if (window.__ga_cargado) return;
+      window.__ga_cargado = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-011M5HKWLR';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-011M5HKWLR', { anonymize_ip: true });
+    }
+
+    if (localStorage.getItem('ib_cookies') === 'aceptadas') cargarAnalitica();
   </script>
 
 </head>
@@ -2671,6 +2720,7 @@
       <li><a href="#propiedades">Inmuebles</a></li>
       <li><a href="#que-es-safti">¿Qué es SAFTI?</a></li>
       <li><a href="#gana-dinero" class="nav-dinero">¡Gana dinero!</a></li>
+      <li><a href="/calculadora-honorarios/">Calculadora</a></li>
       <li><a href="/blog">Blog</a></li>
       <li><a href="#contacto" class="nav-cta">Contactar</a></li>
     </ul>
@@ -2686,6 +2736,7 @@
     <a href="#propiedades" class="mobile-link" data-menu>Inmuebles</a>
     <a href="#que-es-safti" class="mobile-link" data-menu>¿Qué es SAFTI?</a>
     <a href="#gana-dinero" class="mobile-link mobile-link--dinero" data-menu>¡Gana dinero!</a>
+    <a href="/calculadora-honorarios/" class="mobile-link" data-menu>Calculadora</a>
     <a href="/blog" class="mobile-link" data-menu>Blog</a>
     <a href="#contacto" class="mobile-link mobile-link--cta" data-menu>Contactar</a>
   </div>
@@ -3013,6 +3064,17 @@
           documentos necesarios. Y a diferencia de las agencias de barrio, yo no desaparezco al cobrar.</p>
       </div>
     </div>
+
+    <!-- Acceso a la calculadora de honorarios -->
+    <div class="calc-cta reveal">
+      <div class="calc-cta-txt">
+        <span class="calc-cta-tag">Calculadora gratuita</span>
+        <h3>¿Cuánto te queda de verdad al vender tu piso?</h3>
+        <p>Agencia, Hacienda, ayuntamiento y gastos de la operación. Mueve el deslizador y míralo en
+          directo, paso a paso, hasta la cifra que acaba en tu cuenta. Sin registro y sin dejar tus datos.</p>
+      </div>
+      <a href="/calculadora-honorarios/" class="calc-cta-btn">Calcular lo que me queda →</a>
+    </div>
   </section>
 
   <!-- COMPARATIVA SAFTI vs AGENCIAS -->
@@ -3034,8 +3096,8 @@
         <tbody>
           <tr>
             <td>Honorarios</td>
-            <td class="col-bad">Mínimo 6% : 3% al vendedor + 3% al comprador. <br> <em><strong
-                  style="color:var(--orange)">Atención: </em> En Cataluña, cobrar honorarios al
+            <td class="col-bad">Mínimo 6% : 3% al vendedor + 3% al comprador. <br> <strong><em
+                  style="color:var(--orange)">Atención:</em> En Cataluña, cobrar honorarios al
               comprador está
               <em>prohibido — pero muchos lo hacen igual.</em> </strong>
             </td>
@@ -3452,6 +3514,34 @@
         </div>
       </a>
 
+      <a href="/inmuebles/planta-baja-patio-vilapicina/" class="property-card reveal"
+        style="text-decoration:none; color:inherit; display:block;">
+        <div class="property-img">
+          <picture>
+            <source srcset="imagenes/inmuebles/neus-72/card.webp" type="image/webp">
+            <img src="imagenes/inmuebles/neus-72/card.jpg"
+              alt="Planta baja con patio privativo en venta en Vilapicina, Barcelona" width="600" height="300"
+              loading="lazy">
+          </picture>
+          <div class="property-tag">En venta</div>
+        </div>
+        <div class="property-info">
+          <div class="property-price">230.000 €</div>
+          <div class="property-title">Planta baja con patio privativo</div>
+          <div class="property-location">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#888">
+              <path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z" />
+            </svg>
+            Vilapicina i la Torre Llobeta, Barcelona
+          </div>
+          <div class="property-features">
+            <div class="prop-feat">🛏 2–3 hab</div>
+            <div class="prop-feat">🌿 Patio privativo</div>
+            <div class="prop-feat">📐 88 m²</div>
+          </div>
+        </div>
+      </a>
+
     </div>
     <div style="text-align:center; margin-top:48px;">
       <a href="#contacto" class="btn-primary">Busco algo diferente</a>
@@ -3725,6 +3815,7 @@
       <div class="footer-col">
         <h4>Más información</h4>
         <ul>
+          <li><a href="/calculadora-honorarios/">Calculadora de venta</a></li>
           <li><a href="#que-es-safti">¿Qué es SAFTI?</a></li>
           <li><a href="#gana-dinero">Sistema de referidos</a></li>
           <li><a href="#unete">Únete al equipo</a></li>
@@ -3735,6 +3826,13 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Issam Benali · Asesor Independiente SAFTI Barcelona · Todos los derechos reservados</span>
+      <span>
+        <a href="/politica-privacidad/" style="color:rgba(255,255,255,0.55); text-decoration:none;">Aviso
+          legal y privacidad</a>
+        <span style="color:rgba(255,255,255,0.25); margin:0 8px;">·</span>
+        <a href="/politica-privacidad/#cookies"
+          style="color:rgba(255,255,255,0.55); text-decoration:none;">Cookies</a>
+      </span>
       <span><a href="https://safti.es/tu-asesor-safti/issam-benali"
           style="color:rgba(255,255,255,0.35); text-decoration:none;"
           rel="noopener noreferrer">safti.es/tu-asesor-safti/issam-benali</a></span>
@@ -3837,6 +3935,64 @@
     document.querySelectorAll('.blog-card, .blog-featured').forEach(card => {
       card.style.cursor = 'pointer';
     });
+  </script>
+
+  <!-- ═══ AVISO DE COOKIES ═══ -->
+  <div id="cookieBanner" class="ck-banner" role="dialog" aria-live="polite"
+    aria-label="Aviso de cookies" hidden>
+    <p class="ck-text">
+      Uso cookies propias necesarias para que la web funcione y cookies de analítica
+      para saber qué páginas se visitan. Las de analítica solo se activan si las aceptas.
+      Más detalle en la <a href="/politica-privacidad/#cookies">política de cookies</a>.
+    </p>
+    <div class="ck-actions">
+      <button type="button" class="ck-btn ck-btn--ghost" id="ckReject">Solo las necesarias</button>
+      <button type="button" class="ck-btn ck-btn--accept" id="ckAccept">Aceptar todas</button>
+    </div>
+  </div>
+
+  <style>
+    .ck-banner {
+      position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 300;
+      max-width: 760px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
+      padding: 20px 22px; background: #fff; color: #0A0A0A;
+      border: 1px solid #e0e0e0; border-radius: 8px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .16);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .ck-text { flex: 1 1 320px; font-size: 13.5px; line-height: 1.55; color: #444; margin: 0; }
+    .ck-text a { color: #E8530A; }
+    .ck-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .ck-btn {
+      font-family: inherit; font-size: 14px; font-weight: 500;
+      padding: 11px 18px; border-radius: 4px; cursor: pointer; border: 1px solid transparent;
+    }
+    .ck-btn--accept { background: #E8530A; color: #fff; }
+    .ck-btn--accept:hover { background: #C4420A; }
+    .ck-btn--ghost { background: #fff; color: #0A0A0A; border-color: #d6d6d6; }
+    .ck-btn--ghost:hover { border-color: #0A0A0A; }
+    .ck-btn:focus-visible { outline: 3px solid #E8530A; outline-offset: 2px; }
+    @media (max-width: 560px) {
+      .ck-actions { width: 100%; }
+      .ck-btn { flex: 1; }
+    }
+  </style>
+
+  <script>
+    (function () {
+      var b = document.getElementById('cookieBanner');
+      if (!localStorage.getItem('ib_cookies')) b.hidden = false;
+
+      function decidir(valor) {
+        localStorage.setItem('ib_cookies', valor);
+        b.hidden = true;
+        if (valor === 'aceptadas' && typeof cargarAnalitica === 'function') cargarAnalitica();
+      }
+
+      document.getElementById('ckAccept').addEventListener('click', function () { decidir('aceptadas'); });
+      document.getElementById('ckReject').addEventListener('click', function () { decidir('rechazadas'); });
+    })();
   </script>
 
 </body>
