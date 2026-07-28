@@ -397,6 +397,29 @@
 
     .pd-plan img { max-width: 100%; height: auto; border-radius: 4px; }
 
+    /* ── PLANOS: actual vs reforma ───────────────────────────── */
+    .pd-planos-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px;
+    }
+
+    .pd-plano-card {
+      background: var(--light-gray); border-radius: 6px; padding: 20px; text-align: center;
+    }
+
+    .pd-plano-card img { max-width: 100%; height: auto; border-radius: 4px; }
+
+    .pd-plano-tag {
+      display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 1.4px;
+      text-transform: uppercase; padding: 6px 12px; border-radius: 3px; margin-bottom: 14px;
+    }
+
+    .pd-plano-tag--actual { background: #e4e4e4; color: #555; }
+    .pd-plano-tag--reforma { background: var(--orange); color: #fff; }
+
+    @media (max-width: 720px) {
+      .pd-planos-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── FORMULARIO ───────────────────────────────────────── */
     .pd-form-section { background: var(--light-gray); }
 
@@ -596,22 +619,22 @@
         <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/estado-01.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/estado-01.jpg"
           alt="Salón comedor y cocina del piso en Vilapicina, estado actual" width="800" height="600"></picture>
       </button>
-      <button type="button" data-i="3">
-        <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/estado-04.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/estado-04.jpg"
-          alt="Dormitorio, estado actual" width="500" height="400" loading="lazy"></picture>
+      <button type="button" data-i="1">
+        <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.jpg"
+          alt="Render de propuesta de reforma del comedor, la sala de estar y la cocina" width="500" height="400" loading="lazy"></picture>
       </button>
-      <button type="button" data-i="5">
+      <button type="button" data-i="3">
+        <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.jpg"
+          alt="Plano 3D de la distribución propuesta" width="500" height="400" loading="lazy"></picture>
+      </button>
+      <button type="button" data-i="10">
         <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/estado-06.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/estado-06.jpg"
           alt="Distribuidor, estado actual" width="500" height="400" loading="lazy"></picture>
       </button>
-      <button type="button" data-i="12">
-        <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.jpg"
-          alt="Render de propuesta de reforma del comedor y la cocina" width="500" height="400" loading="lazy"></picture>
-      </button>
-      <button type="button" data-i="13">
+      <button type="button" data-i="7">
         <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/render-cocina-detalle.webp" type="image/webp"><img src="/imagenes/inmuebles/vilapicina-josep-romeu/render-cocina-detalle.jpg"
           alt="Render de propuesta de reforma de la cocina" width="500" height="400" loading="lazy"></picture>
-        <span class="pd-gallery-more">Ver las 22 fotos</span>
+        <span class="pd-gallery-more">Ver las 28 fotos</span>
       </button>
     </div>
 
@@ -743,6 +766,33 @@
         width="900" height="1200" loading="lazy"></picture>
       <p class="pd-compare-caption">Plano de la distribución propuesta tras la reforma.</p>
     </div>
+  </section>
+
+  <!-- ═══ PLANOS: ACTUAL VS REFORMA ═══ -->
+  <section class="pd-section pd-wrap">
+    <p class="pd-eyebrow">Los planos, con cotas</p>
+    <h2 class="pd-h2">Cómo está hoy y cómo puede quedar</h2>
+    <p class="pd-lead">Superficie por estancia, en metros cuadrados reales. El plano actual documenta la
+      distribución diáfana de hoy; el de reforma, la propuesta ya diseñada.</p>
+
+    <div class="pd-planos-grid">
+      <div class="pd-plano-card">
+        <span class="pd-plano-tag pd-plano-tag--actual">Plano actual</span>
+        <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/plano-actual.webp" type="image/webp"><img
+          src="/imagenes/inmuebles/vilapicina-josep-romeu/plano-actual.jpg"
+          alt="Plano acotado del estado actual de la vivienda, con la superficie de cada estancia en m²"
+          width="900" height="1200" loading="lazy"></picture>
+      </div>
+      <div class="pd-plano-card">
+        <span class="pd-plano-tag pd-plano-tag--reforma">Plano reforma</span>
+        <picture><source srcset="/imagenes/inmuebles/vilapicina-josep-romeu/plano-reforma-cotas.webp" type="image/webp"><img
+          src="/imagenes/inmuebles/vilapicina-josep-romeu/plano-reforma-cotas.jpg"
+          alt="Plano acotado de la propuesta de reforma, con la superficie de cada estancia en m²"
+          width="900" height="1200" loading="lazy"></picture>
+      </div>
+    </div>
+    <p class="pd-compare-caption">Superficies orientativas sujetas a medición final de obra. El plano en 3D
+      amueblado de arriba corresponde a esta misma propuesta.</p>
   </section>
 
   <!-- ═══ LA CUENTA ═══ -->
@@ -910,30 +960,36 @@
        Cuando tengas más fotos del estado actual (hasta 29), añádelas aquí
        siguiendo el mismo patrón: estado-09.jpg, estado-10.jpg... */
     const PHOTOS = [
-      // Estado actual
+      // Intercaladas: estado actual y renders de la propuesta de reforma
       { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-01.jpg', alt: 'Salón, comedor y cocina — estado actual' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.jpg', alt: 'Render: propuesta de reforma del comedor, la sala de estar y la cocina' },
       { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-02.jpg', alt: 'Salón y cocina — estado actual' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.jpg', alt: 'Plano 3D de la distribución propuesta' },
       { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-03.jpg', alt: 'Salón y cocina — estado actual' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-dormitorio-principal.jpg', alt: 'Render: propuesta de reforma del dormitorio principal' },
       { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-04.jpg', alt: 'Dormitorio — estado actual' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-cocina-detalle.jpg', alt: 'Render: propuesta de reforma de la cocina, detalle' },
       { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-05.jpg', alt: 'Dormitorio con baño — estado actual' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-bano.jpg', alt: 'Render: propuesta de reforma del baño' },
       { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-06.jpg', alt: 'Distribuidor — estado actual' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-sala-estar.jpg', alt: 'Render: propuesta de reforma de la sala de estar' },
       { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-07.jpg', alt: 'Dormitorio con acceso al patio — estado actual' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-dormitorio-secundario.jpg', alt: 'Render: propuesta de reforma del dormitorio secundario' },
       { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-08.jpg', alt: 'Baño — estado actual' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-vestidor.jpg', alt: 'Render: propuesta de reforma del vestidor' },
       { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-09.jpg', alt: 'Salón y cocina — estado actual' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-oficina.jpg', alt: 'Render: propuesta de reforma del despacho' },
       { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-10.jpg', alt: 'Estado actual de la vivienda' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-patio.jpg', alt: 'Render: propuesta de reforma del patio' },
       { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-11.jpg', alt: 'Patio privativo — estado actual' },
       { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-12.jpg', alt: 'Patio privativo — estado actual' },
-      // Renders: propuesta de reforma
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-comedor-cocina.jpg', alt: 'Render: propuesta de reforma del comedor y la cocina' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-cocina-detalle.jpg', alt: 'Render: propuesta de reforma de la cocina, detalle' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-dormitorio-principal.jpg', alt: 'Render: propuesta de reforma del dormitorio principal' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-dormitorio-secundario.jpg', alt: 'Render: propuesta de reforma del dormitorio secundario' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-bano.jpg', alt: 'Render: propuesta de reforma del baño' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-sala-estar.jpg', alt: 'Render: propuesta de reforma de la sala de estar' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-vestidor.jpg', alt: 'Render: propuesta de reforma del vestidor' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-oficina.jpg', alt: 'Render: propuesta de reforma del despacho' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/render-patio.jpg', alt: 'Render: propuesta de reforma del patio' },
-      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/plano-3d.jpg', alt: 'Plano 3D de la distribución propuesta' }
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-13.jpg', alt: 'Estado actual de la vivienda' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-14.jpg', alt: 'Baño — estado actual' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-15.jpg', alt: 'Estado actual de la vivienda' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/estado-16.jpg', alt: 'Baño — estado actual' },
+      // Planos técnicos acotados
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/plano-actual.jpg', alt: 'Plano acotado del estado actual, con m² por estancia' },
+      { src: '/imagenes/inmuebles/vilapicina-josep-romeu/plano-reforma-cotas.jpg', alt: 'Plano acotado de la propuesta de reforma, con m² por estancia' }
     ];
 
     /* ── Lightbox ── */
