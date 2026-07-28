@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cuánto te queda al vender tu piso · Calculadora 2026 | Issam Benali</title>
+  <meta name="description"
+    content="Calcula en directo lo que cuesta vender tu piso en Barcelona: honorarios de agencia, IRPF, plusvalía municipal y gastos. Descubre cuánto acaba en tu cuenta. Gratis y sin registro.">
+  <link rel="canonical" href="https://issambenali.es/calculadora-honorarios/">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="¿Cuánto te queda de verdad al vender tu piso?">
+  <meta property="og:description"
+    content="Mueve el deslizador y míralo en directo: agencia, Hacienda, ayuntamiento y gastos. Y la única cifra que importa al final.">
+  <meta property="og:url" content="https://issambenali.es/calculadora-honorarios/">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Issam Benali · Asesor SAFTI Barcelona">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cobra una inmobiliaria por vender un piso en España?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Entre el 3 % y el 7 % del precio final de venta, más el 21 % de IVA sobre esos honorarios. En Barcelona, las agencias tradicionales con oficina se mueven habitualmente entre el 5 % y el 6 %. No existe un porcentaje regulado por ley: es libre y negociable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿El IVA está incluido en el porcentaje de la inmobiliaria?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. El porcentaje pactado es la base imponible y sobre ella se añade un 21 % de IVA. Un 5 % de honorarios sobre 300.000 € son 15.000 € más 3.150 € de IVA: 18.150 € en total."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué impuestos paga el vendedor al vender un piso en España?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dos principales. El IRPF sobre la ganancia patrimonial, que tributa en la base del ahorro con tipos del 19 % al 30 % según el importe, y la plusvalía municipal del ayuntamiento, que grava el incremento de valor del suelo. La ganancia está exenta de IRPF si reinviertes en otra vivienda habitual en dos años o si tienes 65 años o más y vendes tu vivienda habitual."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuándo se pagan los honorarios de la inmobiliaria?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Con carácter general, en el momento de la firma de la escritura pública ante notario, y solo si la venta llega a cerrarse. Los anticipos por marketing o fotografía antes de vender no son la práctica habitual del sector."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --naranja: #E8530A;
+      --naranja-osc: #C4420A;
+      --naranja-suave: #FFF1E9;
+      --tinta: #1A1613;
+      --gris-600: #6B635C;
+      --gris-400: #9C948C;
+      --gris-300: #E4DCD5;
+      --gris-100: #F4F0EC;
+      --verde: #2E7D52;
+      --verde-suave: #E9F4EE;
+      --papel: #FFFFFF;
+      --fondo: #FBF8F5;
+      --r: 14px;
+      --sombra: 0 1px 2px rgba(26, 22, 19, .05), 0 10px 30px rgba(26, 22, 19, .07);
+      --display: 'Playfair Display', Georgia, serif;
+      --body: 'DM Sans', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--fondo); color: var(--tinta);
+      font-family: var(--body); font-size: 16px; line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--naranja); }
+    :focus-visible { outline: 3px solid var(--naranja); outline-offset: 3px; }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 14px 5vw; background: rgba(255, 255, 255, .95);
+      backdrop-filter: blur(10px); border-bottom: 1px solid var(--gris-300);
+      position: sticky; top: 0; z-index: 60;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; color: inherit; }
+    .nav-badge {
+      background: var(--naranja); color: #fff; font-weight: 600; font-size: 13px;
+      letter-spacing: 1.5px; padding: 7px 11px; border-radius: 3px;
+    }
+    .nav-name { margin-left: 12px; font-family: var(--display); font-size: 17px; font-weight: 700; }
+    .nav-back { font-size: 14px; color: var(--gris-600); text-decoration: none; }
+    .nav-back:hover { color: var(--tinta); }
+
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 40px 5vw 80px; }
+
+    /* ── CABECERA ── */
+    .top { margin-bottom: 30px; }
+    .marca {
+      display: inline-block; font-weight: 600; font-size: 11px; letter-spacing: 1.6px;
+      text-transform: uppercase; color: var(--naranja-osc);
+      background: var(--naranja-suave); border-radius: 99px; padding: 7px 15px; margin-bottom: 16px;
+    }
+    h1 {
+      font-family: var(--display); font-weight: 900;
+      font-size: clamp(29px, 4.6vw, 46px); line-height: 1.08; letter-spacing: -.01em;
+    }
+    h1 em { font-style: italic; color: var(--naranja); }
+    .sub { color: var(--gris-600); font-size: 16.5px; margin-top: 12px; max-width: 58ch; }
+
+    /* ── REJILLA ── */
+    .grid { display: grid; grid-template-columns: 1fr 380px; gap: 24px; align-items: start; }
+
+    .card {
+      background: var(--papel); border: 1px solid var(--gris-300);
+      border-radius: var(--r); box-shadow: var(--sombra); padding: 26px; margin-bottom: 22px;
+    }
+    .card h2 {
+      font-family: var(--display); font-size: 21px; font-weight: 700; margin-bottom: 4px;
+    }
+    .card .ayuda { color: var(--gris-600); font-size: 14px; margin-bottom: 20px; }
+
+    /* ── CAMPOS ── */
+    .campo { margin-bottom: 22px; }
+    .campo:last-child { margin-bottom: 0; }
+    .campo > label {
+      display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 8px;
+    }
+    .input { position: relative; display: flex; align-items: center; }
+    .input .simbolo {
+      position: absolute; left: 15px; color: var(--gris-400); font-weight: 500; pointer-events: none;
+    }
+    .input .simbolo.der { left: auto; right: 15px; }
+    .input input {
+      width: 100%; font-family: var(--body); font-size: 19px; font-weight: 600;
+      padding: 14px 16px 14px 34px; border: 1px solid var(--gris-300);
+      border-radius: 9px; background: var(--papel); color: var(--tinta);
+    }
+    .input input.pct { padding: 14px 40px 14px 16px; }
+    .input input:focus { outline: none; border-color: var(--naranja); }
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type=number] { -moz-appearance: textfield; }
+
+    /* ── DESLIZADORES ── */
+    .slider { margin-top: 14px; }
+    .slider-top {
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-size: 13px; color: var(--gris-600); margin-bottom: 6px;
+    }
+    .slider-top b { font-size: 15px; color: var(--tinta); font-weight: 600; }
+
+    input[type=range] {
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 30px; background: transparent; cursor: pointer; display: block;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      height: 8px; border-radius: 99px;
+      background: linear-gradient(var(--naranja), var(--naranja)) 0/var(--fill, 50%) 100% no-repeat, var(--gris-300);
+    }
+    input[type=range]::-moz-range-track { height: 8px; border-radius: 99px; background: var(--gris-300); }
+    input[type=range]::-moz-range-progress { height: 8px; border-radius: 99px; background: var(--naranja); }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 28px; height: 28px; margin-top: -10px; border-radius: 50%;
+      background: var(--papel); border: 3px solid var(--naranja);
+      box-shadow: 0 2px 8px rgba(26, 22, 19, .2);
+    }
+    input[type=range]::-moz-range-thumb {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--papel); border: 3px solid var(--naranja);
+      box-shadow: 0 2px 8px rgba(26, 22, 19, .2);
+    }
+    .topes { display: flex; justify-content: space-between; font-size: 12px; color: var(--gris-400); }
+
+    /* ── COMPARADOR ── */
+    .versus { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .col {
+      border: 1px solid var(--gris-300); border-radius: 12px; padding: 20px; background: var(--papel);
+    }
+    .col.destacada { border-color: var(--naranja); background: var(--naranja-suave); }
+
+    .col-tit {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--gris-600); margin-bottom: 14px;
+    }
+    .col.destacada .col-tit { color: var(--naranja-osc); }
+
+    .col-cifra {
+      font-family: var(--display); font-size: clamp(26px, 4vw, 34px); font-weight: 900;
+      line-height: 1.05; letter-spacing: -.02em;
+    }
+    .col-pie { font-size: 13px; color: var(--gris-600); margin-top: 4px; }
+
+    .desglose { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--gris-300); }
+    .col.destacada .desglose { border-color: rgba(232, 83, 10, .25); }
+    .linea {
+      display: flex; justify-content: space-between; gap: 10px;
+      font-size: 14px; padding: 5px 0;
+    }
+    .linea span:first-child { color: var(--gris-600); }
+    .linea b { font-weight: 600; font-variant-numeric: tabular-nums; }
+    .linea.fuerte { font-size: 15.5px; padding-top: 10px; }
+    .linea.fuerte span:first-child { color: var(--tinta); font-weight: 500; }
+
+    /* ── DIFERENCIA ── */
+    .dif {
+      margin-top: 20px; padding: 20px 22px; border-radius: 12px;
+      background: var(--verde-suave); border: 1px solid rgba(46, 125, 82, .25);
+      display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px;
+    }
+    .dif-num {
+      font-family: var(--display); font-size: 30px; font-weight: 900; color: var(--verde);
+      letter-spacing: -.02em;
+    }
+    .dif-txt { font-size: 14.5px; color: var(--tinta); flex: 1 1 220px; }
+    .dif.neutro { background: var(--gris-100); border-color: var(--gris-300); }
+    .dif.neutro .dif-num { color: var(--gris-600); }
+
+    /* ── BARRA VISUAL ── */
+    .barras { margin-top: 22px; }
+    .barra-fila { margin-bottom: 14px; }
+    .barra-et {
+      display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px;
+    }
+    .barra-pista { height: 26px; border-radius: 6px; background: var(--gris-100); overflow: hidden; display: flex; }
+    .seg { height: 100%; transition: width .25s ease; }
+    .seg.hon { background: var(--naranja); }
+    .seg.iva { background: #F5A97B; }
+    .seg.queda { background: var(--verde); }
+    .leyenda { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: var(--gris-600); margin-top: 10px; }
+    .punto { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; }
+
+    /* ── SELECTOR DE AGENCIA ── */
+    .etiqueta-grupo {
+      display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 8px;
+    }
+
+    .segmentado {
+      display: inline-flex; background: var(--gris-100); border-radius: 9px; padding: 4px; gap: 4px;
+    }
+    .seg-btn {
+      font-family: var(--body); font-size: 14px; font-weight: 500; color: var(--gris-600);
+      background: transparent; border: 0; border-radius: 6px; padding: 9px 18px; cursor: pointer;
+    }
+    .seg-btn.activo { background: var(--papel); color: var(--tinta); box-shadow: 0 1px 3px rgba(26,22,19,.12); }
+
+    /* ── RESULTADO FISCAL ── */
+    .fiscal-res {
+      display: grid; grid-template-columns: 1fr 260px; gap: 22px; align-items: stretch;
+      margin-top: 22px;
+    }
+    .fiscal-lineas {
+      background: var(--gris-100); border-radius: 12px; padding: 18px 20px;
+    }
+    .fiscal-lineas .linea { padding: 7px 0; }
+    .fiscal-lineas .linea + .linea { border-top: 1px solid var(--gris-300); }
+
+    .fiscal-total {
+      background: var(--verde-suave); border: 1px solid rgba(46,125,82,.28);
+      border-radius: 12px; padding: 20px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .fiscal-et {
+      font-size: 11px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase;
+      color: var(--verde); margin-bottom: 6px;
+    }
+    .fiscal-num {
+      font-family: var(--display); font-size: clamp(28px, 4vw, 36px); font-weight: 900;
+      color: var(--verde); line-height: 1.02; letter-spacing: -.02em;
+    }
+    .fiscal-pie { font-size: 13px; color: var(--gris-600); margin-top: 6px; }
+
+    @media (max-width: 620px) { .fiscal-res { grid-template-columns: 1fr; } }
+
+    /* ── CONSEJOS ── */
+    .tip {
+      display: flex; gap: 12px; padding: 15px 17px; border-radius: 10px;
+      background: var(--naranja-suave); border-left: 3px solid var(--naranja);
+      font-size: 14px; margin-top: 14px; line-height: 1.5;
+    }
+    .tip.calma { background: var(--gris-100); border-left-color: var(--gris-400); }
+    .tip.alerta { background: #FFF4E5; border-left-color: #E0A03C; }
+    .tip b { display: block; margin-bottom: 2px; }
+    .tip-ico { font-size: 17px; line-height: 1.35; }
+
+    /* ── EXTRAS PLEGABLES ── */
+    details.extras { border-top: 1px solid var(--gris-300); margin-top: 22px; padding-top: 18px; }
+    details.extras summary {
+      cursor: pointer; font-size: 14px; font-weight: 600; color: var(--naranja-osc);
+      list-style: none; display: flex; align-items: center; gap: 8px;
+    }
+    details.extras summary::-webkit-details-marker { display: none; }
+    details.extras summary::before { content: '+'; font-size: 18px; line-height: 1; }
+    details.extras[open] summary::before { content: '−'; }
+    details.extras .cuerpo { margin-top: 18px; }
+
+    .dos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .check {
+      display: flex; gap: 10px; align-items: flex-start; font-size: 14px; margin-top: 14px; cursor: pointer;
+    }
+    .check input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--naranja); flex-shrink: 0; }
+
+    /* ── LATERAL ── */
+    .lateral { position: sticky; top: 82px; }
+
+    .resumen {
+      background: var(--papel); border: 1px solid var(--gris-300);
+      border-radius: var(--r); box-shadow: var(--sombra); padding: 24px; margin-bottom: 16px;
+    }
+    .resumen h2 { font-family: var(--display); font-size: 19px; font-weight: 700; margin-bottom: 16px; }
+
+    .btn {
+      display: block; width: 100%; text-align: center; text-decoration: none;
+      font-family: var(--body); font-size: 15px; font-weight: 500;
+      padding: 13px 20px; border-radius: 8px; cursor: pointer; margin-bottom: 9px;
+      border: 1px solid var(--gris-300); background: var(--papel); color: var(--tinta);
+    }
+    .btn:hover { border-color: var(--tinta); }
+    .btn.primario { background: var(--naranja); color: #fff; border-color: var(--naranja); }
+    .btn.primario:hover { background: var(--naranja-osc); border-color: var(--naranja-osc); }
+
+    /* ── REFERENCIA ── */
+    .ref { margin-top: 44px; }
+    .ref h2 {
+      font-family: var(--display); font-size: clamp(23px, 3vw, 30px); font-weight: 900; margin-bottom: 8px;
+    }
+    .ref > p { color: var(--gris-600); max-width: 62ch; margin-bottom: 22px; }
+    .ref h3 { font-size: 17px; font-weight: 600; margin: 30px 0 10px; }
+    .ref p, .ref ul { margin-bottom: 16px; }
+    .ref ul { padding-left: 22px; }
+    .ref li { margin-bottom: 7px; }
+
+    .tabla-scroll { overflow-x: auto; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 520px; background: var(--papel); }
+    th, td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--gris-300); vertical-align: top; }
+    th { font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gris-600); background: var(--gris-100); }
+    td + td, th + th { text-align: right; }
+    tbody tr:last-child td { border-bottom: 0; }
+    .destaca { color: var(--naranja-osc); font-weight: 600; }
+
+    .fuente { font-size: 12.5px; color: var(--gris-400); }
+
+    /* ── CTA FINAL ── */
+    .cta {
+      margin-top: 44px; background: var(--naranja); color: #fff;
+      border-radius: var(--r); padding: 38px 34px; text-align: center;
+    }
+    .cta h2 { font-family: var(--display); font-size: clamp(23px, 3.4vw, 31px); font-weight: 900; margin-bottom: 10px; }
+    .cta p { max-width: 52ch; margin: 0 auto 22px; opacity: .95; }
+    .cta-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .cta .btn { width: auto; display: inline-block; background: #fff; color: var(--naranja-osc); border-color: #fff; }
+    .cta .btn.hueco { background: transparent; color: #fff; border-color: rgba(255,255,255,.55); }
+    .cta .btn.hueco:hover { border-color: #fff; }
+
+    footer {
+      background: var(--tinta); color: #9a9a9a; padding: 38px 5vw; font-size: 14px; text-align: center;
+    }
+    footer a { color: #d6d6d6; text-decoration: none; margin: 0 10px; }
+    footer a:hover { color: var(--naranja); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 940px) {
+      .grid { grid-template-columns: 1fr; }
+      .lateral { position: static; }
+    }
+    @media (max-width: 620px) {
+      .versus, .dos { grid-template-columns: 1fr; }
+      .card { padding: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .seg { transition: none; } }
+
+    @media print {
+      .nav, .lateral, .cta, footer, .slider, details.extras summary { display: none; }
+      body { background: #fff; }
+      .card { box-shadow: none; page-break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-logo">
+      <span class="nav-badge">SAFTI</span>
+      <span class="nav-name">Issam Benali</span>
+    </a>
+    <a href="/" class="nav-back">← Volver al inicio</a>
+  </nav>
+
+  <div class="wrap">
+
+    <header class="top">
+      <span class="marca">Calculadora gratuita · Sin registro</span>
+      <h1>¿Cuánto te queda<br><em>de verdad</em> al vender tu piso?</h1>
+      <p class="sub">Entre la agencia, Hacienda, el ayuntamiento y los gastos de la operación, la
+        distancia entre el precio del cartel y lo que acaba en tu cuenta es más grande de lo que parece.
+        Mueve los deslizadores y míralo en directo, paso a paso.</p>
+    </header>
+
+    <div class="grid">
+
+      <!-- ═══ COLUMNA PRINCIPAL ═══ -->
+      <main>
+
+        <!-- Precio -->
+        <section class="card">
+          <h2>1 · Por cuánto la vendes</h2>
+          <p class="ayuda">Empieza por el precio al que crees que se cerrará la operación. Si aún no lo
+            sabes, deja el que viene puesto y ve moviéndolo.</p>
+
+          <div class="campo">
+            <label for="precio">Precio de venta</label>
+            <div class="input">
+              <span class="simbolo">€</span>
+              <input id="precio" type="number" inputmode="numeric" min="0" step="1000" value="300000">
+            </div>
+            <div class="slider">
+              <input type="range" id="precioR" min="30000" max="1200000" step="5000" value="300000"
+                aria-label="Precio de venta">
+              <div class="topes"><span>30.000 €</span><span>1.200.000 €</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Comparador -->
+        <section class="card">
+          <h2>2 · Lo que se lleva la agencia</h2>
+          <p class="ayuda">A la izquierda, lo que cobro yo. A la derecha, lo que suele cobrar una agencia
+            tradicional en Barcelona. Cambia los porcentajes por los que te hayan ofrecido a ti.</p>
+
+          <div class="dos">
+            <div class="campo">
+              <label for="pctA">Agencia A — honorarios</label>
+              <div class="input">
+                <input class="pct" id="pctA" type="number" inputmode="decimal" min="0" max="12" step="0.1"
+                  value="3">
+                <span class="simbolo der">%</span>
+              </div>
+              <div class="slider">
+                <input type="range" id="pctAR" min="0" max="12" step="0.1" value="3"
+                  aria-label="Porcentaje de la agencia A">
+                <div class="topes"><span>0 %</span><span>12 %</span></div>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="pctB">Agencia B — honorarios</label>
+              <div class="input">
+                <input class="pct" id="pctB" type="number" inputmode="decimal" min="0" max="12" step="0.1"
+                  value="5">
+                <span class="simbolo der">%</span>
+              </div>
+              <div class="slider">
+                <input type="range" id="pctBR" min="0" max="12" step="0.1" value="5"
+                  aria-label="Porcentaje de la agencia B">
+                <div class="topes"><span>0 %</span><span>12 %</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="versus" style="margin-top:6px">
+            <div class="col destacada">
+              <div class="col-tit">Agencia A · <span id="etAPct">3 %</span></div>
+              <div class="col-cifra" id="aTotal">0 €</div>
+              <div class="col-pie">Coste total con IVA</div>
+              <div class="desglose">
+                <div class="linea"><span>Honorarios</span><b id="aBase">0 €</b></div>
+                <div class="linea"><span>IVA (21 %)</span><b id="aIva">0 €</b></div>
+                <div class="linea fuerte"><span>Te queda</span><b id="aQueda">0 €</b></div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="col-tit">Agencia B · <span id="etBPct">5 %</span></div>
+              <div class="col-cifra" id="bTotal">0 €</div>
+              <div class="col-pie">Coste total con IVA</div>
+              <div class="desglose">
+                <div class="linea"><span>Honorarios</span><b id="bBase">0 €</b></div>
+                <div class="linea"><span>IVA (21 %)</span><b id="bIva">0 €</b></div>
+                <div class="linea fuerte"><span>Te queda</span><b id="bQueda">0 €</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dif" id="cajaDif">
+            <span class="dif-num" id="difNum">0 €</span>
+            <span class="dif-txt" id="difTxt">de diferencia entre las dos agencias.</span>
+          </div>
+
+          <div id="consejos"></div>
+
+          <!-- Extras -->
+          <details class="extras">
+            <summary>Afinar el cálculo (honorarios mínimos e IVA)</summary>
+            <div class="cuerpo">
+              <div class="dos">
+                <div class="campo">
+                  <label for="minimo">Honorarios mínimos pactados</label>
+                  <div class="input">
+                    <span class="simbolo">€</span>
+                    <input id="minimo" type="number" inputmode="numeric" min="0" step="500" placeholder="Sin mínimo">
+                  </div>
+                </div>
+                <div class="campo">
+                  <label for="iva">IVA aplicable</label>
+                  <div class="input">
+                    <input class="pct" id="iva" type="number" inputmode="decimal" min="0" max="30" step="0.5"
+                      value="21">
+                    <span class="simbolo der">%</span>
+                  </div>
+                </div>
+              </div>
+
+
+              <label class="check">
+                <input type="checkbox" id="verQueda" checked>
+                <span>Mostrar el reparto visual de a dónde va cada euro del precio de venta</span>
+              </label>
+            </div>
+          </details>
+
+          <!-- Barras -->
+          <div class="barras" id="barras">
+            <div class="barra-fila">
+              <div class="barra-et"><span>Agencia A</span><span id="barAPct">—</span></div>
+              <div class="barra-pista">
+                <div class="seg hon" id="segAHon"></div>
+                <div class="seg iva" id="segAIva"></div>
+                <div class="seg queda" id="segAQueda"></div>
+              </div>
+            </div>
+            <div class="barra-fila">
+              <div class="barra-et"><span>Agencia B</span><span id="barBPct">—</span></div>
+              <div class="barra-pista">
+                <div class="seg hon" id="segBHon"></div>
+                <div class="seg iva" id="segBIva"></div>
+                <div class="seg queda" id="segBQueda"></div>
+              </div>
+            </div>
+            <div class="leyenda">
+              <span><i class="punto" style="background:var(--naranja)"></i>Honorarios</span>
+              <span><i class="punto" style="background:#F5A97B"></i>IVA</span>
+              <span><i class="punto" style="background:var(--verde)"></i>Lo que te queda</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ IMPUESTOS Y GASTOS DE LA VENTA ═══ -->
+        <section class="card" id="fiscal">
+          <h2>3 · Hacienda, el ayuntamiento y los gastos</h2>
+          <p class="ayuda">Aquí es donde suele estar el recorte grande, y casi nadie lo calcula antes de
+            vender. Rellena lo que sepas: lo que dejes en blanco simplemente no se cuenta.</p>
+
+          <div class="campo">
+            <span class="etiqueta-grupo" id="etiquetaEscenario">Calcular sobre</span>
+            <div class="segmentado" role="group" aria-labelledby="etiquetaEscenario">
+              <button type="button" class="seg-btn activo" data-esc="A">Agencia A</button>
+              <button type="button" class="seg-btn" data-esc="B">Agencia B</button>
+            </div>
+          </div>
+
+          <div class="dos">
+            <div class="campo">
+              <label for="precioCompra">Precio al que la compraste</label>
+              <div class="input">
+                <span class="simbolo">€</span>
+                <input id="precioCompra" type="number" inputmode="numeric" min="0" step="1000"
+                  placeholder="No lo sé todavía">
+              </div>
+            </div>
+            <div class="campo">
+              <label for="anioCompra">Año de compra</label>
+              <div class="input">
+                <input id="anioCompra" type="number" inputmode="numeric" min="1950" max="2026" step="1"
+                  style="padding-left:16px" placeholder="Ej. 2011">
+              </div>
+            </div>
+          </div>
+
+          <div class="dos">
+            <div class="campo">
+              <label for="gastosCompra">Gastos que pagaste al comprar</label>
+              <div class="input">
+                <span class="simbolo">€</span>
+                <input id="gastosCompra" type="number" inputmode="numeric" min="0" step="500"
+                  placeholder="ITP, notaría, registro…">
+              </div>
+            </div>
+            <div class="campo">
+              <label for="mejoras">Reformas con factura</label>
+              <div class="input">
+                <span class="simbolo">€</span>
+                <input id="mejoras" type="number" inputmode="numeric" min="0" step="500"
+                  placeholder="Solo mejoras, no pintura">
+              </div>
+            </div>
+          </div>
+
+          <div id="avisoFiscal"></div>
+
+          <!-- Resultado -->
+          <div class="fiscal-res">
+            <div class="fiscal-lineas">
+              <div class="linea"><span>Precio de venta</span><b id="fPrecio">0 €</b></div>
+              <div class="linea"><span>− Honorarios de la agencia (con IVA)</span><b id="fHon">0 €</b></div>
+              <div class="linea"><span>− Plusvalía municipal (estimada)</span><b id="fPlus">0 €</b></div>
+              <div class="linea"><span>− IRPF sobre la ganancia</span><b id="fIrpf">0 €</b></div>
+              <div class="linea"><span>− Otros gastos de la venta</span><b id="fOtros">0 €</b></div>
+            </div>
+            <div class="fiscal-total">
+              <span class="fiscal-et">Te queda limpio</span>
+              <span class="fiscal-num" id="fNeto">0 €</span>
+              <span class="fiscal-pie" id="fPctNeto">—</span>
+            </div>
+          </div>
+
+          <div id="consejosFiscal"></div>
+
+          <details class="extras">
+            <summary>Afinar impuestos y gastos (exenciones, plusvalía, notaría)</summary>
+            <div class="cuerpo">
+
+              <p style="font-size:13.5px; color:var(--gris-600); margin-bottom:16px">
+                <strong>¿Estás exento de IRPF?</strong> Marca lo que se aplique a tu caso.
+              </p>
+
+              <label class="check">
+                <input type="checkbox" id="exReinversion">
+                <span><b>Reinvierto en otra vivienda habitual.</b> Si era tu vivienda habitual y compras
+                  otra en un plazo de dos años, la ganancia queda exenta. Si reinviertes solo una parte,
+                  la exención es proporcional.</span>
+              </label>
+
+              <label class="check">
+                <input type="checkbox" id="ex65">
+                <span><b>Tengo 65 años o más y es mi vivienda habitual.</b> En ese caso la ganancia está
+                  exenta de IRPF, sin necesidad de reinvertir.</span>
+              </label>
+
+              <div class="dos" style="margin-top:20px">
+                <div class="campo">
+                  <label for="tipoPlusvalia">Tipo de plusvalía municipal</label>
+                  <div class="input">
+                    <input class="pct" id="tipoPlusvalia" type="number" inputmode="decimal" min="0" max="30"
+                      step="0.5" value="30">
+                    <span class="simbolo der">%</span>
+                  </div>
+                  <p style="font-size:12.5px; color:var(--gris-400); margin-top:6px">Barcelona aplica el
+                    máximo legal, un 30 %. En otros municipios es menor.</p>
+                </div>
+                <div class="campo">
+                  <label for="pctSuelo">Parte del valor catastral que es suelo</label>
+                  <div class="input">
+                    <input class="pct" id="pctSuelo" type="number" inputmode="decimal" min="0" max="100"
+                      step="1" value="40">
+                    <span class="simbolo der">%</span>
+                  </div>
+                  <div class="slider">
+                    <input type="range" id="pctSueloR" min="0" max="100" step="1" value="40"
+                      aria-label="Porcentaje del valor catastral correspondiente al suelo">
+                    <div class="topes"><span>0 %</span><span>100 %</span></div>
+                  </div>
+                  <p style="font-size:12.5px; color:var(--gris-400); margin-top:6px">Lo tienes en tu recibo
+                    del IBI, desglosado como «valor del suelo» y «valor de construcción». En un piso de
+                    Barcelona suele rondar el 40 %.</p>
+                </div>
+              </div>
+
+              <p style="font-size:13.5px; color:var(--gris-600); margin:22px 0 4px">
+                <strong>Otros gastos de la venta</strong>
+              </p>
+
+              <div class="dos">
+                <div class="campo">
+                  <label for="gNotaria">Notaría del vendedor</label>
+                  <div class="input">
+                    <span class="simbolo">€</span>
+                    <input id="gNotaria" type="number" inputmode="numeric" min="0" step="50" value="400">
+                  </div>
+                </div>
+                <div class="campo">
+                  <label for="gHipoteca">Cancelar la hipoteca</label>
+                  <div class="input">
+                    <span class="simbolo">€</span>
+                    <input id="gHipoteca" type="number" inputmode="numeric" min="0" step="50" value="0"
+                      placeholder="Si no tienes, deja 0">
+                  </div>
+                </div>
+              </div>
+
+              <div class="dos">
+                <div class="campo">
+                  <label for="gCertificados">Certificados (energético, cédula)</label>
+                  <div class="input">
+                    <span class="simbolo">€</span>
+                    <input id="gCertificados" type="number" inputmode="numeric" min="0" step="25" value="250">
+                  </div>
+                </div>
+                <div class="campo">
+                  <label for="gOtros">Otros (comunidad, IBI, gestoría)</label>
+                  <div class="input">
+                    <span class="simbolo">€</span>
+                    <input id="gOtros" type="number" inputmode="numeric" min="0" step="50" value="150">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </section>
+      </main>
+
+      <!-- ═══ LATERAL ═══ -->
+      <aside class="lateral">
+        <div class="resumen">
+          <h2>Tu resumen</h2>
+          <div class="linea"><span>Precio de venta</span><b id="rPrecio">0 €</b></div>
+          <div class="linea"><span>Honorarios agencia A</span><b id="rA">0 €</b></div>
+          <div class="linea"><span>Honorarios agencia B</span><b id="rB">0 €</b></div>
+          <div class="linea"><span>% efectivo A</span><b id="rEfA">0 %</b></div>
+          <div class="linea"><span>% efectivo B</span><b id="rEfB">0 %</b></div>
+          <div class="linea fuerte"><span>Diferencia</span><b id="rDif">0 €</b></div>
+          <div class="linea fuerte"><span>Te queda limpio</span><b id="rNeto">0 €</b></div>
+
+          <div style="margin-top:20px">
+            <button class="btn" type="button" id="btnCopiar">Copiar el resumen</button>
+            <button class="btn" type="button" id="btnImprimir">Guardar en PDF</button>
+            <button class="btn" type="button" id="btnReset">Empezar de cero</button>
+          </div>
+        </div>
+
+        <div class="resumen">
+          <h2 style="font-size:17px">¿Vendes en Barcelona?</h2>
+          <p style="font-size:14px; color:var(--gris-600); margin-bottom:16px">Te digo lo que vale tu piso
+            de verdad y qué honorarios tiene sentido pagar. Sin compromiso y sin discurso.</p>
+          <a class="btn primario" href="/#contacto">Pedir una valoración</a>
+          <a class="btn" href="https://wa.me/34614615790" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ═══ REFERENCIA ESCRITA ═══ -->
+    <section class="ref">
+      <h2>Lo que deberías saber antes de vender</h2>
+      <p>Las cifras de referencia del mercado y las reglas fiscales que más dinero mueven, por escrito y
+        sin letra pequeña. Para que compares lo que te ofrezcan con lo que es habitual.</p>
+
+      <h3>Cuánto cobra cada tipo de agencia al vendedor</h3>
+      <div class="tabla-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo de agencia</th>
+              <th>Honorarios habituales</th>
+              <th>Sobre 300.000 €, con IVA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Asesor personal de red</strong> (mi caso)<br>
+                <span class="fuente">Sin oficina física, estructura ligera</span></td>
+              <td class="destaca">3 % + IVA</td>
+              <td class="destaca">10.890 €</td>
+            </tr>
+            <tr>
+              <td><strong>Agencia tradicional con oficina</strong><br>
+                <span class="fuente">Lo más frecuente en Barcelona</span></td>
+              <td>5 % – 6 % + IVA</td>
+              <td>18.150 € – 21.780 €</td>
+            </tr>
+            <tr>
+              <td><strong>Agencia premium o internacional</strong><br>
+                <span class="fuente">Marketing internacional, producto alto</span></td>
+              <td>6 % – 7 % + IVA</td>
+              <td>21.780 € – 25.410 €</td>
+            </tr>
+            <tr>
+              <td><strong>Vivienda de lujo o prime</strong></td>
+              <td>7 % – 10 % + IVA</td>
+              <td>25.410 € – 36.300 €</td>
+            </tr>
+            <tr>
+              <td><strong>Modelo de tarifa fija</strong><br>
+                <span class="fuente">Importe cerrado, no porcentaje</span></td>
+              <td>Desde ~4.500 € + IVA</td>
+              <td>Depende del plazo y la exclusividad</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fuente">Horquillas de mercado a 2026 recogidas de publicaciones sectoriales especializadas.
+        Cada agencia fija sus tarifas libremente y pueden cambiar: pide siempre la cifra por escrito antes
+        de firmar nada.</p>
+
+      <h3>Los impuestos que paga el vendedor</h3>
+      <p>Los honorarios de la agencia suelen ser lo primero que uno mira, pero rara vez son el mayor
+        recorte. Estos son los dos impuestos que se llevan la parte gruesa:</p>
+
+      <p><strong>IRPF sobre la ganancia patrimonial.</strong> Se paga sobre la diferencia entre lo que
+        vendes y lo que en su día te costó comprar, no sobre el precio de venta. Tributa en la base del
+        ahorro con esta escala:</p>
+
+      <div class="tabla-scroll">
+        <table>
+          <thead>
+            <tr><th>Tramo de ganancia</th><th>Tipo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Hasta 6.000 €</td><td>19 %</td></tr>
+            <tr><td>De 6.000 € a 50.000 €</td><td>21 %</td></tr>
+            <tr><td>De 50.000 € a 200.000 €</td><td>23 %</td></tr>
+            <tr><td>De 200.000 € a 300.000 €</td><td>27 %</td></tr>
+            <tr><td>Más de 300.000 €</td><td>30 %</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fuente">Escala de la base del ahorro vigente tras la Ley 7/2024. Es progresiva: no se
+        aplica un solo tipo a toda la ganancia, sino cada tipo a su tramo.</p>
+
+      <p><strong>Dos exenciones que lo cambian todo.</strong> Si vendes tu vivienda habitual y reinviertes
+        el importe en otra vivienda habitual dentro de dos años, la ganancia queda exenta — y si
+        reinviertes solo una parte, la exención es proporcional. Y si tienes 65 años o más y vendes tu
+        vivienda habitual, la exención es total sin necesidad de reinvertir. Conviene comprobarlo antes de
+        firmar nada, porque a veces basta con ordenar los tiempos de otra manera.</p>
+
+      <p><strong>Plusvalía municipal.</strong> La cobra el ayuntamiento y grava el incremento de valor del
+        <em>suelo</em>, no de la vivienda entera. Desde 2021 puedes elegir entre dos métodos de cálculo y
+        pagar el que salga menor: el objetivo, sobre el valor catastral del suelo, y el de ganancia real,
+        sobre la diferencia entre compra y venta. <strong>Si vendes por debajo de lo que compraste, no se
+        paga.</strong> La calculadora usa el método de ganancia real, que es el que se puede estimar sin
+        tener delante el recibo del IBI.</p>
+
+      <p><strong>Todo lo que gastes en vender te baja el IRPF.</strong> Los honorarios de la agencia, la
+        plusvalía municipal, la notaría, la cancelación de hipoteca y los certificados son gastos
+        deducibles de la ganancia. Las reformas con factura también suman al valor de compra. Guarda cada
+        papel: sin factura, Hacienda no deja restar nada.</p>
+
+      <h3>Cinco cosas que conviene saber antes de firmar un encargo</h3>
+      <ul>
+        <li><strong>El IVA va aparte.</strong> Cuando te digan «un 5 %», ese 5 % es la base. Encima se
+          suma un 21 %. Sobre 300.000 €, son 3.150 € que aparecen después.</li>
+        <li><strong>El porcentaje se aplica al precio final, no al de salida.</strong> Si sales a 320.000 €
+          y cierras en 295.000 €, los honorarios se calculan sobre 295.000 €.</li>
+        <li><strong>Se paga al firmar ante notario, y solo si se vende.</strong> Los anticipos por
+          fotografía o marketing antes de vender no son la práctica habitual del sector.</li>
+        <li><strong>Negocia antes de firmar, nunca después.</strong> Una vez firmada la exclusiva pierdes
+          toda la palanca. Pide dos o tres propuestas y úsalas.</li>
+        <li><strong>Mira si hay honorarios mínimos.</strong> En pisos por debajo de 150.000 € un mínimo
+          pactado puede disparar el porcentaje efectivo muy por encima de lo acordado. La calculadora te
+          lo avisa si activas ese campo.</li>
+      </ul>
+
+      <p class="fuente">Los cálculos de esta página son estimaciones orientativas. No contemplan
+        deducciones autonómicas, coeficientes de abatimiento para inmuebles adquiridos antes de 1995,
+        compensación de pérdidas de ejercicios anteriores, el régimen de no residentes ni las ordenanzas
+        concretas de cada ayuntamiento. Esta página tiene finalidad informativa y no constituye
+        asesoramiento jurídico ni fiscal: para tu caso concreto, consulta con un asesor.</p>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="cta">
+      <h2>¿Te sale un número más bajo del que esperabas?</h2>
+      <p>Es lo normal la primera vez que se hace esta cuenta. Cuéntame tu caso y repasamos dónde hay
+        margen: en el precio, en los honorarios o en cómo se plantea la operación para pagar menos
+        impuestos. Aunque acabes vendiendo con otro.</p>
+      <div class="cta-btns">
+        <a class="btn" href="/#contacto">Escríbeme</a>
+        <a class="btn hueco" href="tel:+34614615790">Llamar al 614 615 790</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div>
+      <a href="/">Inicio</a>
+      <a href="/#propiedades">Inmuebles</a>
+      <a href="/blog">Blog</a>
+      <a href="/politica-privacidad/">Aviso legal</a>
+    </div>
+    <p style="margin-top:14px; font-size:13px;">© 2026 Issam Benali · Asesor inmobiliario SAFTI · Barcelona</p>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var $ = function (id) { return document.getElementById(id); };
+      var eur = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+      var num = function (el) { var v = parseFloat(el.value); return isFinite(v) && v > 0 ? v : 0; };
+      var pct = function (n) { return n.toLocaleString('es-ES', { maximumFractionDigits: 2 }) + ' %'; };
+
+      /* ── Sincronizar cada campo con su deslizador ── */
+      function enlazar(idTexto, idRango) {
+        var t = $(idTexto), r = $(idRango);
+        if (!t || !r) return;
+        t.addEventListener('input', function () {
+          if (t.value !== '') r.value = Math.min(Math.max(num(t), r.min), r.max);
+          pintarRango(r); calcular();
+        });
+        r.addEventListener('input', function () { t.value = r.value; pintarRango(r); calcular(); });
+        pintarRango(r);
+      }
+
+      function pintarRango(r) {
+        var p = (r.value - r.min) / (r.max - r.min) * 100;
+        r.style.setProperty('--fill', p + '%');
+      }
+
+      enlazar('precio', 'precioR');
+      enlazar('pctA', 'pctAR');
+      enlazar('pctB', 'pctBR');
+
+      enlazar('pctSuelo', 'pctSueloR');
+
+      ['precioCompra', 'anioCompra', 'gastosCompra', 'mejoras', 'tipoPlusvalia',
+       'gNotaria', 'gHipoteca', 'gCertificados', 'gOtros'].forEach(function (id) {
+        $(id).addEventListener('input', calcular);
+      });
+      ['exReinversion', 'ex65'].forEach(function (id) {
+        $(id).addEventListener('change', calcular);
+      });
+
+      var escFiscal = 'A';
+      Array.prototype.forEach.call(document.querySelectorAll('.seg-btn'), function (b) {
+        b.addEventListener('click', function () {
+          Array.prototype.forEach.call(document.querySelectorAll('.seg-btn'), function (o) {
+            o.classList.remove('activo');
+          });
+          b.classList.add('activo');
+          escFiscal = b.dataset.esc;
+          calcular();
+        });
+      });
+
+      /* Escala del ahorro del IRPF 2026 (Ley 7/2024) */
+      var TRAMOS = [[6000, 19], [50000, 21], [200000, 23], [300000, 27], [Infinity, 30]];
+
+      function irpfAhorro(ganancia) {
+        var cuota = 0, previo = 0;
+        for (var i = 0; i < TRAMOS.length && ganancia > previo; i++) {
+          var techo = TRAMOS[i][0];
+          var enTramo = Math.min(ganancia, techo) - previo;
+          cuota += enTramo * TRAMOS[i][1] / 100;
+          previo = techo;
+        }
+        return cuota;
+      }
+
+      function fiscal(precio, honorariosTotal) {
+        var compra = num($('precioCompra'));
+        var gastosCompra = num($('gastosCompra'));
+        var mejoras = num($('mejoras'));
+        var tipoPlus = num($('tipoPlusvalia'));
+        var pSuelo = num($('pctSuelo'));
+        var exento = $('exReinversion').checked || $('ex65').checked;
+
+        var otros = num($('gNotaria')) + num($('gHipoteca')) +
+                    num($('gCertificados')) + num($('gOtros'));
+
+        var plusvalia = 0, irpf = 0, ganancia = 0, hayDatos = compra > 0;
+
+        if (hayDatos) {
+          var revalorizacion = Math.max(0, precio - compra);
+          plusvalia = revalorizacion * (pSuelo / 100) * (tipoPlus / 100);
+
+          var transmision = precio - honorariosTotal - plusvalia - otros;
+          var adquisicion = compra + gastosCompra + mejoras;
+          ganancia = Math.max(0, transmision - adquisicion);
+          irpf = exento ? 0 : irpfAhorro(ganancia);
+        }
+
+        return {
+          plusvalia: plusvalia, irpf: irpf, otros: otros, ganancia: ganancia,
+          hayDatos: hayDatos, exento: exento,
+          neto: precio - honorariosTotal - plusvalia - irpf - otros
+        };
+      }
+
+      function pintarFiscal(precio, a, b) {
+        var esc = escFiscal === 'A' ? a : b;
+        var f = fiscal(precio, esc.total);
+
+        $('fPrecio').textContent = eur.format(precio);
+        $('fHon').textContent = '−' + eur.format(esc.total);
+        $('fPlus').textContent = f.hayDatos ? '−' + eur.format(f.plusvalia) : 'sin datos';
+        $('fIrpf').textContent = f.hayDatos ? '−' + eur.format(f.irpf) : 'sin datos';
+        $('fOtros').textContent = '−' + eur.format(f.otros);
+        $('fNeto').textContent = eur.format(f.neto);
+        $('fPctNeto').textContent = precio > 0
+          ? 'el ' + pct(f.neto / precio * 100) + ' del precio de venta'
+          : '—';
+
+        $('avisoFiscal').innerHTML = f.hayDatos ? '' :
+          '<div class="tip calma"><span class="tip-ico">✍️</span><span><b>Escribe el precio de compra</b>' +
+          'Sin él no puedo calcular ni el IRPF ni la plusvalía municipal, que suelen ser la parte más ' +
+          'gorda. Lo tienes en la escritura. El resto de campos son opcionales.</span></div>';
+
+        var t = [];
+        if (f.hayDatos && f.exento) {
+          t.push(['', '✅', 'Exento de IRPF',
+            'Con la exención marcada, la ganancia de ' + eur.format(f.ganancia) +
+            ' no tributa. Ojo: en la reinversión hay que cumplir plazos y requisitos, y la exención es ' +
+            'proporcional si solo reinviertes una parte.']);
+        } else if (f.hayDatos && f.ganancia > 0) {
+          t.push(['', '🧾', 'Los gastos te bajan el IRPF',
+            'La ganancia de ' + eur.format(f.ganancia) + ' ya va neta de honorarios, plusvalía y gastos: ' +
+            'todos son deducibles. Guarda cada factura, porque sin ellas Hacienda no te deja restar nada.']);
+        }
+        if (f.hayDatos && f.plusvalia > 0) {
+          t.push(['calma', '🏛️', 'La plusvalía puede salir más barata',
+            'Aquí uso el método de ganancia real. El ayuntamiento te deja elegir entre ese y el método ' +
+            'objetivo, y pagas el que salga menor. Si vendes por debajo de lo que compraste, no se paga.']);
+        }
+        if (f.hayDatos && f.ganancia === 0 && !f.exento) {
+          t.push(['calma', '📉', 'Sin ganancia, sin IRPF',
+            'Con estas cifras la operación no genera ganancia patrimonial, así que no hay IRPF que pagar. ' +
+            'Aun así hay que declararla.']);
+        }
+        $('consejosFiscal').innerHTML = t.slice(0, 2).map(function (x) {
+          return '<div class="tip ' + x[0] + '"><span class="tip-ico">' + x[1] + '</span><span><b>' +
+            x[2] + '</b>' + x[3] + '</span></div>';
+        }).join('');
+
+        return f;
+      }
+
+      ['minimo', 'iva', 'verQueda'].forEach(function (id) {
+        $(id).addEventListener('input', calcular);
+        $(id).addEventListener('change', calcular);
+      });
+
+      /* ── Cálculo de un escenario ── */
+      function escenario(precio, porcentaje, minimo, tipoIva) {
+        var base = precio * porcentaje / 100;
+        var aplicaMinimo = minimo > 0 && minimo > base;
+        if (aplicaMinimo) base = minimo;
+        var iva = base * tipoIva / 100;
+        return {
+          base: base,
+          iva: iva,
+          total: base + iva,
+          queda: precio - base - iva,
+          efectivo: precio > 0 ? base / precio * 100 : 0,
+          aplicaMinimo: aplicaMinimo
+        };
+      }
+
+      /* ── Consejos según lo que esté pasando ── */
+      function consejos(precio, a, b, pA, pB) {
+        var lista = [];
+
+        if (a.aplicaMinimo || b.aplicaMinimo) {
+          lista.push(['alerta', '⚠️', 'El mínimo manda sobre el porcentaje',
+            'En este precio los honorarios mínimos superan al porcentaje pactado. El coste real equivale a un ' +
+            pct(Math.max(a.efectivo, b.efectivo)) + ' efectivo, no al que figura en el contrato. Es el error que más caro sale en pisos pequeños.']);
+        }
+
+        if (pB >= 6 || pA >= 6) {
+          lista.push(['alerta', '📊', 'Estás por encima de la horquilla habitual',
+            'En Barcelona lo normal en agencia tradicional es entre el 5 % y el 6 %. Por encima del 6 % solo se justifica con un servicio muy diferencial: pide que te concreten exactamente qué incluye.']);
+        }
+
+        var dif = Math.abs(a.total - b.total);
+        if (dif > 0 && precio > 0) {
+          lista.push(['', '💡', 'Un punto porcentual no es poca cosa',
+            'Cada 1 % sobre ' + eur.format(precio) + ' son ' + eur.format(precio * 0.01 * 1.21) +
+            ' con IVA. Negociar medio punto antes de firmar suele ser la hora mejor pagada de toda la venta.']);
+        }
+
+        if (precio > 0 && precio < 120000) {
+          lista.push(['calma', '🔎', 'En precios bajos, pregunta por el mínimo',
+            'Muchas agencias aplican honorarios mínimos que en esta franja pesan más que el porcentaje. Pregúntalo antes de firmar y ábrelo en «Afinar el cálculo» para verlo.']);
+        }
+
+        lista.push(['calma', '📝', 'Que conste por escrito',
+          'El porcentaje, el mínimo, la duración, la exclusividad y quién paga qué deben estar en la nota de encargo. En Cataluña ese documento es obligatorio.']);
+
+        return lista.slice(0, 3).map(function (t) {
+          return '<div class="tip ' + t[0] + '"><span class="tip-ico">' + t[1] + '</span><span><b>' +
+            t[2] + '</b>' + t[3] + '</span></div>';
+        }).join('');
+      }
+
+      /* ── Recalcular todo ── */
+      function calcular() {
+        var precio = num($('precio'));
+        var pA = num($('pctA'));
+        var pB = num($('pctB'));
+        var minimo = num($('minimo'));
+        var tipoIva = $('iva').value === '' ? 21 : num($('iva'));
+
+        var a = escenario(precio, pA, minimo, tipoIva);
+        var b = escenario(precio, pB, minimo, tipoIva);
+
+        $('etAPct').textContent = pct(pA);
+        $('etBPct').textContent = pct(pB);
+
+        $('aBase').textContent = eur.format(a.base);
+        $('aIva').textContent = eur.format(a.iva);
+        $('aTotal').textContent = eur.format(a.total);
+        $('aQueda').textContent = eur.format(a.queda);
+
+        $('bBase').textContent = eur.format(b.base);
+        $('bIva').textContent = eur.format(b.iva);
+        $('bTotal').textContent = eur.format(b.total);
+        $('bQueda').textContent = eur.format(b.queda);
+
+        var dif = b.total - a.total;
+        var caja = $('cajaDif');
+        $('difNum').textContent = eur.format(Math.abs(dif));
+        if (Math.abs(dif) < 1) {
+          caja.className = 'dif neutro';
+          $('difTxt').textContent = 'Las dos agencias te cuestan exactamente lo mismo.';
+        } else if (dif > 0) {
+          caja.className = 'dif';
+          $('difTxt').textContent = 'es lo que te ahorrarías con la agencia A. Con ese dinero se paga la mudanza, los gastos de la próxima compra y sobra.';
+        } else {
+          caja.className = 'dif neutro';
+          $('difTxt').textContent = 'es lo que la agencia A cuesta de más frente a la B.';
+        }
+
+        /* Resumen lateral */
+        $('rPrecio').textContent = eur.format(precio);
+        $('rA').textContent = eur.format(a.total);
+        $('rB').textContent = eur.format(b.total);
+        $('rEfA').textContent = pct(a.efectivo);
+        $('rEfB').textContent = pct(b.efectivo);
+        $('rDif').textContent = eur.format(Math.abs(dif));
+
+        /* Barras */
+        var barras = $('barras');
+        barras.style.display = $('verQueda').checked ? '' : 'none';
+        function pintar(pref, e) {
+          var t = precio > 0 ? precio : 1;
+          $(pref + 'Hon').style.width = (e.base / t * 100) + '%';
+          $(pref + 'Iva').style.width = (e.iva / t * 100) + '%';
+          $(pref + 'Queda').style.width = (Math.max(e.queda, 0) / t * 100) + '%';
+        }
+        pintar('segA', a); pintar('segB', b);
+        $('barAPct').textContent = 'Te queda el ' + pct(precio > 0 ? a.queda / precio * 100 : 0);
+        $('barBPct').textContent = 'Te queda el ' + pct(precio > 0 ? b.queda / precio * 100 : 0);
+
+        /* Consejos */
+        $('consejos').innerHTML = consejos(precio, a, b, pA, pB);
+
+        /* Impuestos y gastos */
+        var f = pintarFiscal(precio, a, b);
+        $('rNeto').textContent = eur.format(f.neto);
+      }
+
+      /* ── Botones ── */
+      $('btnImprimir').addEventListener('click', function () { window.print(); });
+
+      $('btnReset').addEventListener('click', function () {
+        $('precio').value = 300000; $('precioR').value = 300000;
+        $('pctA').value = 3; $('pctAR').value = 3;
+        $('pctB').value = 5; $('pctBR').value = 5;
+        $('minimo').value = ''; $('iva').value = 21;
+        ['precioCompra', 'anioCompra', 'gastosCompra', 'mejoras'].forEach(function (id) { $(id).value = ''; });
+        $('tipoPlusvalia').value = 30; $('pctSuelo').value = 40; $('pctSueloR').value = 40;
+        $('gNotaria').value = 400; $('gHipoteca').value = 0;
+        $('gCertificados').value = 250; $('gOtros').value = 150;
+        $('exReinversion').checked = false; $('ex65').checked = false;
+        ['precioR', 'pctAR', 'pctBR', 'pctSueloR'].forEach(function (id) { pintarRango($(id)); });
+        calcular();
+      });
+
+      $('btnCopiar').addEventListener('click', function () {
+        var btn = this;
+        var texto = [
+          'Vender mi piso — cálculo orientativo',
+          'Precio de venta: ' + $('rPrecio').textContent,
+          '',
+          'Agencia A (' + $('etAPct').textContent + '): ' + $('aTotal').textContent + ' con IVA',
+          'Agencia B (' + $('etBPct').textContent + '): ' + $('bTotal').textContent + ' con IVA',
+          'Diferencia: ' + $('rDif').textContent,
+          'Te queda limpio tras impuestos y gastos: ' + $('rNeto').textContent,
+          '',
+          'Calculado en issambenali.es/calculadora-honorarios'
+        ].join('\n');
+
+        function ok() { btn.textContent = '✓ Copiado'; setTimeout(function () { btn.textContent = 'Copiar el resumen'; }, 2200); }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(texto).then(ok, function () { btn.textContent = 'No se pudo copiar'; });
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = texto; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); ok(); } catch (e) { btn.textContent = 'No se pudo copiar'; }
+          document.body.removeChild(ta);
+        }
+      });
+
+      calcular();
+    })();
+  </script>
+
+</body>
+
+</html>

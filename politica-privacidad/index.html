@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aviso legal, privacidad y cookies | Issam Benali · Asesor SAFTI Barcelona</title>
+  <meta name="description"
+    content="Aviso legal, política de privacidad y política de cookies de issambenali.es. Información sobre el tratamiento de datos personales y tus derechos.">
+  <link rel="canonical" href="https://issambenali.es/politica-privacidad/">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap">
+
+  <style>
+    :root {
+      --orange: #E8530A;
+      --orange-dark: #C4420A;
+      --black: #0A0A0A;
+      --gray: #888888;
+      --light-gray: #F5F5F5;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--black);
+      background: #fff;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--orange);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 3px;
+    }
+
+    .lg-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 5vw;
+      border-bottom: 1px solid #ececec;
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, .95);
+      backdrop-filter: blur(10px);
+      z-index: 50;
+    }
+
+    .lg-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .lg-badge {
+      background: var(--orange);
+      color: #fff;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      padding: 7px 11px;
+      border-radius: 3px;
+    }
+
+    .lg-name {
+      margin-left: 12px;
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .lg-back {
+      font-size: 14px;
+      color: var(--gray);
+      text-decoration: none;
+    }
+
+    .lg-back:hover {
+      color: var(--black);
+    }
+
+    .lg-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 5vw 88px;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .lg-updated {
+      color: var(--gray);
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    .lg-toc {
+      background: var(--light-gray);
+      border-radius: 6px;
+      padding: 22px 26px;
+      margin-bottom: 48px;
+    }
+
+    .lg-toc strong {
+      display: block;
+      font-size: 13px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+
+    .lg-toc ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .lg-toc li {
+      margin-bottom: 4px;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 27px;
+      margin: 52px 0 16px;
+      padding-top: 8px;
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 30px 0 8px;
+    }
+
+    p,
+    ul,
+    ol,
+    table {
+      margin-bottom: 18px;
+    }
+
+    ul,
+    ol {
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid #ececec;
+      vertical-align: top;
+    }
+
+    th {
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .lg-scroll {
+      overflow-x: auto;
+    }
+
+    .lg-scroll table {
+      min-width: 520px;
+    }
+
+    .lg-fill {
+      background: #FFF4EE;
+      border-left: 3px solid var(--orange);
+      padding: 16px 20px;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 18px;
+      font-size: 14.5px;
+    }
+
+    .lg-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      border: 0;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 13px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .lg-btn:hover {
+      background: var(--orange-dark);
+    }
+
+    footer {
+      background: var(--black);
+      color: #9a9a9a;
+      padding: 40px 5vw;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #d6d6d6;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: var(--orange);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="lg-nav">
+    <a href="/" class="lg-logo">
+      <span class="lg-badge">SAFTI</span>
+      <span class="lg-name">Issam Benali</span>
+    </a>
+    <a href="/" class="lg-back">← Volver al inicio</a>
+  </nav>
+
+  <main class="lg-wrap">
+    <h1>Aviso legal, privacidad y cookies</h1>
+    <p class="lg-updated">Última actualización: julio de 2026</p>
+
+    <nav class="lg-toc" aria-label="Índice">
+      <strong>En esta página</strong>
+      <ol>
+        <li><a href="#aviso">Aviso legal e identificación</a></li>
+        <li><a href="#privacidad">Política de privacidad</a></li>
+        <li><a href="#cookies">Política de cookies</a></li>
+      </ol>
+    </nav>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <h2 id="aviso">1. Aviso legal e identificación</h2>
+
+    <p>En cumplimiento de la Ley 34/2002, de servicios de la sociedad de la información y de comercio
+      electrónico (LSSI-CE), se informa de los datos identificativos del titular de este sitio web:</p>
+
+    <div class="lg-scroll">
+      <table>
+        <tbody>
+          <tr>
+            <th>Titular</th>
+            <td>Issam Benali</td>
+          </tr>
+          <tr>
+            <th>NIF / NIE</th>
+            <td>39394484-S</td>
+          </tr>
+          <tr>
+            <th>Domicilio profesional</th>
+            <td>calle Almassora, 16, 08033 Barcelona</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><a href="mailto:issam.benali@safti.es">issam.benali@safti.es</a></td>
+          </tr>
+          <tr>
+            <th>Teléfono</th>
+            <td><a href="tel:+34614615790">+34 614 615 790</a></td>
+          </tr>
+          <tr>
+            <th>Actividad</th>
+            <td>Asesoramiento e intermediación inmobiliaria como agente independiente
+              asociado a la red SAFTI España</td>
+          </tr>
+          <tr>
+            <th>Registro AICAT y SAFTI</th>
+            <td>AICAT SAFTI: 10.452 // ID SAFTI: 061800</td>
+          </tr>
+          <tr>
+            <th>Sitio web</th>
+            <td>https://issambenali.es</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Condiciones de uso</h3>
+    <p>El acceso a este sitio web es gratuito y no requiere registro. La información publicada sobre
+      inmuebles tiene carácter meramente informativo y no constituye oferta contractual vinculante. Los
+      precios, superficies y características pueden variar y deben verificarse documentalmente antes de
+      cualquier operación.</p>
+
+    <p>Las imágenes identificadas como <em>render</em> o <em>propuesta de reforma</em> son
+      recreaciones virtuales de un proyecto no ejecutado, y no reflejan el estado actual del inmueble.</p>
+
+    <h3>Propiedad intelectual</h3>
+    <p>Los textos, fotografías, renders, planos y elementos gráficos de este sitio están protegidos por
+      derechos de propiedad intelectual. No se autoriza su reproducción sin consentimiento previo.</p>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <h2 id="privacidad">2. Política de privacidad</h2>
+
+    <p>Esta política explica cómo se tratan los datos personales que facilitas a través de los formularios
+      de este sitio, conforme al Reglamento (UE) 2016/679 (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD).</p>
+
+    <h3>2.1 Responsable del tratamiento</h3>
+    <p>Issam Benali, con los datos identificativos indicados en el apartado 1. Puedes contactar para
+      cualquier cuestión relativa a tus datos en
+      <a href="mailto:issam.benali@safti.es">issam.benali@safti.es</a>.
+    </p>
+
+    <h3>2.2 Qué datos se recogen y para qué</h3>
+
+    <div class="lg-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Finalidad</th>
+            <th>Datos</th>
+            <th>Base legal</th>
+            <th>Conservación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Responder a tu consulta y organizar visitas a inmuebles</td>
+            <td>Nombre, teléfono, email, disponibilidad y el contenido de tu mensaje</td>
+            <td>Tu consentimiento (art. 6.1.a RGPD) y la aplicación de medidas precontractuales a petición
+              tuya (art. 6.1.b)</td>
+            <td>Mientras dure la relación y, después, durante los plazos de prescripción legal</td>
+          </tr>
+          <tr>
+            <td>Enviarte inmuebles que encajen con lo que buscas</td>
+            <td>Los mismos, más tus criterios de búsqueda</td>
+            <td>Tu consentimiento (art. 6.1.a RGPD)</td>
+            <td>Hasta que solicites la baja</td>
+          </tr>
+          <tr>
+            <td>Cumplir obligaciones legales, contables y fiscales</td>
+            <td>Datos identificativos y de la operación</td>
+            <td>Obligación legal (art. 6.1.c RGPD)</td>
+            <td>Los plazos fijados por la normativa aplicable</td>
+          </tr>
+          <tr>
+            <td>Medir cómo se usa la web para mejorarla</td>
+            <td>Datos de navegación agregados (ver apartado 3)</td>
+            <td>Tu consentimiento al aceptar las cookies analíticas</td>
+            <td>Según lo indicado en la política de cookies</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>No se toman decisiones automatizadas ni se elaboran perfiles con efectos jurídicos. No se tratan
+      categorías especiales de datos.</p>
+
+    <h3>2.3 Quién más puede acceder a tus datos</h3>
+    <p>Solo los proveedores necesarios para prestar el servicio, todos ellos con contrato de encargado de
+      tratamiento:</p>
+    <ul>
+      <li><strong>SAFTI España</strong> — red inmobiliaria a la que estoy asociado, para la gestión de la
+        operación y del expediente.</li>
+      <li><strong>Netlify, Inc.</strong> — alojamiento del sitio web (Estados Unidos).</li>
+      <li><strong>Formspree, Inc.</strong> — procesamiento y entrega de los formularios de contacto
+        (Estados Unidos).</li>
+      <li><strong>Google Ireland Ltd.</strong> — analítica web, solo si has aceptado las cookies
+        correspondientes.</li>
+    </ul>
+    <p>Algunos de estos proveedores están fuera del Espacio Económico Europeo. Las transferencias se
+      amparan en las Cláusulas Contractuales Tipo aprobadas por la Comisión Europea o en decisiones de
+      adecuación vigentes. Fuera de estos casos, tus datos no se ceden a terceros salvo obligación legal.</p>
+
+    <h3>2.4 Tus derechos</h3>
+    <p>Puedes ejercer en cualquier momento los derechos de <strong>acceso, rectificación, supresión,
+        oposición, limitación del tratamiento y portabilidad</strong>, así como retirar el consentimiento
+      que hayas dado, sin que ello afecte a la licitud del tratamiento previo.</p>
+    <p>Para hacerlo, escribe a <a href="mailto:issam.benali@safti.es">issam.benali@safti.es</a> indicando
+      el derecho que quieres ejercer y adjuntando copia de un documento que acredite tu identidad. La
+      respuesta se dará en el plazo máximo de un mes.</p>
+    <p>Si consideras que tus datos no se han tratado correctamente, puedes presentar una reclamación ante
+      la <strong>Agencia Española de Protección de Datos</strong> (<a href="https://www.aepd.es" target="_blank"
+        rel="noopener">www.aepd.es</a>) o ante la Autoritat Catalana de Protecció de
+      Dades.</p>
+
+    <h3>2.5 Seguridad y menores</h3>
+    <p>Se aplican medidas técnicas y organizativas razonables para proteger los datos frente a pérdida,
+      acceso no autorizado o alteración. Este sitio no está dirigido a menores de 14 años y no se recogen
+      conscientemente sus datos.</p>
+
+    <h3>2.6 Veracidad de los datos</h3>
+    <p>Al enviar un formulario garantizas que los datos son ciertos y que, si facilitas datos de otra
+      persona, cuentas con su consentimiento para hacerlo.</p>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <h2 id="cookies">3. Política de cookies</h2>
+
+    <p>Una cookie es un pequeño archivo que se guarda en tu navegador cuando visitas una web. Sirve para
+      que el sitio recuerde información sobre tu visita.</p>
+
+    <p><strong>En este sitio las cookies analíticas no se activan hasta que las aceptas.</strong> Si
+      eliges «Solo las necesarias», Google Analytics no llega a cargarse.</p>
+
+    <h3>3.1 Cookies que se utilizan</h3>
+
+    <div class="lg-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Para qué sirve</th>
+            <th>Duración</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>ib_cookies</code></td>
+            <td>Técnica propia (almacenamiento local)</td>
+            <td>Recordar si has aceptado o rechazado las cookies, para no volver a preguntarte</td>
+            <td>Hasta que borres los datos del navegador</td>
+          </tr>
+          <tr>
+            <td><code>_ga</code></td>
+            <td>Analítica de terceros (Google Analytics 4)</td>
+            <td>Distinguir visitantes de forma anónima</td>
+            <td>2 años</td>
+          </tr>
+          <tr>
+            <td><code>_ga_G-011M5HKWLR</code></td>
+            <td>Analítica de terceros (Google Analytics 4)</td>
+            <td>Mantener el estado de la sesión de analítica</td>
+            <td>2 años</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Las cookies técnicas son imprescindibles para que la web funcione y no requieren consentimiento.
+      Las analíticas sí, y por eso se te pregunta.</p>
+
+    <h3>3.2 Cambiar o retirar tu decisión</h3>
+    <p>Puedes cambiar de opinión cuando quieras con este botón. Se borrará tu elección y volverá a
+      aparecer el aviso para que elijas de nuevo:</p>
+    <p>
+      <button type="button" class="lg-btn" id="resetCookies">Cambiar mis preferencias de cookies</button>
+    </p>
+    <p>También puedes bloquear o eliminar cookies desde la configuración de tu navegador. Ten en cuenta
+      que si bloqueas todas las cookies algunas funciones podrían no comportarse correctamente.</p>
+
+    <h3>3.3 Más información</h3>
+    <p>Puedes consultar cómo trata Google los datos en
+      <a href="https://policies.google.com/technologies/partner-sites" target="_blank"
+        rel="noopener">policies.google.com</a>.
+    </p>
+
+    <div class="lg-fill" style="margin-top:44px">
+      <strong>Nota.</strong> Este texto es un modelo general adaptado a esta web. Antes de publicarlo,
+      revísalo con un asesor legal o con el departamento de protección de datos de SAFTI, sobre todo en
+      lo relativo a quién figura como responsable del tratamiento en las operaciones que gestionas a
+      través de la red.
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <a href="/">Inicio</a>
+      <a href="/#propiedades">Inmuebles</a>
+      <a href="/blog">Blog</a>
+      <a href="/#contacto">Contacto</a>
+    </div>
+    <p style="margin-top:16px; font-size:13px;">© 2026 Issam Benali · Asesor inmobiliario SAFTI · Barcelona</p>
+  </footer>
+
+  <script>
+    document.getElementById('resetCookies').addEventListener('click', function () {
+      localStorage.removeItem('ib_cookies');
+      this.textContent = '✓ Preferencias borradas — recargando…';
+      setTimeout(function () { location.href = '/'; }, 1200);
+    });
+  </script>
+
+</body>
+
+</html>
