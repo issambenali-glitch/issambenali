@@ -1,0 +1,78 @@
+# ==========================================================
+#  REDIRECCIONES 301 — issambenali.es
+#  Artículos movidos de la raíz (/) a la carpeta /blog
+#  301 = redirección permanente (transfiere el SEO a la URL nueva)
+# ==========================================================
+
+# ----- CASO ESPECIAL: artículo fiscal -----
+# Cambió la ñ -> n  y se quitó el .html. Cubrimos todas las variantes.
+# NOTA: se añade "!" (force) porque los .html antiguos SIGUEN existiendo
+# físicamente en el repo. Sin "!", Netlify sirve el archivo directamente
+# y NUNCA aplica esta redirección (el archivo estático gana siempre a una
+# redirección normal) -> esto era la causa de que Google viera contenido
+# duplicado en las URLs antiguas y no indexara casi nada.
+/articulo-fiscal-comprador-vivienda-cataluña.html        /blog/articulo-fiscal-comprador-vivienda-cataluna   301!
+/articulo-fiscal-comprador-vivienda-catalu%C3%B1a.html   /blog/articulo-fiscal-comprador-vivienda-cataluna   301!
+/articulo-fiscal-comprador-vivienda-cataluña             /blog/articulo-fiscal-comprador-vivienda-cataluna   301!
+/articulo-fiscal-comprador-vivienda-cataluna.html        /blog/articulo-fiscal-comprador-vivienda-cataluna   301!
+/articulo-fiscal-comprador-vivienda-cataluna             /blog/articulo-fiscal-comprador-vivienda-cataluna   301!
+
+# ----- RESTO DE ARTÍCULOS (raíz -> /blog) -----
+# "!" forzado por el mismo motivo: los .html siguen en la raíz del repo.
+/articulo-alquiler-seguro-barcelona-2026                 /blog/articulo-alquiler-seguro-barcelona-2026                 301!
+/articulo-alquiler-seguro-barcelona-2026.html            /blog/articulo-alquiler-seguro-barcelona-2026                 301!
+/articulo-obras-barcelona-barrios-2026                   /blog/articulo-obras-barcelona-barrios-2026                   301!
+/articulo-obras-barcelona-barrios-2026.html              /blog/articulo-obras-barcelona-barrios-2026                   301!
+/articulo-extranjeros-no-residentes-barcelona-2026       /blog/articulo-extranjeros-no-residentes-barcelona-2026       301!
+/articulo-extranjeros-no-residentes-barcelona-2026.html  /blog/articulo-extranjeros-no-residentes-barcelona-2026       301!
+/articulo-honorarios-agencia-inmobiliaria-barcelona      /blog/articulo-honorarios-agencia-inmobiliaria-barcelona      301!
+/articulo-honorarios-agencia-inmobiliaria-barcelona.html /blog/articulo-honorarios-agencia-inmobiliaria-barcelona      301!
+/articulo-obra-nueva-vpo-barcelona-2026                  /blog/articulo-obra-nueva-vpo-barcelona-2026                  301!
+/articulo-obra-nueva-vpo-barcelona-2026.html             /blog/articulo-obra-nueva-vpo-barcelona-2026                  301!
+/articulo-vender-piso-heredado-varios-herederos-2026     /blog/articulo-vender-piso-heredado-varios-herederos-2026     301!
+/articulo-vender-piso-heredado-varios-herederos-2026.html /blog/articulo-vender-piso-heredado-varios-herederos-2026    301!
+/articulo-subasta-judicial-vivienda-2026                 /blog/articulo-subasta-judicial-vivienda-2026                 301!
+/articulo-subasta-judicial-vivienda-2026.html            /blog/articulo-subasta-judicial-vivienda-2026                 301!
+/articulo-vicios-ocultos-viviendas-70-80-barcelona-2026  /blog/articulo-vicios-ocultos-viviendas-70-80-barcelona-2026  301!
+/articulo-vicios-ocultos-viviendas-70-80-barcelona-2026.html /blog/articulo-vicios-ocultos-viviendas-70-80-barcelona-2026 301!
+/articulo-okupas-proteger-vivienda-barcelona-2026        /blog/articulo-okupas-proteger-vivienda-barcelona-2026        301!
+/articulo-okupas-proteger-vivienda-barcelona-2026.html   /blog/articulo-okupas-proteger-vivienda-barcelona-2026        301!
+/articulo-zona-tensionada-barcelona-2026                 /blog/articulo-zona-tensionada-barcelona-2026                 301!
+/articulo-zona-tensionada-barcelona-2026.html            /blog/articulo-zona-tensionada-barcelona-2026                 301!
+
+# ----- DUPLICADO HUÉRFANO DENTRO DE /blog -----
+# blog/obras-barcelona-barrios-2026.html es una copia antigua (nombre sin
+# "articulo-") que también sigue existiendo físicamente y compite con la
+# URL buena. La forzamos a redirigir a la versión real del sitemap.
+/blog/obras-barcelona-barrios-2026                       /blog/articulo-obras-barcelona-barrios-2026                   301!
+/blog/obras-barcelona-barrios-2026.html                  /blog/articulo-obras-barcelona-barrios-2026                   301!
+
+# ----- RED DE SEGURIDAD -----
+# Cualquier otro /articulo-... antiguo que se nos haya escapado,
+# se redirige automáticamente a su equivalente en /blog. Forzado por el
+# mismo motivo que las reglas de arriba.
+/articulo-*                                              /blog/articulo-:splat                                         301!
+
+# ----- RED DE SEGURIDAD: slugs 'bonitos' que se usaron por error en canonicals -----
+# (por si algún enlace externo apunta a ellos; redirigen al artículo real)
+/blog/guia-fiscal-comprador-barcelona-2026                    /blog/articulo-fiscal-comprador-vivienda-cataluna              301
+/blog/extranjeros-no-residentes-comprar-vivienda-barcelona-2026 /blog/articulo-extranjeros-no-residentes-barcelona-2026       301
+/blog/cuanto-cobra-agencia-inmobiliaria-barcelona-2026        /blog/articulo-honorarios-agencia-inmobiliaria-barcelona       301
+/blog/alquilar-piso-barcelona-seguridad-2026                  /blog/articulo-alquiler-seguro-barcelona-2026                  301
+/blog/proteger-vivienda-ocupacion-ilegal-barcelona-2026       /blog/articulo-okupas-proteger-vivienda-barcelona-2026         301
+
+# ----- Normalización de barra final en /blog -----
+/blog/                                                         /blog                                                         301
+
+# ----- SERVICIO RETIRADO: busca-alquiler para inquilinos (julio 2026) -----
+# La landing se ha eliminado. Redirigimos a la home para no romper los
+# enlaces ya compartidos en Facebook, Reddit, WhatsApp e Instagram.
+/busco-alquiler-por-ti          /   301
+/busco-alquiler-por-ti/         /   301
+/busco-alquiler-por-ti.html     /   301
+# Alternativa si prefieres que Google la borre del indice cuanto antes
+# en lugar de traspasar autoridad a la home (sustituye las 3 lineas de
+# arriba por estas y quien entre vera tu pagina 404):
+# /busco-alquiler-por-ti        /404.html   410
+# /busco-alquiler-por-ti/       /404.html   410
+# /busco-alquiler-por-ti.html   /404.html   410
