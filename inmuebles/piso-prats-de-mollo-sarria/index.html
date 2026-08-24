@@ -75,11 +75,14 @@
       --orange: #E8530A;
       --orange-light: #FF6B2B;
       --orange-dark: #C4420A;
-      --black: #0A0A0A;
+      --orange-pale: #FBE4D6;
+      --navy: #16233F;
+      --navy-light: #24365C;
+      --black: #14161B;
       --dark: #111111;
       --dark2: #1A1A1A;
-      --gray: #888888;
-      --light-gray: #F5F5F5;
+      --gray: #5C6068;
+      --light-gray: #F2F1EE;
       --white: #FFFFFF;
       --font-display: 'Playfair Display', Georgia, serif;
       --font-body: 'DM Sans', sans-serif;
@@ -109,9 +112,9 @@
       position: sticky; top: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       gap: 16px; padding: 14px 5vw;
-      background: rgba(255, 255, 255, .94);
+      background: rgba(255, 255, 255, .96);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid #ececec;
+      border-bottom: 2px solid var(--orange);
     }
 
     .pd-logo { display: flex; align-items: center; gap: 0; text-decoration: none; }
@@ -151,9 +154,9 @@
     .pd-btn--primary:hover { background: var(--orange-dark); }
 
     .pd-btn--ghost {
-      background: transparent; color: var(--black); border: 1px solid #d6d6d6;
+      background: transparent; color: var(--navy); border: 1.5px solid var(--navy-light);
     }
-    .pd-btn--ghost:hover { border-color: var(--black); }
+    .pd-btn--ghost:hover { border-color: var(--navy); background: rgba(22, 35, 63, .05); }
 
     .pd-btn--sm { padding: 9px 18px; font-size: 14px; }
 
@@ -161,20 +164,27 @@
     .pd-wrap { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
 
     .pd-section { padding: 72px 0; }
-    .pd-section + .pd-section { border-top: 1px solid #ececec; }
+    .pd-section + .pd-section { border-top: 1px solid #e6e0d5; }
+
+    .pd-section--tint { background: var(--light-gray); }
 
     .pd-eyebrow {
-      font-size: 11px; font-weight: 600; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--orange); margin-bottom: 14px;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--orange-dark); margin-bottom: 14px;
+    }
+
+    .pd-eyebrow::before {
+      content: ''; width: 18px; height: 2px; background: var(--orange); display: inline-block;
     }
 
     .pd-h2 {
       font-family: var(--font-display); font-weight: 900;
       font-size: clamp(26px, 3.4vw, 38px); line-height: 1.15;
-      margin-bottom: 14px;
+      margin-bottom: 14px; color: var(--navy);
     }
 
-    .pd-lead { color: #555; max-width: 62ch; }
+    .pd-lead { color: #4A4E55; max-width: 62ch; }
 
     /* ── BREADCRUMB ───────────────────────────────────────── */
     .pd-crumb {
@@ -238,24 +248,28 @@
     /* ── BARRA DE DATOS ───────────────────────────────────── */
     .pd-keybar {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1px; background: #ececec; border: 1px solid #ececec;
+      gap: 2px; background: #e6e0d5; border: 1px solid #e6e0d5;
       border-radius: 5px; overflow: hidden; margin-top: 26px;
     }
 
-    .pd-key { background: #fff; padding: 20px 22px; }
+    .pd-key {
+      background: #fff; padding: 20px 22px 18px;
+      border-top: 3px solid var(--orange);
+    }
 
     .pd-key dt {
       font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase;
-      color: var(--gray); margin-bottom: 6px;
+      font-weight: 600; color: var(--gray); margin-bottom: 6px;
     }
 
     .pd-key dd {
       font-family: var(--font-display); font-size: 24px; font-weight: 700;
+      color: var(--navy);
     }
 
-    .pd-key--price { background: var(--black); }
-    .pd-key--price dt { color: #9a9a9a; }
-    .pd-key--price dd { color: var(--orange); font-size: 28px; }
+    .pd-key--price { background: var(--navy); border-top-color: var(--orange); }
+    .pd-key--price dt { color: #A9B4CC; }
+    .pd-key--price dd { color: var(--orange-light); font-size: 28px; }
 
     /* ── DOS COLUMNAS ─────────────────────────────────────── */
     .pd-cols { display: grid; grid-template-columns: 1fr 380px; gap: 56px; align-items: start; }
@@ -271,12 +285,15 @@
     /* Tarjeta lateral pegajosa */
     .pd-aside {
       position: sticky; top: 88px;
-      border: 1px solid #e4e4e4; border-radius: 6px; padding: 26px;
+      border: 1px solid #e4e4e4; border-top: 4px solid var(--orange);
+      border-radius: 6px; padding: 26px;
       background: #fff;
+      box-shadow: 0 14px 34px -22px rgba(0, 0, 0, .3);
     }
 
     .pd-aside h3 {
       font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 6px;
+      color: var(--navy);
     }
 
     .pd-aside p { font-size: 14px; color: #666; margin-bottom: 18px; }
@@ -302,18 +319,25 @@
     }
 
     .pd-feats div {
-      display: flex; justify-content: space-between; gap: 12px;
-      padding: 13px 0; border-bottom: 1px solid #ececec; font-size: 15px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      padding: 13px 0 13px 16px; border-bottom: 1px solid #ececec; font-size: 15px;
+      position: relative;
+    }
+
+    .pd-feats div::before {
+      content: ''; position: absolute; left: 0; top: 16px; bottom: 16px; width: 3px;
+      border-radius: 2px; background: var(--orange);
     }
 
     .pd-feats dt { color: var(--gray); }
-    .pd-feats dd { font-weight: 500; text-align: right; }
+    .pd-feats dd { font-weight: 700; text-align: right; color: var(--navy); }
 
     /* ── TABLA REFORMA LIGERA VS INTEGRAL ─────────────────── */
     .pd-table-scroll { overflow-x: auto; margin-top: 28px; }
 
     .pd-table {
       width: 100%; border-collapse: collapse; min-width: 540px; font-size: 15px;
+      border-radius: 8px; overflow: hidden; box-shadow: 0 0 0 1px #e4e4e4;
     }
 
     .pd-table th, .pd-table td {
@@ -323,16 +347,15 @@
 
     .pd-table thead th {
       font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase;
-      color: var(--gray); font-weight: 600;
+      color: #fff; font-weight: 700; background: var(--navy);
     }
 
     .pd-table td + td, .pd-table th + th { text-align: left; }
 
-    .pd-table tbody tr:last-child td {
-      border-bottom: 0;
-    }
+    .pd-table tbody tr:nth-child(odd) { background: var(--light-gray); }
+    .pd-table tbody tr:last-child td { border-bottom: 0; }
 
-    .pd-table .pd-win { color: var(--orange); font-weight: 600; }
+    .pd-table .pd-win { color: var(--orange-dark); font-weight: 700; }
 
     .pd-note {
       margin-top: 20px; padding: 18px 20px;
@@ -341,7 +364,8 @@
     }
 
     /* ── FORMULARIO ───────────────────────────────────────── */
-    .pd-form-section { background: var(--light-gray); }
+    .pd-form-section { background: var(--orange-pale); }
+    .pd-form-section .pd-contact-item a:hover { color: var(--orange-dark); }
 
     .pd-form-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: start; }
 
@@ -354,7 +378,8 @@
     .pd-contact-item a:hover { color: var(--orange); }
 
     .pd-form {
-      background: #fff; padding: 30px; border-radius: 6px; border: 1px solid #e4e4e4;
+      background: #fff; padding: 30px; border-radius: 8px; border-top: 4px solid var(--orange);
+      box-shadow: 0 16px 40px -24px rgba(0, 0, 0, .3);
     }
 
     .pd-field { margin-bottom: 17px; }
@@ -407,6 +432,7 @@
     /* ── FOOTER ───────────────────────────────────────────── */
     .pd-footer {
       background: var(--black); color: #9a9a9a; padding: 48px 5vw; font-size: 14px;
+      border-top: 3px solid var(--orange);
     }
 
     .pd-footer-inner {
@@ -635,7 +661,8 @@
   </section>
 
   <!-- ═══ FICHA TÉCNICA ═══ -->
-  <section class="pd-section pd-wrap">
+  <section class="pd-section pd-section--tint">
+    <div class="pd-wrap">
     <p class="pd-eyebrow">Ficha técnica</p>
     <h2 class="pd-h2">Los datos, sin adornos</h2>
 
@@ -653,10 +680,12 @@
       <div><dt>Parking</dt><dd>Plaza interior rotativa incluida</dd></div>
       <div><dt>Barrio</dt><dd>Sarrià-Sant Gervasi, Barcelona</dd></div>
     </dl>
+    </div>
   </section>
 
   <!-- ═══ REFORMA: LIGERA VS INTEGRAL ═══ -->
-  <section class="pd-section pd-wrap">
+  <section class="pd-section pd-section--accent">
+    <div class="pd-wrap">
     <p class="pd-eyebrow">Si decides reformar</p>
     <h2 class="pd-h2">Dos formas de abordarlo,<br>según lo que busques</h2>
     <p class="pd-lead">No hace falta decidirlo antes de comprar. Son dos caminos posibles, no dos condiciones
@@ -695,6 +724,7 @@
       Las cifras son una estimación inicial, no un presupuesto cerrado de reformista. Cada operación tiene sus
       circunstancias fiscales y de financiación: confírmalas con tu asesor. La hipoteca cubre la compra, no la
       obra, salvo producto específico.
+    </div>
     </div>
   </section>
 
