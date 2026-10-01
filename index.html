@@ -448,13 +448,82 @@
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
     }
 
+    /* Línea y punto que unen la ficha con la foto de fondo (solo ordenador) */
+    .hero-listing-pin {
+      position: absolute;
+      right: 100%;
+      top: 62%;
+      width: clamp(150px, 15vw, 290px);
+      height: 2px;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+      pointer-events: none;
+    }
+
+    .hero-listing-pin::before,
+    .hero-listing-pin::after {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      margin-top: -9px;
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
+
+    .hero-listing-pin::before {
+      background: var(--orange);
+      border: 3px solid #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .hero-listing-pin::after {
+      border: 2px solid #fff;
+      animation: heroPinPulse 2.2s ease-out infinite;
+    }
+
+    @keyframes heroPinPulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: scale(2.8);
+        opacity: 0;
+      }
+    }
+
+    .hero-listing-pin-label {
+      position: absolute;
+      left: 20px;
+      bottom: 10px;
+      white-space: nowrap;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-listing-pin::after {
+        animation: none;
+        display: none;
+      }
+    }
+
     .hero-listing-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 2.5px;
+      letter-spacing: 1.6px;
       text-transform: uppercase;
       color: var(--orange);
     }
@@ -546,6 +615,10 @@
 
       .hero-listing:hover {
         transform: translateY(-4px);
+      }
+
+      .hero-listing-pin {
+        display: none;
       }
 
       /* relative + z-index: si no, la foto de fondo tapa las cifras */
@@ -2916,8 +2989,9 @@
       </div>
     </div>
     <a href="/inmuebles/piso-prats-de-mollo-sarria/" class="hero-listing"
-      aria-label="Piso en venta en Sarrià-Sant Gervasi, 117 m², 4 habitaciones, 925.000 euros. Ver el inmueble">
-      <span class="hero-listing-badge">En venta</span>
+      aria-label="El piso de la foto, en venta en Sarrià-Sant Gervasi, 117 m², 4 habitaciones, 925.000 euros. Ver el inmueble">
+      <span class="hero-listing-pin" aria-hidden="true"><span class="hero-listing-pin-label">Este piso</span></span>
+      <span class="hero-listing-badge">En venta · el piso de la foto</span>
       <span class="hero-listing-zone">Sarrià-Sant Gervasi</span>
       <span class="hero-listing-city">Barcelona</span>
       <span class="hero-listing-specs"><span>117 m²</span><span>4 hab.</span><span>2 baños</span></span>
