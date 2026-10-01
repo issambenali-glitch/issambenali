@@ -114,7 +114,7 @@
   <meta name="twitter:image" content="https://issambenali.es/imagenes/foto-perfil-asesor-inmobiliario-issam-benali.png">
 
   <!-- Preload hero image -->
-  <link rel="preload" as="image" href="imagenes/hero-barcelona.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="imagenes/hero-salon-piso-sarria-sant-gervasi.webp" type="image/webp" fetchpriority="high">
   <!-- ✅ FIX render-blocking: fuentes cargadas de forma no bloqueante -->
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
@@ -287,8 +287,9 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(80deg, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.65) 20%, rgba(0, 0, 0, 0.453) 50%),
-        url('imagenes/hero-barcelona.jpg') center/cover no-repeat;
+        linear-gradient(to top, rgba(10, 10, 10, 0.55) 0%, rgba(10, 10, 10, 0) 32%),
+        linear-gradient(80deg, rgba(10, 10, 10, 0.86) 0%, rgba(10, 10, 10, 0.62) 26%, rgba(10, 10, 10, 0.22) 58%, rgba(10, 10, 10, 0.08) 100%),
+        url('imagenes/hero-salon-piso-sarria-sant-gervasi.webp') center/cover no-repeat;
     }
 
     .hero-content {
@@ -418,6 +419,163 @@
       letter-spacing: 1.2px;
       margin-top: 6px;
       font-weight: 700;
+    }
+
+    /* ── FICHA DEL INMUEBLE EN PORTADA ──────────────────────────
+       Para cambiar el piso destacado: edita los textos del bloque
+       "hero-listing" en el HTML (zona, metros, precio y enlace) y
+       la foto en .hero-bg (arriba) y en el <link rel="preload">. */
+    .hero-listing {
+      position: absolute;
+      z-index: 2;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-62%);
+      width: 310px;
+      padding: 26px 28px 24px;
+      background: rgba(255, 255, 255, 0.95);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      border-top: 4px solid var(--orange);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      color: #1a1a1a;
+      text-decoration: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .hero-listing:hover {
+      transform: translateY(calc(-62% - 4px));
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+    }
+
+    .hero-listing-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+
+    .hero-listing-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 0 4px rgba(232, 83, 10, 0.18);
+    }
+
+    .hero-listing-zone {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 12px 0 4px;
+    }
+
+    .hero-listing-city {
+      display: block;
+      font-size: 13px;
+      color: #6b6b6b;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-listing-specs {
+      display: flex;
+      gap: 14px;
+      margin: 16px 0 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #e6e1dc;
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .hero-listing-specs span+span {
+      padding-left: 14px;
+      border-left: 1px solid #e6e1dc;
+    }
+
+    .hero-listing-price {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+    }
+
+    .hero-listing-cta {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #1a1a1a;
+      border-bottom: 2px solid var(--orange);
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 1024px) {
+      .hero {
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 110px 0 56px;
+      }
+
+      .hero-bg {
+        background:
+          linear-gradient(170deg, rgba(10, 10, 10, 0.82) 0%, rgba(10, 10, 10, 0.58) 55%, rgba(10, 10, 10, 0.4) 100%),
+          url('imagenes/hero-salon-piso-sarria-sant-gervasi.webp') center/cover no-repeat;
+      }
+
+      .hero-listing {
+        position: relative;
+        inset: auto;
+        transform: none;
+        margin: 36px 8% 0;
+      }
+
+      .hero-listing:hover {
+        transform: translateY(-4px);
+      }
+
+      /* relative + z-index: si no, la foto de fondo tapa las cifras */
+      .hero .hero-stats {
+        position: relative;
+        inset: auto;
+        z-index: 2;
+      }
+
+      .hero-stats {
+        margin-top: 40px;
+        padding: 0 8%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-listing {
+        width: auto;
+        align-self: stretch;
+        margin: 28px 5% 0;
+        padding: 22px 22px 20px;
+      }
+
+      .hero-listing-zone {
+        font-size: 23px;
+      }
+
+      .hero-listing-price {
+        font-size: 30px;
+      }
     }
 
     /* ── STRIP SAFTI ────────────────────────────────────────── */
@@ -2254,7 +2412,7 @@
       .hero-bg {
         background:
           linear-gradient(170deg, rgba(10, 10, 10, 0.82) 0%, rgba(10, 10, 10, 0.55) 55%, rgba(0, 0, 0, 0.3) 100%),
-          url('imagenes/hero-barcelona.jpg') center/cover no-repeat;
+          url('imagenes/hero-salon-piso-sarria-sant-gervasi.webp') center/cover no-repeat;
       }
 
       .hero-content {
@@ -2757,6 +2915,15 @@
         <a href="#servicios" class="btn-outline">Mis servicios</a>
       </div>
     </div>
+    <a href="/inmuebles/piso-prats-de-mollo-sarria/" class="hero-listing"
+      aria-label="Piso en venta en Sarrià-Sant Gervasi, 117 m², 4 habitaciones, 925.000 euros. Ver el inmueble">
+      <span class="hero-listing-badge">En venta</span>
+      <span class="hero-listing-zone">Sarrià-Sant Gervasi</span>
+      <span class="hero-listing-city">Barcelona</span>
+      <span class="hero-listing-specs"><span>117 m²</span><span>4 hab.</span><span>2 baños</span></span>
+      <span class="hero-listing-price">925.000 €</span>
+      <span class="hero-listing-cta">Ver el piso →</span>
+    </a>
     <div class="hero-stats">
       <div class="stat">
         <div class="stat-num">+10</div>
