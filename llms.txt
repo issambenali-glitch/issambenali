@@ -41,7 +41,7 @@ Castellano · Catalán · Francés · Inglés · Árabe
 ## Páginas principales
 
 - [Inicio](https://issambenali.es) — Presentación, servicios y contacto
-- [Blog Inmobiliario](https://issambenali.es/blog.html) — Guías y análisis del mercado inmobiliario en Barcelona
+- [Blog Inmobiliario](https://issambenali.es/blog) — Guías y análisis del mercado inmobiliario en Barcelona
 
 ## Sobre la red SAFTI
 
