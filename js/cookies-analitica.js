@@ -59,13 +59,20 @@
     b.setAttribute('role', 'dialog');
     b.setAttribute('aria-live', 'polite');
     b.setAttribute('aria-label', 'Aviso de cookies');
+    var TXT = {
+      es: ['Uso cookies propias necesarias para que la web funcione y cookies de analítica para saber qué páginas se visitan. Las de analítica solo se activan si las aceptas. Más detalle en la ', 'política de cookies', 'Solo las necesarias', 'Aceptar todas'],
+      ca: ['Faig servir galetes pròpies necessàries perquè el web funcioni i galetes d\'analítica per saber quines pàgines es visiten. Les d\'analítica només s\'activen si les acceptes. Més detall a la ', 'política de galetes', 'Només les necessàries', 'Acceptar-les totes'],
+      fr: ['J\'utilise des cookies nécessaires au fonctionnement du site et des cookies de mesure d\'audience. Ces derniers ne sont activés que si vous les acceptez. Plus de détails dans la ', 'politique de cookies', 'Nécessaires uniquement', 'Tout accepter'],
+      en: ['I use cookies needed for the site to work and analytics cookies to see which pages are visited. Analytics cookies are only enabled if you accept them. More details in the ', 'cookie policy', 'Necessary only', 'Accept all'],
+      ar: ['أستخدم ملفات تعريف ارتباط ضرورية لعمل الموقع وأخرى للإحصاءات لمعرفة الصفحات التي تُزار. لا تُفعَّل ملفات الإحصاءات إلا بموافقتك. التفاصيل في ', 'سياسة ملفات تعريف الارتباط', 'الضرورية فقط', 'قبول الكل']
+    };
+    var idioma = (document.documentElement.lang || 'es').slice(0, 2);
+    var x = TXT[idioma] || TXT.es;
     b.innerHTML =
-      '<p class="ck-text">Uso cookies propias necesarias para que la web funcione y cookies de analítica ' +
-      'para saber qué páginas se visitan. Las de analítica solo se activan si las aceptas. ' +
-      'Más detalle en la <a href="/politica-privacidad/#cookies">política de cookies</a>.</p>' +
+      '<p class="ck-text">' + x[0] + '<a href="/politica-privacidad/#cookies">' + x[1] + '</a>.</p>' +
       '<div class="ck-actions">' +
-      '<button type="button" class="ck-btn ck-btn--ghost" data-ck="rechazadas">Solo las necesarias</button>' +
-      '<button type="button" class="ck-btn ck-btn--accept" data-ck="aceptadas">Aceptar todas</button>' +
+      '<button type="button" class="ck-btn ck-btn--ghost" data-ck="rechazadas">' + x[2] + '</button>' +
+      '<button type="button" class="ck-btn ck-btn--accept" data-ck="aceptadas">' + x[3] + '</button>' +
       '</div>';
     b.addEventListener('click', function (e) {
       var v = e.target && e.target.getAttribute && e.target.getAttribute('data-ck');

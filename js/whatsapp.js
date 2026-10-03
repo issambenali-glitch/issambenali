@@ -3,11 +3,18 @@
    Aparece abajo a la derecha en todas las páginas.
    Para usarlo en una página nueva, pega antes de </head>:
    <script src="/js/whatsapp.js" defer></script>
-   Para cambiar el número o el mensaje, edita las dos líneas de abajo.
+   Para cambiar el número o los mensajes, edita las líneas de abajo.
    ═══════════════════════════════════════════════════════════ */
 (function () {
   var TELEFONO = '34614615790';
-  var MENSAJE = 'Hola Issam, te escribo desde tu web.';
+  var MENSAJES = {
+    es: 'Hola Issam, te escribo desde tu web.',
+    ca: 'Hola Issam, t\'escric des de la teva web.',
+    fr: 'Bonjour Issam, je vous écris depuis votre site.',
+    en: 'Hi Issam, I\'m writing from your website.',
+    ar: 'مرحباً عصام، أراسلك من موقعك الإلكتروني.'
+  };
+  var MENSAJE = MENSAJES[(document.documentElement.lang || 'es').slice(0, 2)] || MENSAJES.es;
 
   function crear() {
     if (document.getElementById('waFloat')) return;
@@ -18,6 +25,7 @@
       'background:#25D366;color:#fff;text-decoration:none;border-radius:999px;padding:12px 18px 12px 14px;' +
       "font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.22);" +
       'transition:transform .2s,box-shadow .2s}' +
+      '[dir=rtl] .wa-float{right:auto;left:18px}' +
       '.wa-float:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.28)}' +
       '.wa-float:focus-visible{outline:3px solid #E8530A;outline-offset:3px}' +
       '.wa-float svg{width:26px;height:26px;flex:none}' +
