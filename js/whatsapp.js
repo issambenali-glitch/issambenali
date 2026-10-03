@@ -48,6 +48,16 @@
     document.body.appendChild(a);
   }
 
+  // ── MEDICIÓN: avisa a Google Analytics (solo si el visitante aceptó las cookies)
+  //    cuando alguien pulsa WhatsApp, el teléfono o el correo.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a || typeof window.gtag !== 'function') return;
+    var h = a.getAttribute('href');
+    var ev = h.indexOf('wa.me') > -1 ? 'clic_whatsapp' : h.indexOf('tel:') === 0 ? 'clic_telefono' : h.indexOf('mailto:') === 0 ? 'clic_email' : null;
+    if (ev) window.gtag('event', ev, { pagina: location.pathname });
+  });
+
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', crear);
   else crear();
 })();
