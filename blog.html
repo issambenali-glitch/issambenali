@@ -1703,6 +1703,29 @@
   <script src="/js/cookies-analitica.js" defer></script>
 
   <script src="/js/whatsapp.js" defer></script>
+  <style id="menu-v3">
+    /* ── MENÚ (versión oct-2026) ── */
+    nav .nav-links { margin-left: auto; gap: 22px; }
+    .nav-links a { white-space: nowrap; }
+    .nav-links a.nav-dinero { background: #FFF1E8; border: 2px solid var(--orange) !important; color: var(--orange-dark, #C4420A) !important; padding: 8px 14px !important; border-radius: 999px; letter-spacing: .3px; transition: background .18s, color .18s; }
+    .nav-links a.nav-dinero:hover { background: var(--orange); color: #fff !important; opacity: 1; }
+    .mobile-menu { max-height: calc(100vh - 70px); overflow-y: auto; padding: 12px 0 18px; }
+    .mobile-link--dinero { display: flex; flex-direction: column; gap: 2px; margin: 0 6% 8px; padding: 14px 16px; background: #FFF1E8; border: 2px solid var(--orange) !important; color: var(--black) !important; }
+    .mobile-link--dinero strong { font-family: var(--font-display); font-size: 19px; color: var(--orange-dark, #C4420A); line-height: 1.2; }
+    .mobile-link--dinero span { font-size: 13.5px; font-weight: 500; color: #555; }
+    .mobile-link--dinero:hover { background: #FFE6D6; }
+    .lang-menu-row { padding: 16px 6% 4px !important; display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 8px !important; }
+    .lang-menu-row span { grid-column: 1 / -1; }
+    .lang-menu-row a { text-align: center; padding: 10px 6px !important; font-size: 14.5px !important; }
+    @media (max-width: 1280px) {
+      .nav-links { display: none !important; }
+      .nav-hamburger { display: flex !important; }
+      .mobile-menu { display: flex !important; }
+      .lang-dd { margin-left: auto; margin-right: 12px; }
+      .lang-dd .lang-dd-name { display: none; }
+      .lang-dd .lang-dd-code { display: inline !important; }
+    }
+  </style>
 </head>
 
 <body>
@@ -1721,13 +1744,12 @@
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="/">Inicio</a></li>
+      <li><a href="/#zonas">Vender mi piso</a></li>
       <li><a href="/#servicios">Servicios</a></li>
       <li><a href="/#propiedades">Inmuebles</a></li>
-      <li><a href="/que-es-safti/">¿Qué es SAFTI?</a></li>
-      <li><a href="/gana-dinero/" class="nav-dinero">¡Gana dinero!</a></li>
-      <li><a href="/blog" class="active">Blog</a></li>
-      <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/gana-dinero/" class="nav-dinero">Gana hasta 14.500 €</a></li>
+      <li><a href="/#contacto" class="nav-cta">Contactar</a></li>
     </ul>
     <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -1736,13 +1758,13 @@
 
   <!-- MENÚ MÓVIL DESPLEGABLE -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="/" class="mobile-link" data-menu>Inicio</a>
+    <a href="/gana-dinero/" class="mobile-link mobile-link--dinero" data-menu><strong>Gana hasta 14.500 €</strong><span>Recomiéndame a quien quiera vender su piso →</span></a>
+    <a href="/#zonas" class="mobile-link" data-menu>Vender mi piso</a>
     <a href="/#servicios" class="mobile-link" data-menu>Servicios</a>
     <a href="/#propiedades" class="mobile-link" data-menu>Inmuebles</a>
-    <a href="/que-es-safti/" class="mobile-link" data-menu>¿Qué es SAFTI?</a>
-    <a href="/gana-dinero/" class="mobile-link mobile-link--dinero" data-menu>¡Gana dinero!</a>
-    <a href="/blog" class="mobile-link mobile-link--active" data-menu>Blog</a>
-    <a href="#contacto" class="mobile-link mobile-link--cta" data-menu>Contactar</a>
+    <a href="/calculadora-honorarios/" class="mobile-link" data-menu>Calculadora</a>
+    <a href="/blog" class="mobile-link" data-menu>Blog</a>
+    <a href="/#contacto" class="mobile-link mobile-link--cta" data-menu>Contactar</a>
   </div>
 
   <!-- HERO -->
