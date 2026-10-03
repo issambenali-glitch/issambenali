@@ -2943,6 +2943,21 @@
       document.querySelectorAll('details.lang-dd[open]').forEach(function (d) { if (!d.contains(e.target)) d.removeAttribute('open'); });
     });
   </script>
+  <!-- ═══ RITMO DE FONDOS ═══
+       Cada sección alterna de tono para que se note dónde acaba una y empieza otra:
+       blanco → crema → blanco → oscuro → gris claro → oscuro → crema → oscuro → blanco → crema. -->
+  <style>
+    .quick-val { background: #fff; box-shadow: 0 6px 18px rgba(0,0,0,.05); position: relative; z-index: 1; }
+    #zonas { background: #FBF3EC; border-top: 1px solid #F0E2D6; border-bottom: 1px solid #F0E2D6; }
+    .services { background: #fff; }
+    .services .service-card { background: #FAF8F6; border: 1px solid #EEE7E0; }
+    .properties { background: #F1F1F1; border-top: 1px solid #E4E4E4; border-bottom: 1px solid #E4E4E4; }
+    .testimonials { border-top: 1px solid #F0E2D6; }
+    .mas-safti { background: #fff; }
+    .mas-safti .sbtn { background: #FAF8F6; }
+    .blog { background: #FBF3EC; border-top: 1px solid #F0E2D6; }
+    .zdist-cols .zdist, .zotras { box-shadow: 0 6px 20px rgba(120,70,30,.07); }
+  </style>
   <!-- ✅ Google Analytics 4 -->
   <!-- ═══ ANALÍTICA CON CONSENTIMIENTO PREVIO (RGPD / LSSI) ═══
        Google Analytics NO se carga hasta que el visitante acepta.
@@ -3103,7 +3118,7 @@
   </section>
 
   <!-- ZONAS DE COBERTURA -->
-  <section class="zonas-cobertura" id="zonas" style="background:var(--light-gray); padding:60px 5%;">
+  <section class="zonas-cobertura" id="zonas" style="padding:72px 5%;">
     <div style="max-width:1100px; margin:0 auto;">
       <div class="section-tag" style="justify-content:center;">Zona de actuación</div>
       <h2
@@ -3628,7 +3643,7 @@
   </section>
 
   <!-- MÁS SOBRE SAFTI (páginas propias) -->
-  <section style="background:var(--light-gray); padding:60px 5%;">
+  <section class="mas-safti" style="padding:72px 5%;">
     <div style="max-width:1200px; margin:0 auto;">
       <div class="section-tag" style="justify-content:center;">Además</div>
       <h2 style="font-family:var(--font-display); font-size:clamp(24px,3vw,34px); font-weight:900; text-align:center; color:var(--black); margin:10px 0 26px;">SAFTI, recomendaciones y equipo</h2>
@@ -3640,7 +3655,7 @@
         </a>
         <a class="sbtn" href="/gana-dinero/" id="gana-dinero">
           <span class="sbtn-q">Tu vecino vende. Tú cobras.</span>
-          <span class="sbtn-d">Si me recomiendas a alguien y la operación se cierra, te llevas el 10 % de mis honorarios.</span>
+          <span class="sbtn-d">Recomiéndame a alguien que quiera vender. Si la operación se cierra, ganas entre 500 € y 14.500 € por cada contacto.</span>
           <span class="sbtn-go">Ver cómo funciona <b>→</b></span>
         </a>
         <a class="sbtn" href="/unete-a-safti/" id="unete">
@@ -3663,62 +3678,51 @@
 
     <div class="blog-grid reveal">
 
-      <!-- ✏️ ARTÍCULO 1 — el más reciente -->
-      <a href="/blog/articulo-fiscal-comprador-vivienda-cataluna" class="blog-card-new"
+<!-- ✏️ ARTÍCULO 1 -->
+      <a href="/blog/articulo-ley-amianto-cataluna-certificado-2026" class="blog-card-new"
         style="text-decoration: none; color: inherit; display: block;">
         <div class="blog-card-new-img">
-          <img src="imagenes/articulo-fiscal-compra-barcelona.jpg" alt="Mercado inmobiliario Barcelona 2025">
-          <div class="blog-card-new-tag">Legal y Fiscal</div>
+          <img src="imagenes/articulo-ley-amianto-cataluna-certificado-card.jpg" alt="Certificado de amianto obligatorio en Cataluña, Ley 8/2026" width="400" height="200" loading="lazy">
+          <div class="blog-card-new-tag">Novedad legal</div>
         </div>
         <div class="blog-card-new-body">
-          <div class="blog-card-new-cat">Legal y Fiscal</div>
-          <h3>Guía fiscal del comprador en Barcelona 2026: todos los impuestos y gastos explicados.</h3>
-          <p>¿Cuánto cuesta realmente comprar un piso en Barcelona en 2026? ITP, notaría, registro y el Valor de
-            Referencia del Catastro — explicados sin letra pequeña por un asesor independiente.</p>
+          <div class="blog-card-new-cat">Legal y Normativa</div>
+          <h3>Certificado de amianto obligatorio en Cataluña: todo sobre la Ley 8/2026</h3>
+          <p>Desde el 3 de octubre de 2026 necesitas un certificado de presencia o ausencia de amianto para vender o alquilar tu piso. Qué es, multas y cómo tramitarlo.</p>
           <div class="blog-card-new-footer">
-            <span class="blog-card-new-date">📅 Abril 2026</span>
+            <span class="blog-card-new-date">📅 Octubre 2026</span>
             <span class="blog-card-new-read">Leer →</span>
           </div>
         </div>
       </a>
       <!-- ✏️ ARTÍCULO 2 -->
-      <a href="/blog/articulo-alquiler-seguro-barcelona-2026" class="blog-card-new"
+      <a href="/blog/articulo-ley-alquiler-indemnizacion-12-meses-2026" class="blog-card-new"
         style="text-decoration: none; color: inherit; display: block;">
         <div class="blog-card-new-img">
-          <img src="imagenes/articulo-alquiler-seguro-barcelona.jpg" alt="Honorarios agencias inmobiliarias Barcelona">
-          <div class="blog-card-new-tag">Alquiler</div>
+          <img src="imagenes/articulo-ley-alquiler-indemnizacion-12-meses-card.jpg" alt="Decreto de alquiler derogado: indemnización de 12 meses" width="400" height="200" loading="lazy">
+          <div class="blog-card-new-tag">Actualizado</div>
         </div>
         <div class="blog-card-new-body">
           <div class="blog-card-new-cat">Alquiler</div>
-          <h3>Alquila tu vivienda en Barcelona con seguridad: contrato, fianza y seguro de impago</h3>
-          <p>Todo lo que necesitas saber como propietario antes de poner tu piso en alquiler en 2026: qué debe incluir
-            el contrato, cuánta fianza puedes pedir, cómo depositarla correctamente en Cataluña y si merece la pena
-            contratar un seguro de impago.</p>
+          <h3>Decreto de alquiler derogado: qué pasa con la indemnización de 12 meses</h3>
+          <p>El Congreso tumbó el decreto el 2 de octubre. No hay indemnización de 12 meses ni contrato indefinido: estas son las reglas que se aplican hoy.</p>
           <div class="blog-card-new-footer">
-            <span class="blog-card-new-date">📅 Mayo 2026</span>
+            <span class="blog-card-new-date">📅 Octubre 2026</span>
             <span class="blog-card-new-read">Leer →</span>
           </div>
         </div>
       </a>
-
       <!-- ✏️ ARTÍCULO 3 -->
-      <a href="/blog/articulo-obras-barcelona-barrios-2026" class="blog-card-new"
+      <a href="/blog/articulo-honorarios-agencia-inmobiliaria-barcelona" class="blog-card-new"
         style="text-decoration: none; color: inherit; display: block;">
         <div class="blog-card-new-img">
-          <picture>
-            <source srcset="imagenes/imagen-antes-despues-meridiana-2030.webp" type="image/webp">
-            <img src="imagenes/imagen-antes-despues-meridiana-2030.png"
-              alt="obras Barcelona 2026, obras barrios Barcelona, transformación urbana Barcelona, obras Vallcarca 2026, obras La Rambla Barcelona, obras Meridiana Barcelona, prolongación L8 FGC Barcelona, impacto obras precio pisos Barcelona, urbanismo Barcelona 2027, inversión municipal Barcelona barrios"
-              width="600" height="200" loading="lazy">
-          </picture>
-          <div class="blog-card-new-tag">Mercado</div>
+          <img src="imagenes/agencia-fisica-inmobiliaria-barcelona-nou-barris.jpg" alt="Cuánto cobra una agencia inmobiliaria en Barcelona" width="400" height="200" loading="lazy">
+          <div class="blog-card-new-tag">Venta</div>
         </div>
         <div class="blog-card-new-body">
-          <div class="blog-card-new-cat">Mercado</div>
-          <h3>Guía completa de la obras en Barcelona 2024–2027: qué cambia barrio a barrio.</h3>
-          <p>Vallcarca, La Rambla, Meridiana y L8 FGC: guía práctica de las grandes transformaciones urbanas de
-            Barcelona y su impacto en el mercado inmobiliario. Actualizado mayo 2026.
-          </p>
+          <div class="blog-card-new-cat">Venta</div>
+          <h3>¿Cuánto cobra realmente una agencia en Barcelona? Lo que no te cuentan</h3>
+          <p>Qué honorarios son habituales, quién los paga y qué debes revisar antes de firmar un encargo de venta.</p>
           <div class="blog-card-new-footer">
             <span class="blog-card-new-date">📅 Mayo 2026</span>
             <span class="blog-card-new-read">Leer →</span>
