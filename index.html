@@ -3596,37 +3596,80 @@
   </section>
 
   <!-- PROCESO -->
-  <section class="process" id="proceso">
-    <div class="section-header reveal">
-      <div class="section-tag" style="justify-content:center">Cómo trabajamos</div>
-      <h2>Tu operación,<br>paso a paso</h2>
-      <p>Un proceso claro y sin sorpresas. Desde la primera llamada hasta el día que firmas ante notario — y más allá.
-      </p>
-    </div>
-    <div class="process-steps">
-      <div class="process-step reveal">
-        <div class="step-num">1</div>
-        <h3>Consulta gratuita</h3>
-        <p>Llámame o escríbeme. En 15 minutos analizamos tu situación y diseño una estrategia personalizada para ti. Sin
-          compromiso.</p>
+  <section class="pasos" id="proceso">
+    <style>
+      .pasos { padding:84px 5%; background:#FBF6F1; border-top:1px solid #F0E2D6; border-bottom:1px solid #F0E2D6; }
+      .ps-in { max-width:1100px; margin:0 auto; }
+      .ps-head { text-align:center; margin-bottom:40px; }
+      .ps-head h2 { font-family:var(--font-display); font-size:clamp(30px,4.2vw,46px); font-weight:900; line-height:1.12; color:var(--black); margin:10px 0; }
+      .ps-head h2 em { font-style:italic; color:var(--orange); }
+      .ps-head p { color:#555; font-size:17px; line-height:1.6; max-width:600px; margin:0 auto; }
+      .ps-list { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:0; counter-reset:ps; position:relative; }
+      .ps-list::before { content:''; position:absolute; top:23px; left:12.5%; right:12.5%; height:2px; background:var(--orange); }
+      .ps-step { position:relative; padding:0 16px; text-align:center; display:flex; flex-direction:column; align-items:center; }
+      .ps-n { width:48px; height:48px; border-radius:50%; background:var(--orange); color:#fff; display:grid; place-items:center; font-family:var(--font-display); font-size:22px; font-weight:900; position:relative; z-index:1; box-shadow:0 0 0 8px #FBF6F1; margin-bottom:18px; }
+      .ps-when { font-size:11.5px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--orange-dark); margin-bottom:6px; }
+      .ps-step h3 { font-family:var(--font-display); font-size:22px; font-weight:900; line-height:1.2; color:var(--black); margin:0 0 8px; }
+      .ps-step p { font-size:15px; line-height:1.6; color:#555; margin:0 0 14px; }
+      .ps-you { margin-top:auto; font-size:13.5px; line-height:1.4; color:var(--black); background:#fff; border:1px solid #EBDDD0; padding:9px 12px; width:100%; }
+      .ps-you b { color:var(--orange-dark); }
+      .ps-cta { text-align:center; margin-top:38px; }
+      .ps-cta a { display:inline-block; background:var(--orange); color:#fff; text-decoration:none; font-size:14px; font-weight:700; letter-spacing:.6px; text-transform:uppercase; padding:16px 28px; transition:background .18s; }
+      .ps-cta a:hover { background:var(--orange-dark); }
+      .ps-cta small { display:block; margin-top:10px; color:#666; font-size:14px; }
+      @media (max-width:900px) {
+        .pasos { padding:60px 5%; }
+        .ps-head { margin-bottom:28px; }
+        .ps-list { grid-template-columns:1fr; }
+        .ps-list::before { top:10px; bottom:10px; left:23px; right:auto; width:2px; height:auto; }
+        .ps-step { display:grid; grid-template-columns:48px 1fr; column-gap:16px; text-align:left; padding:0 0 26px; align-items:start; }
+        .ps-step:last-child { padding-bottom:0; }
+        .ps-n { grid-row:1 / span 4; margin:0; box-shadow:0 0 0 6px #FBF6F1; }
+        .ps-step > :not(.ps-n) { grid-column:2; }
+        .ps-step h3 { font-size:20px; margin-bottom:5px; }
+        .ps-step p { margin-bottom:10px; }
+        .ps-cta a { display:block; }
+      }
+    </style>
+    <div class="ps-in">
+      <div class="ps-head reveal">
+        <div class="section-tag" style="justify-content:center">Cómo trabajo</div>
+        <h2>De la primera llamada a la notaría, <em>en 4 pasos</em></h2>
+        <p>Yo me ocupo del trabajo. En cada paso verás lo poco que te pido a ti.</p>
       </div>
-      <div class="process-step reveal">
-        <div class="step-num">2</div>
-        <h3>Valoración real</h3>
-        <p>Estudio de mercado basado en ventas reales recientes en tu zona. Precio honesto que maximiza tu resultado sin
-          engaños.</p>
-      </div>
-      <div class="process-step reveal">
-        <div class="step-num">3</div>
-        <h3>Difusión masiva</h3>
-        <p>Tu propiedad en los destacados de Idealista y en +150 portales internacionales simultáneamente. Máxima
-          exposición desde el día 1.</p>
-      </div>
-      <div class="process-step reveal">
-        <div class="step-num">4</div>
-        <h3>Cierre y post-venta</h3>
-        <p>Negociación, contratos legales, gestión notarial y acompañamiento fiscal tras la firma. No desaparezco cuando
-          cobro.</p>
+      <ol class="ps-list reveal">
+        <li class="ps-step">
+          <span class="ps-n">1</span>
+          <span class="ps-when">Hoy</span>
+          <h3>Hablamos 15 minutos</h3>
+          <p>Me cuentas tu situación y te digo con claridad qué opciones tienes. Gratis y sin compromiso.</p>
+          <div class="ps-you"><b>Tú:</b> una llamada o un WhatsApp.</div>
+        </li>
+        <li class="ps-step">
+          <span class="ps-n">2</span>
+          <span class="ps-when">Antes de publicar</span>
+          <h3>Precio real y papeles al día</h3>
+          <p>Valoro tu piso con ventas cerradas de tu zona y reviso nota simple, cédula y certificado energético.</p>
+          <div class="ps-you"><b>Tú:</b> me enseñas el piso.</div>
+        </li>
+        <li class="ps-step">
+          <span class="ps-n">3</span>
+          <span class="ps-when">En el mercado</span>
+          <h3>Lo publico y lo enseño yo</h3>
+          <p>Fotos profesionales, destacado en Idealista y más de 150 portales. Filtro a los compradores y hago las visitas.</p>
+          <div class="ps-you"><b>Tú:</b> recibes las ofertas y decides.</div>
+        </li>
+        <li class="ps-step">
+          <span class="ps-n">4</span>
+          <span class="ps-when">Cierre</span>
+          <h3>Arras, notaría y después</h3>
+          <p>Negocio la oferta, preparo el contrato y coordino la notaría. Tras la firma te ayudo con plusvalía e impuestos.</p>
+          <div class="ps-you"><b>Tú:</b> firmas y cobras.</div>
+        </li>
+      </ol>
+      <div class="ps-cta reveal">
+        <a href="#valoracion">Empezar por el paso 1 →</a>
+        <small>Solo cobro si tu piso se vende.</small>
       </div>
     </div>
   </section>
@@ -3847,60 +3890,103 @@
   </section>
 
   <!-- COMPARATIVA SAFTI vs AGENCIAS -->
-  <section class="comparison" id="comparativa">
-    <div class="section-header reveal">
-      <div class="section-tag" style="justify-content:center; color:var(--orange)">La diferencia que importa</div>
-      <h2 style="color:white">Qué hago diferente</h2>
-      <p>No todas las inmobiliarias trabajan igual. Esto es lo que puedes esperar de mí, punto por punto.</p>
+  <section class="dif" id="comparativa">
+    <style>
+      .dif { padding:84px 5%; background:#1F1A17; color:#fff; }
+      .df-in { max-width:1100px; margin:0 auto; }
+      .df-head { text-align:center; margin-bottom:36px; }
+      .df-head h2 { font-family:var(--font-display); font-size:clamp(30px,4.2vw,46px); font-weight:900; line-height:1.12; color:#fff; margin:10px 0; }
+      .df-head h2 em { font-style:italic; color:var(--orange-light); }
+      .df-head p { color:rgba(255,255,255,.78); font-size:17px; line-height:1.6; max-width:600px; margin:0 auto; }
+      .df-calc { background:#fff; color:var(--black); padding:30px 30px 26px; display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:center; border-top:5px solid var(--orange); }
+      .df-calc h3 { font-family:var(--font-display); font-size:25px; font-weight:900; line-height:1.2; margin:0 0 18px; }
+      .df-lab { display:flex; justify-content:space-between; align-items:baseline; font-size:14px; color:#555; margin-bottom:8px; }
+      .df-lab output { font-family:var(--font-display); font-size:26px; font-weight:900; color:var(--black); }
+      .df-calc input[type=range] { width:100%; accent-color:var(--orange); height:28px; margin:0 0 18px; }
+      .df-q { font-size:14px; color:#555; margin-bottom:8px; }
+      .df-pcts { display:flex; gap:8px; }
+      .df-pcts button { flex:1; font:inherit; font-size:16px; font-weight:700; padding:11px 0; background:#fff; color:var(--black); border:2px solid #DDD3CA; cursor:pointer; transition:all .15s; }
+      .df-pcts button[aria-pressed=true] { background:var(--orange); border-color:var(--orange); color:#fff; }
+      .df-res { background:#FBF6F1; border:1px solid #F0E2D6; padding:22px 22px 20px; }
+      .df-line { display:flex; justify-content:space-between; gap:12px; font-size:15.5px; padding:7px 0; color:#444; }
+      .df-line b { color:var(--black); white-space:nowrap; }
+      .df-line--me b { color:var(--orange-dark); }
+      .df-save { margin-top:12px; padding-top:14px; border-top:2px solid var(--black); }
+      .df-save span { display:block; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--orange-dark); }
+      .df-save strong { display:block; font-family:var(--font-display); font-size:clamp(36px,5vw,48px); font-weight:900; line-height:1.1; color:var(--black); margin-top:2px; }
+      .df-note { font-size:13px; color:#666; margin:10px 0 0; line-height:1.5; }
+      .df-note a { color:var(--orange-dark); font-weight:700; }
+      .df-facts { list-style:none; margin:22px 0 0; padding:0; display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.14); }
+      .df-facts li { background:#1F1A17; padding:22px 16px 20px; text-align:center; }
+      .df-facts strong { display:block; font-family:var(--font-display); font-size:38px; font-weight:900; line-height:1; color:var(--orange-light); margin-bottom:8px; }
+      .df-facts span { display:block; font-size:14.5px; line-height:1.45; color:rgba(255,255,255,.86); }
+      @media (max-width:900px) {
+        .dif { padding:60px 5%; }
+        .df-calc { grid-template-columns:1fr; gap:22px; padding:24px 18px 20px; }
+        .df-calc h3 { font-size:22px; }
+        .df-facts { grid-template-columns:1fr 1fr; }
+        .df-facts li:last-child { grid-column:1 / -1; }
+        .df-facts strong { font-size:32px; }
+      }
+    </style>
+    <div class="df-in">
+      <div class="df-head reveal">
+        <div class="section-tag" style="justify-content:center; color:var(--orange-light)">La diferencia, en euros</div>
+        <h2>Qué hago diferente, <em>en números</em></h2>
+        <p>Sin adjetivos. Cifras que puedes comprobar antes de firmar nada.</p>
+      </div>
+
+      <div class="df-calc reveal">
+        <div>
+          <h3>¿Cuánto cambia según los honorarios que te pidan?</h3>
+          <div class="df-lab"><label for="df-precio">Precio de venta de tu piso</label><output id="df-precio-out" for="df-precio">300.000 €</output></div>
+          <input type="range" id="df-precio" min="100000" max="1000000" step="10000" value="300000">
+          <div class="df-q">¿Qué porcentaje te ha pedido la otra agencia?</div>
+          <div class="df-pcts" id="df-pcts">
+            <button type="button" data-p="4" aria-pressed="false">4 %</button>
+            <button type="button" data-p="5" aria-pressed="true">5 %</button>
+            <button type="button" data-p="6" aria-pressed="false">6 %</button>
+          </div>
+        </div>
+        <div class="df-res" aria-live="polite">
+          <div class="df-line"><span>Con el <span id="df-pct-txt">5</span> % + IVA pagarías</span><b id="df-otra">18.150 €</b></div>
+          <div class="df-line df-line--me"><span>Conmigo, 3 % + IVA</span><b id="df-yo">10.890 €</b></div>
+          <div class="df-save"><span>Te quedas de más</span><strong id="df-dif">7.260 €</strong></div>
+          <p class="df-note">Honorarios con el 21 % de IVA incluido. Para ver también plusvalía, IRPF y gastos: <a href="/calculadora-honorarios/">calculadora completa →</a></p>
+        </div>
+      </div>
+
+      <ul class="df-facts reveal">
+        <li><strong>3 %</strong><span>+ IVA, y solo si tu piso se vende.</span></li>
+        <li><strong>0 €</strong><span>al comprador. Cobro solo al vendedor.</span></li>
+        <li><strong>+150</strong><span>portales de 80 países, con destacado en Idealista.</span></li>
+        <li><strong>5</strong><span>idiomas: castellano, catalán, inglés, francés y árabe.</span></li>
+        <li><strong>3</strong><span>documentos revisados antes de publicar: nota simple, cédula y certificado energético.</span></li>
+      </ul>
     </div>
-    <div class="reveal" style="overflow-x:auto;">
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th class="col-bad">Lo habitual en el sector</th>
-            <th class="col-good">Issam Benali con SAFTI</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Honorarios</td>
-            <td class="col-bad">Varían mucho de una agencia a otra y no siempre se explican por adelantado.</td>
-            <td class="col-good">3 % todo incluido, y solo si se vende. Sin letra pequeña ni cargos extra.</td>
-          </tr>
-          <tr>
-            <td>Valoración</td>
-            <td class="col-bad">Es frecuente salir con un precio alto y tener que bajarlo después.</td>
-            <td class="col-good">Valoración basada en ventas cerradas, aunque no sea la cifra que esperabas oír.</td>
-          </tr>
-          <tr>
-            <td>Contratos</td>
-            <td class="col-bad">Modelos estándar que no siempre se explican cláusula a cláusula.</td>
-            <td class="col-good">Elaborados por el departamento jurídico de SAFTI y explicados línea a línea antes de firmar.</td>
-          </tr>
-          <tr>
-            <td>Documentación</td>
-            <td class="col-bad">A menudo se revisa cuando ya hay un comprador interesado.</td>
-            <td class="col-good">Nota simple, cédula y certificados revisados antes de publicar. Sin bloqueos en notaría.</td>
-          </tr>
-          <tr>
-            <td>Difusión</td>
-            <td class="col-bad">Portales nacionales.</td>
-            <td class="col-good">Destacados en Idealista y publicación en +150 portales de 80 países.</td>
-          </tr>
-          <tr>
-            <td>Idiomas</td>
-            <td class="col-bad">Normalmente castellano y catalán.</td>
-            <td class="col-good">Atención en 5 idiomas, también para el comprador internacional.</td>
-          </tr>
-          <tr>
-            <td>Después de la firma</td>
-            <td class="col-bad">El servicio suele terminar en la notaría.</td>
-            <td class="col-good">Sigo disponible: impuestos, trámites y lo que necesites.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <script>
+      (function(){
+        var r=document.getElementById('df-precio'), box=document.getElementById('df-pcts'); if(!r||!box) return;
+        var pct=5, eur=function(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €'; };
+        function upd(){
+          var p=+r.value, yo=p*0.03*1.21, otra=p*pct/100*1.21;
+          document.getElementById('df-precio-out').textContent=eur(p);
+          document.getElementById('df-yo').textContent=eur(yo);
+          document.getElementById('df-otra').textContent=eur(otra);
+          document.getElementById('df-dif').textContent=eur(otra-yo);
+          document.getElementById('df-pct-txt').textContent=pct;
+        }
+        r.addEventListener('input',upd);
+        box.addEventListener('click',function(e){
+          var b=e.target.closest('button'); if(!b) return;
+          pct=+b.getAttribute('data-p');
+          [].forEach.call(box.querySelectorAll('button'),function(x){ x.setAttribute('aria-pressed', x===b ? 'true':'false'); });
+          upd();
+          if(window.gtag) gtag('event','comparador_honorarios',{porcentaje:pct});
+        });
+        upd();
+      })();
+    </script>
   </section>
 
   <!-- MÁS SOBRE SAFTI (páginas propias) -->
