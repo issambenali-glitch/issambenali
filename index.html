@@ -3166,97 +3166,324 @@
   <!-- ZONAS DE COBERTURA -->
   <section class="zonas-cobertura" id="zonas" style="padding:72px 5%;">
     <div style="max-width:1100px; margin:0 auto;">
-      <div class="section-tag" style="justify-content:center;">Zona de actuación</div>
+      <div class="section-tag" style="justify-content:center;">Precios por barrio</div>
       <h2
-        style="font-family:var(--font-display); font-size:clamp(26px,3.5vw,40px); font-weight:900; color:var(--black); text-align:center; margin:12px 0 8px;">
-        De casa en la zona norte de Barcelona.<br>Disponible en <em style="color:var(--orange); font-style:normal;">toda
-          la ciudad.</em>
+        style="font-family:var(--font-display); font-size:clamp(28px,3.8vw,44px); font-weight:900; color:var(--black); text-align:center; margin:12px 0 12px; line-height:1.15;">
+        ¿Cuánto vale el <em style="color:var(--orange); font-style:normal;">metro cuadrado</em> en tu barrio?
       </h2>
-      <p style="text-align:center; color:#555; max-width:680px; margin:0 auto 30px; font-size:16px; line-height:1.7;">
-        Conozco de primera mano el mercado de Nou Barris y Sant Andreu: sus precios reales, sus calles y sus compradores
-        habituales. <strong style="color:var(--black);">Pulsa tu distrito o tu barrio</strong> y verás cuánto se paga hoy por metro
-        cuadrado y cómo vender tu piso allí.
+      <p class="pz-intro">
+        Elige tu distrito y verás el precio medio de cada barrio. Trabajo en toda Barcelona, Santa Coloma y Badalona, y
+        conozco calle a calle <strong>Nou Barris y Sant Andreu</strong>.
       </p>
 
       <style>
-        .zbtn-label { display:flex; align-items:center; justify-content:center; gap:10px; font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--orange); margin-bottom:16px; text-align:center; }
-        .zbtn-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(215px, 1fr)); gap:12px; margin-bottom:14px; }
-        .zbtn { display:flex; flex-direction:column; gap:3px; background:#fff; border:1px solid #e6e1dc; border-left:5px solid var(--orange); padding:14px 16px 12px; text-decoration:none; color:var(--black); box-shadow:0 3px 10px rgba(0,0,0,.05); transition:transform .18s, box-shadow .18s, background .18s; }
-        .zbtn:hover, .zbtn:focus-visible { transform:translateY(-3px); box-shadow:0 10px 24px rgba(232,83,10,.22); background:#FFF7F2; }
-        .zbtn-name { font-family:var(--font-display); font-size:18px; font-weight:700; line-height:1.2; }
-        .zbtn-price { font-size:13.5px; color:#666; }
-        .zbtn-go { margin-top:8px; align-self:flex-start; background:var(--orange); color:#fff; font-size:12px; font-weight:700; letter-spacing:.6px; text-transform:uppercase; padding:6px 11px; }
-        .zbtn:hover .zbtn-go b { display:inline-block; transform:translateX(3px); }
-        .zbtn-go b { transition:transform .18s; font-weight:700; }
-        .zdist-cols { display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-bottom:14px; align-items:start; }
-        .zdist { background:#fff; border:1px solid #e6e1dc; padding:0 0 16px; box-shadow:0 4px 14px rgba(0,0,0,.05); }
-        .zdist-head { display:flex; flex-direction:column; gap:4px; background:var(--orange); color:#fff; text-decoration:none; padding:22px 22px 20px; transition:background .18s; }
-        .zdist-head:hover, .zdist-head:focus-visible { background:var(--orange-dark); }
-        .zdist-tag { font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; opacity:.9; }
-        .zdist-name { font-family:var(--font-display); font-size:30px; font-weight:900; line-height:1.1; }
-        .zdist-sub { font-size:14px; opacity:.95; }
-        .zdist-go { margin-top:12px; align-self:flex-start; background:#fff; color:var(--orange-dark); font-size:12.5px; font-weight:700; letter-spacing:.6px; text-transform:uppercase; padding:9px 14px; }
-        .zdist-go b { display:inline-block; transition:transform .18s; }
-        .zdist-head:hover .zdist-go b { transform:translateX(4px); }
-        .zdist-label { font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#8a7d72; margin:16px 16px 10px; }
-        .zdist .zbtn-grid { grid-template-columns:1fr 1fr; margin:0 16px; gap:10px; }
-        .zdist .zbtn { box-shadow:none; background:#FBF6F1; border-color:#F0E2D6; border-left:4px solid var(--orange); }
-        .zdist .zbtn:hover { background:#fff; }
-        @media (max-width:820px) { .zdist-cols { grid-template-columns:1fr; gap:22px; } }
-        @media (max-width:520px) { .zdist-name { font-size:26px; } .zdist .zbtn-grid { margin:0 12px; } .zdist-label { margin:14px 12px 10px; } }
-        .zbtn-fuente { font-size:12.5px; color:#888; text-align:center; margin-bottom:34px; }
-        .zotras { background:#fff; border:1px solid #e6e1dc; padding:20px 22px; font-size:15px; line-height:1.75; color:#555; }
-        .zotras strong { color:var(--black); }
-        .zotras a { color:var(--orange); font-weight:700; }
-        @media (max-width:520px) { .zbtn-grid { grid-template-columns:1fr 1fr; gap:10px; } .zbtn { padding:12px 12px 11px; } .zbtn-name { font-size:16px; } .zbtn-go { font-size:11px; padding:5px 9px; } }
+        .pz-intro { text-align:center; color:#555; max-width:660px; margin:0 auto 26px; font-size:16.5px; line-height:1.7; }
+        .pz-intro strong { color:var(--black); }
+        .pz-pick { max-width:520px; margin:0 auto 26px; }
+        .pz-pick label { display:block; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--orange); margin-bottom:8px; text-align:center; }
+        .pz-pick select { width:100%; appearance:none; -webkit-appearance:none; padding:16px 48px 16px 18px; font-family:var(--font-body); font-size:17px; font-weight:600; color:var(--black); background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8530A' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center / 20px; border:2px solid var(--orange); border-radius:0; cursor:pointer; box-shadow:0 6px 20px rgba(120,70,30,.10); }
+        .pz-pick select:focus-visible { outline:3px solid rgba(232,83,10,.35); outline-offset:2px; }
+        .pz-panel { display:grid; grid-template-columns:350px 1fr; background:#fff; border:1px solid #F0E2D6; box-shadow:0 8px 26px rgba(120,70,30,.08); max-width:980px; margin:0 auto 18px; }
+        .pz-js .pz-panel { display:none; }
+        .pz-js .pz-panel.is-on { display:grid; }
+        .pz-head { background:var(--orange); color:#fff; padding:28px 26px; display:flex; flex-direction:column; gap:4px; }
+        .pz-tag { font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; opacity:.9; }
+        .pz-head h3 { font-family:var(--font-display); font-size:28px; font-weight:900; line-height:1.15; color:#fff; margin:0 0 10px; }
+        .pz-big { font-family:var(--font-display); font-size:38px; font-weight:900; line-height:1; }
+        .pz-sub { font-size:14px; opacity:.95; margin-top:6px; }
+        .pz-btn { margin-top:auto; align-self:flex-start; background:#fff; color:var(--orange-dark); font-size:12px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; padding:11px 14px; text-decoration:none; }
+        .pz-head .pz-btn { margin-top:22px; }
+        .pz-btn:hover { background:#FFF1E8; }
+        .pz-btn b, .pz-act b { display:inline-block; transition:transform .18s; }
+        .pz-btn:hover b, .pz-act:hover b { transform:translateX(3px); }
+        .pz-list { list-style:none; margin:0; padding:8px 22px; }
+        .pz-list li { display:grid; grid-template-columns:1fr auto 104px 150px; gap:14px; align-items:center; padding:13px 0; border-bottom:1px solid #F3ECE5; }
+        .pz-list li:last-child { border-bottom:0; }
+        .pz-n { font-weight:600; color:var(--black); font-size:15.5px; line-height:1.3; }
+        .pz-p { font-family:var(--font-display); font-weight:700; font-size:17px; color:var(--black); white-space:nowrap; }
+        .pz-var { font-size:13px; color:#777; white-space:nowrap; text-align:right; }
+        .pz-act { justify-self:end; font-size:12px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; text-decoration:none; color:var(--orange-dark); border:1.5px solid #E9C9B3; padding:7px 10px; white-space:nowrap; transition:background .18s, color .18s, border-color .18s; }
+        .pz-act:hover { border-color:var(--orange); background:#FFF1E8; }
+        .pz-act--page { background:var(--orange); color:#fff; border-color:var(--orange); }
+        .pz-act--page:hover { background:var(--orange-dark); border-color:var(--orange-dark); color:#fff; }
+        .pz-foot { text-align:center; font-size:13px; color:#888; max-width:760px; margin:18px auto 0; line-height:1.6; }
+        .pz-foot a { color:var(--orange); font-weight:700; }
+        @media (max-width:820px) {
+          .pz-panel, .pz-js .pz-panel.is-on { grid-template-columns:1fr; }
+          .pz-head { padding:22px 20px; }
+          .pz-head h3 { font-size:24px; } .pz-big { font-size:32px; }
+          .pz-list { padding:4px 16px; }
+          .pz-list li { grid-template-columns:1fr auto; gap:4px 12px; padding:12px 0; }
+          .pz-n { grid-column:1; } .pz-act { grid-column:2; grid-row:1 / span 2; align-self:center; }
+          .pz-p { grid-column:1; font-size:15px; display:inline; }
+          .pz-var { display:none; }
+        }
       </style>
 
-      <p class="zbtn-label">👇 Elige tu distrito o tu barrio para ver sus precios</p>
-      <div class="zdist-cols">
-        <div class="zdist">
-          <a class="zdist-head" href="/vender-piso-nou-barris/">
-            <span class="zdist-tag">Distrito</span>
-            <span class="zdist-name">Nou Barris</span>
-            <span class="zdist-sub">13 barrios al norte de Barcelona · media de 3.318 €/m²</span>
-            <span class="zdist-go">Ver precios de todo el distrito <b>→</b></span>
-          </a>
-          <p class="zdist-label">Barrios de Nou Barris</p>
-          <div class="zbtn-grid">
-            <a class="zbtn" href="/vender-piso-verdun/"><span class="zbtn-name">Verdun</span><span class="zbtn-price">3.440 €/m²</span><span class="zbtn-go">Ver precios <b>→</b></span></a>
-            <a class="zbtn" href="/vender-piso-prosperitat/"><span class="zbtn-name">Prosperitat</span><span class="zbtn-price">3.663 €/m²</span><span class="zbtn-go">Ver precios <b>→</b></span></a>
-            <a class="zbtn" href="/vender-piso-trinitat-nova/"><span class="zbtn-name">Trinitat Nova</span><span class="zbtn-price">3.209 €/m²</span><span class="zbtn-go">Ver precios <b>→</b></span></a>
-            <a class="zbtn" href="/vender-piso-roquetes/"><span class="zbtn-name">Roquetes</span><span class="zbtn-price">2.769 €/m²</span><span class="zbtn-go">Ver precios <b>→</b></span></a>
-            <a class="zbtn" href="/vender-piso-torre-baro/"><span class="zbtn-name">Torre Baró</span><span class="zbtn-price">1.985 €/m² en la zona</span><span class="zbtn-go">Ver precios <b>→</b></span></a>
-          </div>
+      <div class="pz" id="pz">
+        <div class="pz-pick">
+          <label for="pz-select">Elige tu zona</label>
+          <select id="pz-select" aria-controls="pz">
+            <optgroup label="Mi zona de especialización">
+            <option value="nou-barris">Nou Barris · 3.318 €/m²</option>
+            <option value="sant-andreu">Sant Andreu · 3.998 €/m²</option>
+            </optgroup>
+            <optgroup label="Resto de Barcelona">
+            <option value="ciutat-vella">Ciutat Vella · 4.850 €/m²</option>
+            <option value="eixample">Eixample · 6.648 €/m²</option>
+            <option value="gracia">Gràcia · 5.654 €/m²</option>
+            <option value="horta-guinardo">Horta-Guinardó · 4.198 €/m²</option>
+            <option value="les-corts">Les Corts · 6.635 €/m²</option>
+            <option value="sant-marti">Sant Martí · 5.390 €/m²</option>
+            <option value="sants-montjuic">Sants-Montjuïc · 4.594 €/m²</option>
+            <option value="sarria-sant-gervasi">Sarrià-Sant Gervasi · 7.211 €/m²</option>
+            </optgroup>
+            <optgroup label="Área metropolitana">
+            <option value="santa-coloma">Santa Coloma de Gramenet · 2.486 €/m²</option>
+            <option value="badalona">Badalona · 2.670 €/m²</option>
+            </optgroup>
+          </select>
         </div>
-        <div class="zdist">
-          <a class="zdist-head" href="/vender-piso-sant-andreu/">
-            <span class="zdist-tag">Distrito</span>
-            <span class="zdist-name">Sant Andreu</span>
-            <span class="zdist-sub">7 barrios entre la Meridiana y el Besòs · media de 3.998 €/m²</span>
-            <span class="zdist-go">Ver precios de todo el distrito <b>→</b></span>
-          </a>
-          <p class="zdist-label">Barrios de Sant Andreu</p>
-          <div class="zbtn-grid">
-            <a class="zbtn" href="/vender-piso-la-sagrera/"><span class="zbtn-name">La Sagrera</span><span class="zbtn-price">4.300 €/m²</span><span class="zbtn-go">Ver precios <b>→</b></span></a>
-            <a class="zbtn" href="/vender-piso-congres-indians/"><span class="zbtn-name">El Congrés i els Indians</span><span class="zbtn-price">4.294 €/m²</span><span class="zbtn-go">Ver precios <b>→</b></span></a>
-            <a class="zbtn" href="/vender-piso-trinitat-vella/"><span class="zbtn-name">Trinitat Vella</span><span class="zbtn-price">2.562 €/m²</span><span class="zbtn-go">Ver precios <b>→</b></span></a>
-            <a class="zbtn" href="/vender-piso-bon-pastor/"><span class="zbtn-name">Bon Pastor</span><span class="zbtn-price">3.236 €/m²</span><span class="zbtn-go">Ver precios <b>→</b></span></a>
-            <a class="zbtn" href="/vender-piso-baro-de-viver/"><span class="zbtn-name">Baró de Viver</span><span class="zbtn-price">Valoración a medida</span><span class="zbtn-go">Ver precios <b>→</b></span></a>
-          </div>
-        </div>
-      </div>
-      <p class="zbtn-fuente">Precio medio de oferta por barrio. Fuente: idealista, septiembre de 2026.</p>
 
-      <div class="zotras">
-        <p style="margin-bottom:10px;"><strong>También trabajo en el resto de Barcelona:</strong> Eixample, Gràcia,
-          Sarrià-Sant Gervasi, Les Corts, Sants-Montjuïc, Horta-Guinardó, Sant Martí, Ciutat Vella, Poblenou y
-          Vallcarca.</p>
-        <p style="margin-bottom:10px;"><strong>Y en el área metropolitana:</strong> Santa Coloma de Gramenet, Badalona,
-          L'Hospitalet, Montcada i Reixac y Cerdanyola del Vallès.</p>
-        <p style="margin:0;">¿Tu barrio no está entre los botones? <a href="#contacto">Escríbeme y te lo valoro igual, sin
-            coste →</a></p>
+        <div class="pz-panel" id="pz-nou-barris" data-pz="nou-barris">
+          <div class="pz-head">
+            <span class="pz-tag">Distrito</span>
+            <h3>Nou Barris</h3>
+            <span class="pz-big">3.318 €/m²</span>
+            <span class="pz-sub">+17,1 % en el último año · septiembre de 2026</span>
+            <a class="pz-btn" href="/vender-piso-nou-barris/">Ver precios de todo el distrito <b>→</b></a>
+          </div>
+          <ul class="pz-list" aria-label="Barrios de Nou Barris">
+            <li><span class="pz-n">Vilapicina i la Torre Llobeta</span><span class="pz-p">4.286 €/m²</span><span class="pz-var">+17,7 % anual</span><a class="pz-act" href="#valoracion" data-zona="Vilapicina i la Torre Llobeta">Pedir valoración</a></li>
+            <li><span class="pz-n">Porta</span><span class="pz-p">3.840 €/m²</span><span class="pz-var">+6,8 % anual</span><a class="pz-act" href="#valoracion" data-zona="Porta">Pedir valoración</a></li>
+            <li><span class="pz-n">La Guineueta</span><span class="pz-p">3.683 €/m²</span><span class="pz-var">+13,8 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Guineueta">Pedir valoración</a></li>
+            <li><span class="pz-n">La Prosperitat</span><span class="pz-p">3.663 €/m²</span><span class="pz-var">+15,0 % anual</span><a class="pz-act pz-act--page" href="/vender-piso-prosperitat/">Ver precios <b>→</b></a></li>
+            <li><span class="pz-n">Verdun</span><span class="pz-p">3.440 €/m²</span><span class="pz-var">+14,7 % anual</span><a class="pz-act pz-act--page" href="/vender-piso-verdun/">Ver precios <b>→</b></a></li>
+            <li><span class="pz-n">La Trinitat Nova</span><span class="pz-p">3.209 €/m²</span><span class="pz-var">+27,5 % anual</span><a class="pz-act pz-act--page" href="/vender-piso-trinitat-nova/">Ver precios <b>→</b></a></li>
+            <li><span class="pz-n">Can Peguera y el Turó de la Peira</span><span class="pz-p">3.158 €/m²</span><span class="pz-var">+18,0 % anual</span><a class="pz-act" href="#valoracion" data-zona="Can Peguera y el Turó de la Peira">Pedir valoración</a></li>
+            <li><span class="pz-n">Les Roquetes</span><span class="pz-p">2.769 €/m²</span><span class="pz-var">+13,1 % anual</span><a class="pz-act pz-act--page" href="/vender-piso-roquetes/">Ver precios <b>→</b></a></li>
+            <li><span class="pz-n">Ciutat Meridiana, Torre Baró y Vallbona</span><span class="pz-p">1.985 €/m²</span><span class="pz-var">+11,4 % anual</span><a class="pz-act pz-act--page" href="/vender-piso-torre-baro/">Ver precios <b>→</b></a></li>
+          </ul>
+        </div>
+        <div class="pz-panel" id="pz-sant-andreu" data-pz="sant-andreu">
+          <div class="pz-head">
+            <span class="pz-tag">Distrito</span>
+            <h3>Sant Andreu</h3>
+            <span class="pz-big">3.998 €/m²</span>
+            <span class="pz-sub">+10,8 % en el último año · septiembre de 2026</span>
+            <a class="pz-btn" href="/vender-piso-sant-andreu/">Ver precios de todo el distrito <b>→</b></a>
+          </div>
+          <ul class="pz-list" aria-label="Barrios de Sant Andreu">
+            <li><span class="pz-n">Sant Andreu</span><span class="pz-p">4.511 €/m²</span><span class="pz-var">+9,1 % anual</span><a class="pz-act" href="#valoracion" data-zona="Sant Andreu">Pedir valoración</a></li>
+            <li><span class="pz-n">Navas</span><span class="pz-p">4.427 €/m²</span><span class="pz-var">+0,6 % anual</span><a class="pz-act" href="#valoracion" data-zona="Navas">Pedir valoración</a></li>
+            <li><span class="pz-n">La Sagrera</span><span class="pz-p">4.300 €/m²</span><span class="pz-var">+0,7 % anual</span><a class="pz-act pz-act--page" href="/vender-piso-la-sagrera/">Ver precios <b>→</b></a></li>
+            <li><span class="pz-n">El Congrés i els Indians</span><span class="pz-p">4.294 €/m²</span><span class="pz-var">+8,9 % anual</span><a class="pz-act pz-act--page" href="/vender-piso-congres-indians/">Ver precios <b>→</b></a></li>
+            <li><span class="pz-n">El Bon Pastor</span><span class="pz-p">3.236 €/m²</span><span class="pz-var">+31,2 % anual</span><a class="pz-act pz-act--page" href="/vender-piso-bon-pastor/">Ver precios <b>→</b></a></li>
+            <li><span class="pz-n">La Trinitat Vella</span><span class="pz-p">2.562 €/m²</span><span class="pz-var">+21,7 % anual</span><a class="pz-act pz-act--page" href="/vender-piso-trinitat-vella/">Ver precios <b>→</b></a></li>
+            <li><span class="pz-n">Baró de Viver</span><span class="pz-p">Sin dato propio</span><a class="pz-act pz-act--page" href="/vender-piso-baro-de-viver/">Ver precios <b>→</b></a></li>
+          </ul>
+        </div>
+        <div class="pz-panel" id="pz-ciutat-vella" data-pz="ciutat-vella">
+          <div class="pz-head">
+            <span class="pz-tag">Distrito</span>
+            <h3>Ciutat Vella</h3>
+            <span class="pz-big">4.850 €/m²</span>
+            <span class="pz-sub">+0,7 % en el último año · septiembre de 2026</span>
+            <a class="pz-btn" href="#valoracion" data-zona="Ciutat Vella">Pedir valoración gratuita <b>→</b></a>
+          </div>
+          <ul class="pz-list" aria-label="Barrios de Ciutat Vella">
+            <li><span class="pz-n">La Barceloneta</span><span class="pz-p">5.745 €/m²</span><span class="pz-var">−4,7 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Barceloneta">Pedir valoración</a></li>
+            <li><span class="pz-n">Sant Pere, Santa Caterina i la Ribera</span><span class="pz-p">5.314 €/m²</span><span class="pz-var">+5,0 % anual</span><a class="pz-act" href="#valoracion" data-zona="Sant Pere, Santa Caterina i la Ribera">Pedir valoración</a></li>
+            <li><span class="pz-n">El Gòtic</span><span class="pz-p">4.934 €/m²</span><span class="pz-var">−2,3 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Gòtic">Pedir valoración</a></li>
+            <li><span class="pz-n">El Raval</span><span class="pz-p">4.139 €/m²</span><span class="pz-var">−0,3 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Raval">Pedir valoración</a></li>
+          </ul>
+        </div>
+        <div class="pz-panel" id="pz-eixample" data-pz="eixample">
+          <div class="pz-head">
+            <span class="pz-tag">Distrito</span>
+            <h3>Eixample</h3>
+            <span class="pz-big">6.648 €/m²</span>
+            <span class="pz-sub">+3,5 % en el último año · septiembre de 2026</span>
+            <a class="pz-btn" href="#valoracion" data-zona="Eixample">Pedir valoración gratuita <b>→</b></a>
+          </div>
+          <ul class="pz-list" aria-label="Barrios de Eixample">
+            <li><span class="pz-n">La Dreta de l'Eixample</span><span class="pz-p">7.794 €/m²</span><span class="pz-var">+2,0 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Dreta de l'Eixample">Pedir valoración</a></li>
+            <li><span class="pz-n">L'Antiga Esquerra de l'Eixample</span><span class="pz-p">6.818 €/m²</span><span class="pz-var">+1,1 % anual</span><a class="pz-act" href="#valoracion" data-zona="L'Antiga Esquerra de l'Eixample">Pedir valoración</a></li>
+            <li><span class="pz-n">La Nova Esquerra de l'Eixample</span><span class="pz-p">5.761 €/m²</span><span class="pz-var">+4,3 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Nova Esquerra de l'Eixample">Pedir valoración</a></li>
+            <li><span class="pz-n">El Fort Pienc</span><span class="pz-p">5.738 €/m²</span><span class="pz-var">+7,7 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Fort Pienc">Pedir valoración</a></li>
+            <li><span class="pz-n">Sant Antoni</span><span class="pz-p">5.731 €/m²</span><span class="pz-var">+1,8 % anual</span><a class="pz-act" href="#valoracion" data-zona="Sant Antoni">Pedir valoración</a></li>
+            <li><span class="pz-n">La Sagrada Família</span><span class="pz-p">5.711 €/m²</span><span class="pz-var">+4,7 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Sagrada Família">Pedir valoración</a></li>
+          </ul>
+        </div>
+        <div class="pz-panel" id="pz-gracia" data-pz="gracia">
+          <div class="pz-head">
+            <span class="pz-tag">Distrito</span>
+            <h3>Gràcia</h3>
+            <span class="pz-big">5.654 €/m²</span>
+            <span class="pz-sub">+6,7 % en el último año · septiembre de 2026</span>
+            <a class="pz-btn" href="#valoracion" data-zona="Gràcia">Pedir valoración gratuita <b>→</b></a>
+          </div>
+          <ul class="pz-list" aria-label="Barrios de Gràcia">
+            <li><span class="pz-n">Vila de Gràcia</span><span class="pz-p">6.017 €/m²</span><span class="pz-var">+7,9 % anual</span><a class="pz-act" href="#valoracion" data-zona="Vila de Gràcia">Pedir valoración</a></li>
+            <li><span class="pz-n">El Camp d'en Grassot i Gràcia Nova</span><span class="pz-p">5.826 €/m²</span><span class="pz-var">+6,2 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Camp d'en Grassot i Gràcia Nova">Pedir valoración</a></li>
+            <li><span class="pz-n">Vallcarca i els Penitents</span><span class="pz-p">5.320 €/m²</span><span class="pz-var">+5,0 % anual</span><a class="pz-act" href="#valoracion" data-zona="Vallcarca i els Penitents">Pedir valoración</a></li>
+            <li><span class="pz-n">La Salut</span><span class="pz-p">5.298 €/m²</span><span class="pz-var">+10,6 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Salut">Pedir valoración</a></li>
+            <li><span class="pz-n">El Coll</span><span class="pz-p">4.017 €/m²</span><span class="pz-var">+12,5 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Coll">Pedir valoración</a></li>
+          </ul>
+        </div>
+        <div class="pz-panel" id="pz-horta-guinardo" data-pz="horta-guinardo">
+          <div class="pz-head">
+            <span class="pz-tag">Distrito</span>
+            <h3>Horta-Guinardó</h3>
+            <span class="pz-big">4.198 €/m²</span>
+            <span class="pz-sub">+8,8 % en el último año · septiembre de 2026</span>
+            <a class="pz-btn" href="#valoracion" data-zona="Horta-Guinardó">Pedir valoración gratuita <b>→</b></a>
+          </div>
+          <ul class="pz-list" aria-label="Barrios de Horta-Guinardó">
+            <li><span class="pz-n">El Baix Guinardó</span><span class="pz-p">4.987 €/m²</span><span class="pz-var">+5,3 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Baix Guinardó">Pedir valoración</a></li>
+            <li><span class="pz-n">La Font d'en Fargues</span><span class="pz-p">4.431 €/m²</span><span class="pz-var">+6,9 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Font d'en Fargues">Pedir valoración</a></li>
+            <li><span class="pz-n">El Guinardó</span><span class="pz-p">4.395 €/m²</span><span class="pz-var">+5,3 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Guinardó">Pedir valoración</a></li>
+            <li><span class="pz-n">Can Baró</span><span class="pz-p">4.341 €/m²</span><span class="pz-var">+12,8 % anual</span><a class="pz-act" href="#valoracion" data-zona="Can Baró">Pedir valoración</a></li>
+            <li><span class="pz-n">Horta</span><span class="pz-p">4.198 €/m²</span><span class="pz-var">+15,1 % anual</span><a class="pz-act" href="#valoracion" data-zona="Horta">Pedir valoración</a></li>
+            <li><span class="pz-n">El Carmel</span><span class="pz-p">3.601 €/m²</span><span class="pz-var">+17,4 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Carmel">Pedir valoración</a></li>
+            <li><span class="pz-n">La Teixonera</span><span class="pz-p">3.514 €/m²</span><span class="pz-var">+6,8 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Teixonera">Pedir valoración</a></li>
+            <li><span class="pz-n">Sant Genís dels Agudells y Montbau</span><span class="pz-p">3.380 €/m²</span><span class="pz-var">+4,9 % anual</span><a class="pz-act" href="#valoracion" data-zona="Sant Genís dels Agudells y Montbau">Pedir valoración</a></li>
+          </ul>
+        </div>
+        <div class="pz-panel" id="pz-les-corts" data-pz="les-corts">
+          <div class="pz-head">
+            <span class="pz-tag">Distrito</span>
+            <h3>Les Corts</h3>
+            <span class="pz-big">6.635 €/m²</span>
+            <span class="pz-sub">+5,9 % en el último año · septiembre de 2026</span>
+            <a class="pz-btn" href="#valoracion" data-zona="Les Corts">Pedir valoración gratuita <b>→</b></a>
+          </div>
+          <ul class="pz-list" aria-label="Barrios de Les Corts">
+            <li><span class="pz-n">Pedralbes</span><span class="pz-p">8.301 €/m²</span><span class="pz-var">+2,5 % anual</span><a class="pz-act" href="#valoracion" data-zona="Pedralbes">Pedir valoración</a></li>
+            <li><span class="pz-n">Les Corts</span><span class="pz-p">6.489 €/m²</span><span class="pz-var">+7,4 % anual</span><a class="pz-act" href="#valoracion" data-zona="Les Corts">Pedir valoración</a></li>
+            <li><span class="pz-n">La Maternitat i Sant Ramon</span><span class="pz-p">5.302 €/m²</span><span class="pz-var">+11,2 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Maternitat i Sant Ramon">Pedir valoración</a></li>
+          </ul>
+        </div>
+        <div class="pz-panel" id="pz-sant-marti" data-pz="sant-marti">
+          <div class="pz-head">
+            <span class="pz-tag">Distrito</span>
+            <h3>Sant Martí</h3>
+            <span class="pz-big">5.390 €/m²</span>
+            <span class="pz-sub">+5,6 % en el último año · septiembre de 2026</span>
+            <a class="pz-btn" href="#valoracion" data-zona="Sant Martí">Pedir valoración gratuita <b>→</b></a>
+          </div>
+          <ul class="pz-list" aria-label="Barrios de Sant Martí">
+            <li><span class="pz-n">Diagonal Mar i el Front Marítim del Poblenou</span><span class="pz-p">9.048 €/m²</span><span class="pz-var">+9,1 % anual</span><a class="pz-act" href="#valoracion" data-zona="Diagonal Mar i el Front Marítim del Poblenou">Pedir valoración</a></li>
+            <li><span class="pz-n">La Vila Olímpica del Poblenou</span><span class="pz-p">6.677 €/m²</span><span class="pz-var">+2,2 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Vila Olímpica del Poblenou">Pedir valoración</a></li>
+            <li><span class="pz-n">El Poblenou</span><span class="pz-p">6.109 €/m²</span><span class="pz-var">+1,7 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Poblenou">Pedir valoración</a></li>
+            <li><span class="pz-n">El Parc i la Llacuna del Poblenou</span><span class="pz-p">5.641 €/m²</span><span class="pz-var">+6,0 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Parc i la Llacuna del Poblenou">Pedir valoración</a></li>
+            <li><span class="pz-n">El Camp de l'Arpa del Clot</span><span class="pz-p">4.737 €/m²</span><span class="pz-var">+4,5 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Camp de l'Arpa del Clot">Pedir valoración</a></li>
+            <li><span class="pz-n">Provençals del Poblenou</span><span class="pz-p">4.716 €/m²</span><span class="pz-var">+14,9 % anual</span><a class="pz-act" href="#valoracion" data-zona="Provençals del Poblenou">Pedir valoración</a></li>
+            <li><span class="pz-n">El Clot</span><span class="pz-p">4.593 €/m²</span><span class="pz-var">−3,6 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Clot">Pedir valoración</a></li>
+            <li><span class="pz-n">Sant Martí de Provençals</span><span class="pz-p">4.110 €/m²</span><span class="pz-var">+9,4 % anual</span><a class="pz-act" href="#valoracion" data-zona="Sant Martí de Provençals">Pedir valoración</a></li>
+            <li><span class="pz-n">La Verneda i la Pau</span><span class="pz-p">3.834 €/m²</span><span class="pz-var">+22,4 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Verneda i la Pau">Pedir valoración</a></li>
+            <li><span class="pz-n">El Besòs</span><span class="pz-p">3.483 €/m²</span><span class="pz-var">+19,1 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Besòs">Pedir valoración</a></li>
+          </ul>
+        </div>
+        <div class="pz-panel" id="pz-sants-montjuic" data-pz="sants-montjuic">
+          <div class="pz-head">
+            <span class="pz-tag">Distrito</span>
+            <h3>Sants-Montjuïc</h3>
+            <span class="pz-big">4.594 €/m²</span>
+            <span class="pz-sub">+6,1 % en el último año · septiembre de 2026</span>
+            <a class="pz-btn" href="#valoracion" data-zona="Sants-Montjuïc">Pedir valoración gratuita <b>→</b></a>
+          </div>
+          <ul class="pz-list" aria-label="Barrios de Sants-Montjuïc">
+            <li><span class="pz-n">Sants</span><span class="pz-p">5.061 €/m²</span><span class="pz-var">+7,9 % anual</span><a class="pz-act" href="#valoracion" data-zona="Sants">Pedir valoración</a></li>
+            <li><span class="pz-n">Hostafrancs</span><span class="pz-p">4.967 €/m²</span><span class="pz-var">+4,5 % anual</span><a class="pz-act" href="#valoracion" data-zona="Hostafrancs">Pedir valoración</a></li>
+            <li><span class="pz-n">La Font de la Guatlla</span><span class="pz-p">4.787 €/m²</span><span class="pz-var">+19,7 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Font de la Guatlla">Pedir valoración</a></li>
+            <li><span class="pz-n">Sants-Badal</span><span class="pz-p">4.632 €/m²</span><span class="pz-var">+7,3 % anual</span><a class="pz-act" href="#valoracion" data-zona="Sants-Badal">Pedir valoración</a></li>
+            <li><span class="pz-n">El Poble-sec y Parc de Montjuïc</span><span class="pz-p">4.592 €/m²</span><span class="pz-var">+1,0 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Poble-sec y Parc de Montjuïc">Pedir valoración</a></li>
+            <li><span class="pz-n">La Bordeta</span><span class="pz-p">4.342 €/m²</span><span class="pz-var">+4,5 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Bordeta">Pedir valoración</a></li>
+            <li><span class="pz-n">La Marina del Port</span><span class="pz-p">3.720 €/m²</span><span class="pz-var">+6,6 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Marina del Port">Pedir valoración</a></li>
+          </ul>
+        </div>
+        <div class="pz-panel" id="pz-sarria-sant-gervasi" data-pz="sarria-sant-gervasi">
+          <div class="pz-head">
+            <span class="pz-tag">Distrito</span>
+            <h3>Sarrià-Sant Gervasi</h3>
+            <span class="pz-big">7.211 €/m²</span>
+            <span class="pz-sub">+7,7 % en el último año · septiembre de 2026</span>
+            <a class="pz-btn" href="#valoracion" data-zona="Sarrià-Sant Gervasi">Pedir valoración gratuita <b>→</b></a>
+          </div>
+          <ul class="pz-list" aria-label="Barrios de Sarrià-Sant Gervasi">
+            <li><span class="pz-n">Sarrià</span><span class="pz-p">7.806 €/m²</span><span class="pz-var">+8,2 % anual</span><a class="pz-act" href="#valoracion" data-zona="Sarrià">Pedir valoración</a></li>
+            <li><span class="pz-n">Sant Gervasi-Galvany</span><span class="pz-p">7.688 €/m²</span><span class="pz-var">+5,0 % anual</span><a class="pz-act" href="#valoracion" data-zona="Sant Gervasi-Galvany">Pedir valoración</a></li>
+            <li><span class="pz-n">Les Tres Torres</span><span class="pz-p">7.455 €/m²</span><span class="pz-var">+8,1 % anual</span><a class="pz-act" href="#valoracion" data-zona="Les Tres Torres">Pedir valoración</a></li>
+            <li><span class="pz-n">Sant Gervasi-la Bonanova</span><span class="pz-p">7.078 €/m²</span><span class="pz-var">+12,7 % anual</span><a class="pz-act" href="#valoracion" data-zona="Sant Gervasi-la Bonanova">Pedir valoración</a></li>
+            <li><span class="pz-n">El Putxet i el Farró</span><span class="pz-p">6.378 €/m²</span><span class="pz-var">+5,8 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Putxet i el Farró">Pedir valoración</a></li>
+            <li><span class="pz-n">Vallvidrera, el Tibidabo i les Planes</span><span class="pz-p">5.122 €/m²</span><span class="pz-var">+17,1 % anual</span><a class="pz-act" href="#valoracion" data-zona="Vallvidrera, el Tibidabo i les Planes">Pedir valoración</a></li>
+          </ul>
+        </div>
+        <div class="pz-panel" id="pz-santa-coloma" data-pz="santa-coloma">
+          <div class="pz-head">
+            <span class="pz-tag">Municipio</span>
+            <h3>Santa Coloma de Gramenet</h3>
+            <span class="pz-big">2.486 €/m²</span>
+            <span class="pz-sub">+8,1 % en el último año · septiembre de 2026</span>
+            <a class="pz-btn" href="#valoracion" data-zona="Santa Coloma de Gramenet">Pedir valoración gratuita <b>→</b></a>
+          </div>
+          <ul class="pz-list" aria-label="Barrios de Santa Coloma de Gramenet">
+            <li><span class="pz-n">Riu</span><span class="pz-p">3.220 €/m²</span><span class="pz-var">+15,9 % anual</span><a class="pz-act" href="#valoracion" data-zona="Riu">Pedir valoración</a></li>
+            <li><span class="pz-n">Centre</span><span class="pz-p">3.075 €/m²</span><span class="pz-var">+10,2 % anual</span><a class="pz-act" href="#valoracion" data-zona="Centre">Pedir valoración</a></li>
+            <li><span class="pz-n">Singuerlín</span><span class="pz-p">2.633 €/m²</span><span class="pz-var">+6,6 % anual</span><a class="pz-act" href="#valoracion" data-zona="Singuerlín">Pedir valoración</a></li>
+            <li><span class="pz-n">Riera Alta y Llatí</span><span class="pz-p">2.469 €/m²</span><span class="pz-var">+11,0 % anual</span><a class="pz-act" href="#valoracion" data-zona="Riera Alta y Llatí">Pedir valoración</a></li>
+            <li><span class="pz-n">Santa Rosa y Can Mariner</span><span class="pz-p">2.221 €/m²</span><span class="pz-var">+2,5 % anual</span><a class="pz-act" href="#valoracion" data-zona="Santa Rosa y Can Mariner">Pedir valoración</a></li>
+            <li><span class="pz-n">Fondo</span><span class="pz-p">2.044 €/m²</span><span class="pz-var">+12,6 % anual</span><a class="pz-act" href="#valoracion" data-zona="Fondo">Pedir valoración</a></li>
+            <li><span class="pz-n">El Raval</span><span class="pz-p">1.984 €/m²</span><span class="pz-var">−10,5 % anual</span><a class="pz-act" href="#valoracion" data-zona="El Raval">Pedir valoración</a></li>
+          </ul>
+        </div>
+        <div class="pz-panel" id="pz-badalona" data-pz="badalona">
+          <div class="pz-head">
+            <span class="pz-tag">Municipio</span>
+            <h3>Badalona</h3>
+            <span class="pz-big">2.670 €/m²</span>
+            <span class="pz-sub">+5,8 % en el último año · agosto de 2026</span>
+            <a class="pz-btn" href="#valoracion" data-zona="Badalona">Pedir valoración gratuita <b>→</b></a>
+          </div>
+          <ul class="pz-list" aria-label="Barrios de Badalona">
+            <li><span class="pz-n">Port</span><span class="pz-p">4.867 €/m²</span><span class="pz-var">−0,7 % anual</span><a class="pz-act" href="#valoracion" data-zona="Port">Pedir valoración</a></li>
+            <li><span class="pz-n">Centre</span><span class="pz-p">3.786 €/m²</span><span class="pz-var">−5,4 % anual</span><a class="pz-act" href="#valoracion" data-zona="Centre">Pedir valoración</a></li>
+            <li><span class="pz-n">La Morera</span><span class="pz-p">3.629 €/m²</span><a class="pz-act" href="#valoracion" data-zona="La Morera">Pedir valoración</a></li>
+            <li><span class="pz-n">Casagemes y Canyadó</span><span class="pz-p">3.568 €/m²</span><span class="pz-var">+1,4 % anual</span><a class="pz-act" href="#valoracion" data-zona="Casagemes y Canyadó">Pedir valoración</a></li>
+            <li><span class="pz-n">Gorg y Progrés</span><span class="pz-p">3.208 €/m²</span><span class="pz-var">+4,1 % anual</span><a class="pz-act" href="#valoracion" data-zona="Gorg y Progrés">Pedir valoración</a></li>
+            <li><span class="pz-n">Bufalà</span><span class="pz-p">3.022 €/m²</span><span class="pz-var">+5,9 % anual</span><a class="pz-act" href="#valoracion" data-zona="Bufalà">Pedir valoración</a></li>
+            <li><span class="pz-n">Montigalà y Sant Crist</span><span class="pz-p">2.691 €/m²</span><span class="pz-var">+6,7 % anual</span><a class="pz-act" href="#valoracion" data-zona="Montigalà y Sant Crist">Pedir valoración</a></li>
+            <li><span class="pz-n">La Salut, Lloreda y Sistrells</span><span class="pz-p">2.247 €/m²</span><span class="pz-var">+16,9 % anual</span><a class="pz-act" href="#valoracion" data-zona="La Salut, Lloreda y Sistrells">Pedir valoración</a></li>
+            <li><span class="pz-n">Llefià, Sant Roc y Artigues</span><span class="pz-p">2.179 €/m²</span><span class="pz-var">+5,2 % anual</span><a class="pz-act" href="#valoracion" data-zona="Llefià, Sant Roc y Artigues">Pedir valoración</a></li>
+          </ul>
+        </div>
+
+        <p class="pz-foot">Precios medios de oferta según el <a href="https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/cataluna/barcelona-provincia/barcelona/" target="_blank" rel="noopener noreferrer">informe de precios de idealista</a>. Son una referencia, no una valoración: el precio real de tu piso depende de la finca, la altura y el estado.<br>También trabajo en L'Hospitalet, Montcada i Reixac y Cerdanyola del Vallès. <a href="#contacto">¿No encuentras tu barrio? Escríbeme →</a></p>
       </div>
+
+      <script>
+        (function () {
+          var box = document.getElementById('pz'), sel = document.getElementById('pz-select');
+          if (!box || !sel) return;
+          box.classList.add('pz-js');
+          function show(id) {
+            box.querySelectorAll('.pz-panel').forEach(function (p) { p.classList.toggle('is-on', p.getAttribute('data-pz') === id); });
+          }
+          sel.addEventListener('change', function () {
+            show(sel.value);
+            if (window.gtag) gtag('event', 'ver_precios_zona', { zona: sel.value });
+          });
+          show(sel.value || 'nou-barris');
+          // "Pedir valoración": lleva al formulario con el barrio ya escrito
+          box.addEventListener('click', function (e) {
+            var a = e.target.closest('a[data-zona]');
+            if (!a) return;
+            var inp = document.querySelector('#valoracion input[name="direccion"]');
+            if (inp) { inp.value = a.getAttribute('data-zona') + ', '; setTimeout(function () { inp.focus(); }, 400); }
+          });
+        })();
+      </script>
 
     </div>
   </section>
