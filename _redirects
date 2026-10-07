@@ -65,3 +65,9 @@
 /busco-alquiler-por-ti          /   301
 /busco-alquiler-por-ti/         /   301
 /busco-alquiler-por-ti.html     /   301
+
+# ----- Páginas de barrio retiradas (oct 2026): demasiado pequeñas para tener página propia -----
+/vender-piso-baro-de-viver     /vender-piso-sant-andreu/   301
+/vender-piso-baro-de-viver/    /vender-piso-sant-andreu/   301
+/vender-piso-torre-baro        /vender-piso-nou-barris/    301
+/vender-piso-torre-baro/       /vender-piso-nou-barris/    301
