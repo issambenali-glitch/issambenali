@@ -83,18 +83,19 @@
 
   <style>
     :root {
-      --naranja: #E8530A;
-      --naranja-osc: #C4420A;
-      --naranja-suave: #FFF1E9;
-      --tinta: #1A1613;
-      --gris-600: #6B635C;
-      --gris-400: #9C948C;
-      --gris-300: #E4DCD5;
-      --gris-100: #F4F0EC;
-      --verde: #2E7D52;
-      --verde-suave: #E9F4EE;
+      --naranja: #EC6525;
+      --naranja-osc: #B2391A;
+      --naranja-suave: #FCEDE4;
+      --tinta: #1D1B1B;
+      --gris-600: #655B53;
+      --gris-400: #978B80;
+      --gris-300: #E6DCD2;
+      --gris-100: #F3EDE7;
+      --lino: #DACABE;
+      --verde: #2F6B4F;
+      --verde-suave: #EAF2EC;
       --papel: #FFFFFF;
-      --fondo: #FBF8F5;
+      --fondo: #F9F5F3;
       --r: 14px;
       --sombra: 0 1px 2px rgba(26, 22, 19, .05), 0 10px 30px rgba(26, 22, 19, .07);
       --display: 'Playfair Display', Georgia, serif;
@@ -532,7 +533,170 @@
     }
     @media (prefers-reduced-motion: reduce) { .barra-movil, .btn, .seg-btn, .btn-link { transition: none; } }
 
+    /* ══ REDISEÑO (nov-2026) ══════════════════════════════════════ */
+    body { background: var(--fondo); }
+    .nav { background: rgba(249,245,243,.92); border-bottom-color: var(--gris-300); }
+    .wrap { max-width: 1200px; padding-top: 56px; }
+
+    /* Cabecera */
+    .top { margin-bottom: 40px; max-width: 760px; }
+    h1 { font-size: clamp(34px, 5.2vw, 60px); line-height: 1.02; letter-spacing: -.02em; }
+    .sub { font-size: 18px; line-height: 1.6; margin-top: 18px; color: var(--gris-600); }
+    .guia { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .guia a {
+      display: inline-flex; align-items: center; gap: 9px; min-height: 44px; padding: 6px 16px 6px 6px;
+      border-radius: 99px; background: var(--papel); border: 1px solid var(--gris-300);
+      color: var(--tinta); text-decoration: none; font-size: 14.5px; font-weight: 500;
+      transition: border-color .15s ease, transform .1s ease;
+    }
+    .guia a:hover { border-color: var(--naranja); }
+    .guia a:active { transform: scale(.96); }
+    .guia a span {
+      display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%;
+      background: var(--naranja-suave); color: var(--naranja-osc); font-weight: 600; font-size: 14px;
+    }
+    .guia a.guia-fin { background: var(--verde-suave); border-color: transparent; color: var(--verde); }
+    .guia a.guia-fin span { background: var(--verde); color: #fff; }
+
+    /* Rejilla */
+    .grid { grid-template-columns: minmax(0, 1fr) 400px; gap: 32px; }
+
+    /* Pasos con hilo conductor */
+    main { position: relative; }
+    .card {
+      border: 0; border-radius: 20px; padding: 34px 36px; margin-bottom: 24px; position: relative;
+      box-shadow: 0 1px 0 var(--gris-300);
+    }
+    .card.paso:not(:last-child)::after {
+      content: ''; position: absolute; left: 56px; bottom: -25px; width: 2px; height: 26px; background: var(--lino);
+    }
+    .paso-cab { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+    .paso-n {
+      flex-shrink: 0; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+      background: var(--naranja); color: #fff; font: 600 17px var(--body);
+    }
+    .card h2 { font-size: clamp(22px, 2.4vw, 27px); line-height: 1.15; margin: 0; letter-spacing: -.01em; }
+    .card .ayuda { font-size: 15px; line-height: 1.6; margin: 0 0 26px 54px; max-width: 60ch; }
+
+    /* Campos */
+    .campo > label, .campo > .etiqueta-grupo { font-size: 14px; margin-bottom: 9px; }
+    .input input, .input select {
+      background: var(--fondo); border: 1.5px solid transparent; border-radius: 12px;
+      font-size: 20px; padding: 16px 18px 16px 38px;
+    }
+    .input input.pct { padding: 16px 44px 16px 18px; }
+    .input input.limpio, .input select { padding-left: 18px; }
+    .input .simbolo { left: 18px; font-size: 18px; }
+    .input .simbolo.der { right: 18px; }
+    .input input:hover, .input select:hover { border-color: var(--gris-300); }
+    .input input:focus, .input select:focus { background: var(--papel); border-color: var(--naranja); }
+    .pista { font-size: 13px; line-height: 1.5; }
+
+    /* Deslizadores */
+    input[type=range]::-webkit-slider-runnable-track { height: 6px; }
+    input[type=range]::-webkit-slider-thumb {
+      width: 26px; height: 26px; margin-top: -10px; background: var(--naranja);
+      border: 4px solid var(--papel); box-shadow: 0 0 0 1px var(--naranja), 0 3px 10px rgba(236,101,37,.35);
+    }
+    input[type=range]::-moz-range-thumb { background: var(--naranja); border: 4px solid var(--papel); }
+
+    /* Comparador de agencias */
+    .versus { gap: 14px; margin-top: 10px !important; }
+    .col { border: 1.5px solid var(--gris-300); border-radius: 16px; padding: 22px; }
+    .col.destacada { background: var(--papel); border: 2px solid var(--naranja); }
+    .col-tit { font-size: 14px; font-weight: 600; color: var(--gris-600); }
+    .col-tit { display: block; }
+    .col.destacada .col-tit::before {
+      content: 'Mis honorarios'; display: table; margin-bottom: 10px; font-size: 12px; font-weight: 600;
+      padding: 4px 10px; border-radius: 99px; background: var(--naranja-suave); color: var(--naranja-osc);
+    }
+    .col:not(.destacada) .col-tit::before {
+      content: 'Agencia tradicional'; display: table; margin-bottom: 10px; font-size: 12px; font-weight: 600;
+      padding: 4px 10px; border-radius: 99px; background: var(--gris-100); color: var(--gris-600);
+    }
+    .linea.fuerte { font-size: 14.5px; }
+    .col-cifra { font-size: clamp(32px, 4vw, 42px); margin-top: 4px; }
+    .col.destacada .col-cifra { color: var(--naranja-osc); }
+    .dif { border: 0; border-radius: 16px; padding: 22px 24px; margin-top: 16px; }
+    .dif-num { font-size: 36px; }
+    .dif-txt { font-size: 15px; }
+    .tip { border-radius: 14px; padding: 16px 18px; gap: 14px; }
+
+    /* Paso 3 */
+    .segmentado { background: var(--fondo); border-radius: 12px; }
+    .seg-btn { min-height: 40px; border-radius: 9px; }
+    .fiscal-lineas { background: var(--fondo); border-radius: 16px; }
+    .fiscal-total, .metodo { border-radius: 16px; }
+    .metodo { border: 1.5px solid var(--gris-300); }
+    @media (min-width: 941px) { .fiscal-res { display: none; } }
+
+    /* Resumen: el ticket de la venta */
+    .lateral { top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; scrollbar-width: thin; padding-bottom: 4px; }
+    .resumen { border-radius: 20px; padding: 28px; }
+    .resumen h2 { font-size: 22px; }
+    .res-esc { margin-bottom: 18px; }
+    .res-neto { background: none; border: 0; padding: 0; margin-bottom: 22px; }
+    .res-neto .fiscal-et { font-size: 13.5px; color: var(--gris-600); font-weight: 500; }
+    .res-neto .fiscal-num { display: block; font-size: clamp(40px, 4.4vw, 52px); letter-spacing: -.03em; margin: 2px 0 4px; }
+    .res-neto .fiscal-pie { display: block; font-size: 14px; }
+    .mini-barra, .mini-leyenda, .res-lineas { display: none; }
+    .cs-tit { font-size: 13px; font-weight: 600; color: var(--gris-600); padding-top: 18px; border-top: 1px solid var(--gris-300); margin-bottom: 12px; }
+    .cascada { display: grid; gap: 11px; }
+    .cs-top { display: flex; justify-content: space-between; gap: 10px; font-size: 13.5px; margin-bottom: 5px; }
+    .cs-top span { color: var(--gris-600); }
+    .cs-top b { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .cs-pista { position: relative; height: 10px; border-radius: 99px; background: var(--gris-100); overflow: hidden; }
+    .cs-pista i { position: absolute; top: 0; bottom: 0; border-radius: 99px; transition: left .3s ease, width .3s ease; }
+    .cs-base .cs-pista i { background: var(--lino); }
+    .cs-hon .cs-pista i { background: var(--naranja); }
+    .cs-imp .cs-pista i { background: var(--naranja-osc); }
+    .cs-gas .cs-pista i { background: #F2A57F; }
+    .cs-deuda .cs-pista i { background: var(--gris-400); }
+    .cs-falta .cs-pista { background: repeating-linear-gradient(90deg, var(--gris-300) 0 6px, transparent 6px 11px); }
+    .cs-falta .cs-top b { color: var(--gris-400); font-weight: 500; }
+    .cs-final { padding-top: 12px; border-top: 1px dashed var(--lino); }
+    .cs-final .cs-top span { color: var(--tinta); font-weight: 600; }
+    .cs-final .cs-top b { color: var(--verde); font-size: 16px; }
+    .cs-final .cs-pista i { background: var(--verde); }
+    .res-nota { font-size: 12.5px; margin-top: 12px; }
+    .res-datos { gap: 8px; }
+    .dato { background: var(--fondo); border-radius: 12px; }
+    .lateral .resumen + .resumen { background: var(--naranja-suave); box-shadow: none; }
+    .lateral .resumen + .resumen h2 { font-size: 20px !important; }
+
+    /* Referencia */
+    .ref { margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--gris-300); }
+    .ref h2 { font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -.02em; }
+    .ref h3 { font-size: 19px; margin-top: 40px; display: flex; align-items: center; gap: 12px; }
+    .ref h3::before { content: ''; width: 18px; height: 3px; border-radius: 2px; background: var(--naranja); }
+    .tabla-scroll { border-radius: 16px; border: 1px solid var(--gris-300); background: var(--papel); }
+    table { background: transparent; }
+    th { background: var(--fondo); color: var(--gris-600); }
+    tbody tr:hover td { background: var(--fondo); }
+
+    /* Llamada final */
+    .cta { border-radius: 24px; padding: 56px 40px; margin-top: 64px; }
+    .cta h2 { font-size: clamp(26px, 3.6vw, 38px); letter-spacing: -.02em; }
+
+    @media (max-width: 940px) {
+      .lateral { max-height: none; overflow: visible; }
+      .grid { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+    }
+    @media (max-width: 620px) {
+      .wrap { padding-top: 32px; }
+      .card { padding: 24px 20px; border-radius: 18px; }
+      .card .ayuda { margin-left: 0; }
+      .card.paso:not(:last-child)::after { left: 39px; }
+      .guia { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .guia a { padding-right: 10px; font-size: 13.5px; }
+      h1 { font-size: 32px; }
+      .resumen { padding: 22px 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .cs-pista i { transition: none; } }
+
     @media print {
+      .guia { display: none; }
+      .lateral { max-height: none; overflow: visible; }
       .barra-movil { display: none !important; }
       .nav, .cta, footer, .slider, .topes, details.extras summary,
       #zonaBotones, .lateral .resumen + .resumen { display: none; }
@@ -565,6 +729,12 @@
         distancia entre el precio del cartel y lo que acaba en tu cuenta es más grande de lo que parece.
         Mueve los deslizadores y míralo en directo, paso a paso.</p>
       <p class="gratis"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gratis, sin registro y sin dejar tus datos</p>
+      <nav class="guia" aria-label="Pasos de la calculadora">
+        <a href="#paso-precio"><span>1</span>El precio</a>
+        <a href="#paso-agencia"><span>2</span>La agencia</a>
+        <a href="#fiscal"><span>3</span>Impuestos</a>
+        <a href="#resumen" class="guia-fin"><span>=</span>Lo que te queda</a>
+      </nav>
     </header>
 
     <div class="grid">
@@ -573,8 +743,8 @@
       <main>
 
         <!-- Precio -->
-        <section class="card">
-          <h2>1 · Por cuánto la vendes</h2>
+        <section class="card paso" id="paso-precio">
+          <div class="paso-cab"><span class="paso-n" aria-hidden="true">1</span><h2>Por cuánto la vendes</h2></div>
           <p class="ayuda">Empieza por el precio al que crees que se cerrará la operación. Si aún no lo
             sabes, deja el que viene puesto y ve moviéndolo.</p>
 
@@ -593,8 +763,8 @@
         </section>
 
         <!-- Comparador -->
-        <section class="card">
-          <h2>2 · Lo que se lleva la agencia</h2>
+        <section class="card paso" id="paso-agencia">
+          <div class="paso-cab"><span class="paso-n" aria-hidden="true">2</span><h2>Lo que se lleva la agencia</h2></div>
           <p class="ayuda">A la izquierda, lo que cobro yo. A la derecha, lo que suele cobrar una agencia
             tradicional en Barcelona. Cambia los porcentajes por los que te hayan ofrecido a ti.</p>
 
@@ -636,7 +806,7 @@
               <div class="desglose">
                 <div class="linea"><span>Honorarios</span><b id="aBase">0 €</b></div>
                 <div class="linea"><span>IVA (21 %)</span><b id="aIva">0 €</b></div>
-                <div class="linea fuerte"><span>Precio − honorarios</span><b id="aQueda">0 €</b></div>
+                <div class="linea fuerte"><span>Tras la agencia</span><b id="aQueda">0 €</b></div>
               </div>
             </div>
 
@@ -647,7 +817,7 @@
               <div class="desglose">
                 <div class="linea"><span>Honorarios</span><b id="bBase">0 €</b></div>
                 <div class="linea"><span>IVA (21 %)</span><b id="bIva">0 €</b></div>
-                <div class="linea fuerte"><span>Precio − honorarios</span><b id="bQueda">0 €</b></div>
+                <div class="linea fuerte"><span>Tras la agencia</span><b id="bQueda">0 €</b></div>
               </div>
             </div>
           </div>
@@ -715,8 +885,8 @@
         </section>
 
         <!-- ═══ IMPUESTOS Y GASTOS DE LA VENTA ═══ -->
-        <section class="card" id="fiscal">
-          <h2>3 · Hacienda, el ayuntamiento y los gastos</h2>
+        <section class="card paso" id="fiscal">
+          <div class="paso-cab"><span class="paso-n" aria-hidden="true">3</span><h2>Hacienda, el ayuntamiento y los gastos</h2></div>
           <p class="ayuda">Aquí es donde suele estar el recorte grande, y casi nadie lo calcula antes de
             vender. Rellena lo que sepas: lo que dejes en blanco simplemente no se cuenta.</p>
 
@@ -976,7 +1146,7 @@
       <!-- ═══ LATERAL ═══ -->
       <aside class="lateral">
         <div class="resumen" id="resumen">
-          <h2>Tu resumen</h2>
+          <h2>Lo que te queda</h2>
           <p class="res-esc" id="resEscenario">—</p>
 
           <div class="res-neto">
@@ -984,6 +1154,9 @@
             <span class="fiscal-num" id="rNeto">0 €</span>
             <span class="fiscal-pie" id="rNetoPct">—</span>
           </div>
+
+          <p class="cs-tit">De dónde sale, euro a euro</p>
+          <div class="cascada" id="cascada"></div>
 
           <div class="mini-barra" aria-hidden="true">
             <div class="mseg mhon" id="mHon"></div>
@@ -1631,6 +1804,34 @@
         $('rCoste').textContent = eur.format(f.coste);
         $('rHipoteca').textContent = '−' + eur.format(f.hipoteca);
         $('filaRHipoteca').style.display = f.hipoteca > 0 ? '' : 'none';
+
+        /* Cascada visual: del precio de venta a lo que te queda */
+        (function () {
+          var tot = precio > 0 ? precio : 1, resto = precio, html = '';
+          var fila = function (et, imp, tipo, falta) {
+            var izq, ancho, val;
+            if (tipo === 'base') { izq = 0; ancho = 100; val = eur.format(imp); }
+            else if (tipo === 'final') { izq = 0; ancho = Math.max(imp, 0) / tot * 100; val = eur.format(imp); }
+            else if (falta) { izq = 0; ancho = 0; val = 'falta dato'; }
+            else {
+              izq = Math.max(resto - imp, 0) / tot * 100;
+              ancho = Math.max(imp / tot * 100, imp > 0 ? 0.8 : 0);
+              val = '\u2212' + eur.format(imp);
+              resto -= imp;
+            }
+            html += '<div class="cs-fila cs-' + tipo + (falta ? ' cs-falta' : '') + '"><div class="cs-top"><span>' + et +
+              '</span><b>' + val + '</b></div><div class="cs-pista"><i style="left:' + izq.toFixed(2) +
+              '%;width:' + ancho.toFixed(2) + '%"></i></div></div>';
+          };
+          fila('Precio de venta', precio, 'base');
+          fila('Agencia (' + pct(pctEsc) + ' + IVA)', esc.total, 'hon');
+          fila('Plusvalía municipal', f.plusvalia, 'imp', p.cuota === null);
+          fila('IRPF de la ganancia', f.irpf, 'imp', !f.hayIrpf);
+          fila('Gastos de la venta', f.gastos, 'gas');
+          if (f.hipoteca > 0) fila('Hipoteca que cancelas', f.hipoteca, 'deuda');
+          fila('Te queda', f.neto, 'final');
+          $('cascada').innerHTML = html;
+        })();
 
         var pendientes = (p.cuota === null || !f.hayIrpf);
         $('rNota').textContent = pendientes
