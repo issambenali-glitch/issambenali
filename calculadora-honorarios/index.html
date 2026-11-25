@@ -141,7 +141,7 @@
       font-family: var(--display); font-weight: 900;
       font-size: clamp(29px, 4.6vw, 46px); line-height: 1.08; letter-spacing: -.01em;
     }
-    h1 em { font-style: italic; color: var(--naranja); }
+    h1 em { font-style: normal; color: var(--naranja); }
     .sub { color: var(--gris-600); font-size: 16.5px; margin-top: 12px; max-width: 58ch; }
 
     /* ── REJILLA ── */
@@ -477,7 +477,63 @@
     }
     @media (prefers-reduced-motion: reduce) { .seg, .mseg { transition: none; } }
 
+    /* ── PULIDO (nov-2026) ── */
+    ::selection { background: #FBD3BD; color: var(--tinta); }
+    html { accent-color: var(--naranja); scroll-padding-top: 90px; }
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    .card { box-shadow: none; }
+    .resumen { border-color: transparent; box-shadow: 0 1px 2px rgba(26,22,19,.06), 0 12px 32px rgba(26,22,19,.08); }
+    .gratis { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 14px; font-weight: 500; color: var(--verde); }
+    .gratis svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .opc { font-weight: 400; color: var(--gris-400); }
+    .col-tit, .fiscal-et, .metodo-et, th { letter-spacing: .2px; text-transform: none; font-size: 13px; }
+    th { font-weight: 600; }
+    .dato span { letter-spacing: 0; text-transform: none; font-size: 12.5px; }
+    .col-cifra, .dif-num, .fiscal-num, .metodo-num, .dato b, td, .barra-et span:last-child { font-variant-numeric: tabular-nums lining-nums; }
+    .tip, .tip.calma, .tip.alerta { border-left: 0; border-radius: 12px; }
+    .tip { background: var(--naranja-suave); }
+    .tip.calma { background: var(--gris-100); }
+    .tip.alerta { background: #FFF4E5; }
+    .tip-ico { flex-shrink: 0; width: 22px; height: 22px; color: var(--naranja-osc); }
+    .tip.calma .tip-ico { color: var(--gris-600); }
+    .tip.alerta .tip-ico { color: #B06A00; }
+    .tip-ico svg, .btn-link svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+    .acciones { display: flex; flex-wrap: wrap; gap: 2px 4px; margin: 18px 0 0 -10px; padding-top: 14px; border-top: 1px solid var(--gris-100); }
+    .btn-link {
+      display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 8px 10px;
+      font: 500 14px var(--body); color: var(--gris-600); background: none; border: 0; border-radius: 8px; cursor: pointer;
+    }
+    .btn-link svg { width: 17px; height: 17px; }
+    .btn-link:hover { background: var(--gris-100); color: var(--tinta); }
+    .btn, .seg-btn, .btn-link { transition: background-color .15s ease, border-color .15s ease, color .15s ease, transform .1s ease; }
+    .btn:active, .seg-btn:active, .btn-link:active { transform: scale(.96); }
+    .input input, .input select { transition: border-color .15s ease, box-shadow .15s ease; }
+    .input input:hover, .input select:hover { border-color: var(--gris-400); }
+    .input input:focus, .input select:focus { box-shadow: 0 0 0 4px rgba(232, 83, 10, .14); }
+    .input input::placeholder { color: var(--gris-400); font-weight: 400; font-size: 16px; }
+    .barra-movil { display: none; }
+    @media (max-width: 940px) {
+      .barra-movil {
+        display: flex; align-items: center; justify-content: space-between; gap: 12px;
+        position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 70;
+        padding: 10px 10px 10px 18px; border-radius: 14px; background: var(--papel); color: var(--tinta);
+        border: 1px solid var(--gris-300); box-shadow: 0 10px 30px rgba(26,22,19,.16);
+        transition: transform .25s cubic-bezier(.2,.8,.2,1), opacity .2s ease;
+      }
+      .barra-movil.oculta { transform: translateY(140%); opacity: 0; pointer-events: none; }
+      .bm-et { display: block; font-size: 12px; color: var(--gris-600); }
+      .barra-movil b { color: var(--verde); font-family: var(--display); font-size: 24px; font-weight: 900; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+      .bm-btn {
+        display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 10px;
+        background: var(--naranja); color: #fff; font-weight: 600; font-size: 14.5px; text-decoration: none;
+      }
+      body { padding-bottom: 92px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .barra-movil, .btn, .seg-btn, .btn-link { transition: none; } }
+
     @media print {
+      .barra-movil { display: none !important; }
       .nav, .cta, footer, .slider, .topes, details.extras summary,
       #zonaBotones, .lateral .resumen + .resumen { display: none; }
       body { background: #fff; }
@@ -504,11 +560,11 @@
   <div class="wrap">
 
     <header class="top">
-      <span class="marca">Calculadora gratuita · Sin registro</span>
       <h1>¿Cuánto te queda<br><em>de verdad</em> al vender tu piso?</h1>
       <p class="sub">Entre la agencia, Hacienda, el ayuntamiento y los gastos de la operación, la
         distancia entre el precio del cartel y lo que acaba en tu cuenta es más grande de lo que parece.
         Mueve los deslizadores y míralo en directo, paso a paso.</p>
+      <p class="gratis"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gratis, sin registro y sin dejar tus datos</p>
     </header>
 
     <div class="grid">
@@ -544,7 +600,7 @@
 
           <div class="dos">
             <div class="campo">
-              <label for="pctA">Agencia A — honorarios</label>
+              <label for="pctA">Honorarios de la agencia A</label>
               <div class="input">
                 <input class="pct" id="pctA" type="number" inputmode="decimal" min="0" max="12" step="0.1"
                   value="3">
@@ -558,7 +614,7 @@
             </div>
 
             <div class="campo">
-              <label for="pctB">Agencia B — honorarios</label>
+              <label for="pctB">Honorarios de la agencia B</label>
               <div class="input">
                 <input class="pct" id="pctB" type="number" inputmode="decimal" min="0" max="12" step="0.1"
                   value="5">
@@ -678,16 +734,16 @@
               <div class="input">
                 <span class="simbolo">€</span>
                 <input id="precioCompra" type="number" inputmode="numeric" min="0" step="1000"
-                  placeholder="Lo tienes en la escritura">
+                  placeholder="En tu escritura">
               </div>
               <p class="pista">Sin este dato no hay ni IRPF ni método real de plusvalía.</p>
             </div>
             <div class="campo">
-              <label for="anioCompra">Fecha de compra</label>
+              <label for="anioCompra">Fecha de compra <span class="opc">(el mes es opcional)</span></label>
               <div class="fecha-dos">
                 <div class="input">
                   <select id="mesCompra" aria-label="Mes de compra">
-                    <option value="">Mes (opcional)</option>
+                    <option value="">Mes</option>
                     <option value="1">Enero</option>
                     <option value="2">Febrero</option>
                     <option value="3">Marzo</option>
@@ -717,7 +773,7 @@
               <div class="input">
                 <span class="simbolo">€</span>
                 <input id="vcSuelo" type="number" inputmode="numeric" min="0" step="500"
-                  placeholder="Mira tu recibo del IBI">
+                  placeholder="En tu recibo del IBI">
               </div>
               <p class="pista">En el recibo del IBI aparece separado del valor de la construcción. Es lo
                 que permite calcular la plusvalía por el método objetivo, que suele salir más barato.</p>
@@ -727,7 +783,7 @@
               <div class="input">
                 <span class="simbolo">€</span>
                 <input id="hipoteca" type="number" inputmode="numeric" min="0" step="1000"
-                  placeholder="Si ya está pagada, déjalo vacío">
+                  placeholder="Vacío si ya está pagada">
               </div>
               <p class="pista">No es un gasto ni un impuesto, pero sale del precio el mismo día de la firma.</p>
             </div>
@@ -747,7 +803,7 @@
               <div class="input">
                 <span class="simbolo">€</span>
                 <input id="mejoras" type="number" inputmode="numeric" min="0" step="500"
-                  placeholder="Solo mejoras, no pintura">
+                  placeholder="Mejoras, no pintura">
               </div>
             </div>
           </div>
@@ -919,7 +975,7 @@
 
       <!-- ═══ LATERAL ═══ -->
       <aside class="lateral">
-        <div class="resumen">
+        <div class="resumen" id="resumen">
           <h2>Tu resumen</h2>
           <p class="res-esc" id="resEscenario">—</p>
 
@@ -958,15 +1014,15 @@
 
           <div class="res-datos">
             <div class="dato"><span>Se queda por el camino</span><b id="rCostePct">—</b></div>
-            <div class="dato"><span id="rDifEt">Cambiar de agencia</span><b id="rDif">0 €</b></div>
-            <div class="dato" id="datoGanancia"><span id="rGananciaEt">Ganancia patrimonial</span><b id="rGanancia">—</b></div>
-            <div class="dato" id="datoMetodo"><span>Plusvalía · método</span><b id="rMetodo">—</b></div>
+            <div class="dato"><span id="rDifEt">Con la otra agencia</span><b id="rDif">0 €</b></div>
+            <div class="dato" id="datoGanancia"><span id="rGananciaEt">Ganancia patrimonial</span><b id="rGanancia">Falta dato</b></div>
+            <div class="dato" id="datoMetodo"><span>Plusvalía · método</span><b id="rMetodo">Falta dato</b></div>
           </div>
 
-          <div style="margin-top:20px" id="zonaBotones">
-            <button class="btn" type="button" id="btnCopiar">Copiar el resumen</button>
-            <button class="btn" type="button" id="btnImprimir">Guardar en PDF</button>
-            <button class="btn" type="button" id="btnReset">Empezar de cero</button>
+          <div class="acciones" id="zonaBotones">
+            <button class="btn-link" type="button" id="btnCopiar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Copiar</button>
+            <button class="btn-link" type="button" id="btnImprimir"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>Guardar PDF</button>
+            <button class="btn-link" type="button" id="btnReset"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8m0-5v5h5"/></svg>Empezar de cero</button>
           </div>
         </div>
 
@@ -1059,7 +1115,7 @@
         aplica un solo tipo a toda la ganancia, sino cada tipo a su tramo.</p>
 
       <p><strong>Dos exenciones que lo cambian todo.</strong> Si vendes tu vivienda habitual y reinviertes
-        el importe en otra vivienda habitual dentro de dos años, la ganancia queda exenta — y si
+        el importe en otra vivienda habitual dentro de dos años, la ganancia queda exenta, y si
         reinviertes solo una parte, la exención es proporcional. Y si tienes 65 años o más y vendes tu
         vivienda habitual, la exención es total sin necesidad de reinvertir. Conviene comprobarlo antes de
         firmar nada, porque a veces basta con ordenar los tiempos de otra manera.</p>
@@ -1161,14 +1217,39 @@
     <p style="margin-top:14px; font-size:13px;">© 2026 Issam Benali · Asesor inmobiliario SAFTI · Barcelona</p>
   </footer>
 
+  <div class="barra-movil" id="barraMovil" aria-live="polite">
+    <div><span class="bm-et">Te queda</span><b id="bmNeto">0 €</b></div>
+    <a href="#resumen" class="bm-btn">Ver desglose</a>
+  </div>
+
   <script>
     (function () {
       'use strict';
 
       var $ = function (id) { return document.getElementById(id); };
-      var eur = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+      var eur = {
+        format: function (n) {
+          var r = Math.round(Math.abs(n));
+          var v = r.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+          return (n < 0 && r !== 0 ? '\u2212' : '') + v + '\u00a0€';
+        }
+      };
       var num = function (el) { var v = parseFloat(el.value); return isFinite(v) && v > 0 ? v : 0; };
       var pct = function (n) { return n.toLocaleString('es-ES', { maximumFractionDigits: 2 }) + ' %'; };
+      var ICONOS = {
+        alerta: '<path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/>',
+        idea: '<path d="M9 18h6m-5 4h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z"/>',
+        nota: '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Zm0 0v6h6M8 13h8M8 17h5"/>',
+        ok: '<path d="M22 11.1V12a10 10 0 1 1-5.9-9.1M22 4 12 14l-3-3"/>',
+        edificio: '<path d="M3 21h18M5 21V10m14 11V10M9 21v-7m6 7v-7M2 10l10-7 10 7"/>',
+        lupa: '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
+        baja: '<path d="m22 17-8.5-8.5-5 5L2 7m20 10h-6m6 0v-6"/>'
+      };
+      var EMOJI = { '⚠️': 'alerta', '📊': 'alerta', '💡': 'idea', '🔎': 'lupa', '📝': 'nota', '✍️': 'nota',
+        '🏛️': 'edificio', '✅': 'ok', '🧾': 'nota', '📉': 'baja', '📜': 'nota' };
+      var ico = function (e) {
+        return '<svg viewBox="0 0 24 24" aria-hidden="true">' + (ICONOS[EMOJI[e]] || ICONOS.idea) + '</svg>';
+      };
       var dec = function (n) { return n.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
 
       /* ══ Tablas oficiales ══════════════════════════════════════════
@@ -1376,7 +1457,7 @@
           'El porcentaje, el mínimo, la duración, la exclusividad y quién paga qué deben estar en la nota de encargo. En Cataluña ese documento es obligatorio.']);
 
         return lista.slice(0, 3).map(function (t) {
-          return '<div class="tip ' + t[0] + '"><span class="tip-ico">' + t[1] + '</span><span><b>' +
+          return '<div class="tip ' + t[0] + '"><span class="tip-ico">' + ico(t[1]) + '</span><span><b>' +
             t[2] + '</b>' + t[3] + '</span></div>';
         }).join('');
       }
@@ -1446,7 +1527,7 @@
         if (aniosTenencia() === null) faltan.push('el año de compra');
 
         $('avisoFiscal').innerHTML = faltan.length === 0 ? '' :
-          '<div class="tip calma"><span class="tip-ico">✍️</span><span><b>Faltan datos para el cálculo completo</b>' +
+          '<div class="tip calma"><span class="tip-ico">' + ico('✍️') + '</span><span><b>Faltan datos para el cálculo completo</b>' +
           'Añade ' + faltan.join(', ').replace(/, ([^,]*)$/, ' y $1') +
           '. Sin eso no puedo estimar la parte que más pesa. Los tienes en la escritura y en el recibo del IBI.</span></div>';
 
@@ -1495,7 +1576,7 @@
         }
 
         $('consejosFiscal').innerHTML = t.slice(0, 2).map(function (x) {
-          return '<div class="tip ' + x[0] + '"><span class="tip-ico">' + x[1] + '</span><span><b>' +
+          return '<div class="tip ' + x[0] + '"><span class="tip-ico">' + ico(x[1]) + '</span><span><b>' +
             x[2] + '</b>' + x[3] + '</span></div>';
         }).join('');
 
@@ -1510,6 +1591,7 @@
           eur.format(precio);
 
         $('rNeto').textContent = eur.format(f.neto);
+        $('bmNeto').textContent = eur.format(f.neto);
         $('rNetoPct').textContent = precio > 0
           ? 'el ' + pct(f.neto / precio * 100) + ' del precio de venta'
           : '—';
@@ -1559,12 +1641,12 @@
         /* Datos clave */
         $('rCostePct').textContent = precio > 0 ? pct(f.coste / precio * 100) : '—';
 
-        $('rDifEt').textContent = 'Si vas con la ' + (escFiscal === 'A' ? 'B' : 'A');
+        $('rDifEt').textContent = 'Con la agencia ' + (escFiscal === 'A' ? 'B' : 'A') ;
         $('rDif').textContent = (dif > 0 ? '−' : '+') + eur.format(Math.abs(dif));
 
         if (!f.hayIrpf) {
           $('rGananciaEt').textContent = 'Ganancia patrimonial';
-          $('rGanancia').textContent = '—';
+          $('rGanancia').textContent = 'Falta dato';
         } else if (f.ganancia < 0) {
           $('rGananciaEt').textContent = 'Pérdida patrimonial';
           $('rGanancia').textContent = eur.format(Math.abs(f.ganancia));
@@ -1573,7 +1655,7 @@
           $('rGanancia').textContent = eur.format(f.ganancia);
         }
 
-        if (p.cuota === null) $('rMetodo').textContent = '—';
+        if (p.cuota === null) $('rMetodo').textContent = 'Falta dato';
         else if (!p.sujeto) $('rMetodo').textContent = 'No sujeta';
         else if (p.objetivo !== null && p.real !== null) {
           $('rMetodo').textContent = p.metodo === 'real' ? 'Real (el menor)' : 'Objetivo (el menor)';
@@ -1705,6 +1787,12 @@
       });
 
       calcular();
+      /* Barra móvil: se esconde cuando el resumen ya está en pantalla */
+      if ('IntersectionObserver' in window && $('barraMovil') && $('resumen')) {
+        new IntersectionObserver(function (e) {
+          $('barraMovil').classList.toggle('oculta', e[0].isIntersecting);
+        }, { threshold: 0.15 }).observe($('resumen'));
+      }
     })();
   </script>
 
