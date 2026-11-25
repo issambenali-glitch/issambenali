@@ -603,7 +603,8 @@
     /* Comparador de agencias */
     .versus { gap: 14px; margin-top: 10px !important; }
     .col { border: 1.5px solid var(--gris-300); border-radius: 16px; padding: 22px; }
-    .col.destacada { background: var(--papel); border: 2px solid var(--naranja); }
+    .col.destacada { background: var(--naranja-suave); border: 2px solid var(--naranja); }
+    .col.destacada .col-tit::before { background: var(--papel); }
     .col-tit { font-size: 14px; font-weight: 600; color: var(--gris-600); }
     .col-tit { display: block; }
     .col.destacada .col-tit::before {
@@ -617,7 +618,7 @@
     .linea.fuerte { font-size: 14.5px; }
     .col-cifra { font-size: clamp(32px, 4vw, 42px); margin-top: 4px; }
     .col.destacada .col-cifra { color: var(--naranja-osc); }
-    .dif { border: 0; border-radius: 16px; padding: 22px 24px; margin-top: 16px; }
+    .dif { border: 1px solid rgba(47,107,79,.22); border-radius: 16px; padding: 22px 24px; margin-top: 16px; }
     .dif-num { font-size: 36px; }
     .dif-txt { font-size: 15px; }
     .tip { border-radius: 14px; padding: 16px 18px; gap: 14px; }
@@ -635,8 +636,8 @@
     .resumen { border-radius: 20px; padding: 28px; }
     .resumen h2 { font-size: 22px; }
     .res-esc { margin-bottom: 18px; }
-    .res-neto { background: none; border: 0; padding: 0; margin-bottom: 22px; }
-    .res-neto .fiscal-et { font-size: 13.5px; color: var(--gris-600); font-weight: 500; }
+    .res-neto { background: var(--verde-suave); border: 1px solid rgba(47,107,79,.25); border-radius: 16px; padding: 18px 20px; margin-bottom: 22px; }
+    .res-neto .fiscal-et { font-size: 13.5px; color: var(--verde); font-weight: 600; }
     .res-neto .fiscal-num { display: block; font-size: clamp(40px, 4.4vw, 52px); letter-spacing: -.03em; margin: 2px 0 4px; }
     .res-neto .fiscal-pie { display: block; font-size: 14px; }
     .mini-barra, .mini-leyenda, .res-lineas { display: none; }
@@ -647,17 +648,20 @@
     .cs-top b { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
     .cs-pista { position: relative; height: 10px; border-radius: 99px; background: var(--gris-100); overflow: hidden; }
     .cs-pista i { position: absolute; top: 0; bottom: 0; border-radius: 99px; transition: left .3s ease, width .3s ease; }
-    .cs-base .cs-pista i { background: var(--lino); }
-    .cs-hon .cs-pista i { background: var(--naranja); }
-    .cs-imp .cs-pista i { background: var(--naranja-osc); }
-    .cs-gas .cs-pista i { background: #F2A57F; }
-    .cs-deuda .cs-pista i { background: var(--gris-400); }
+    .cs-pista i.s-base { background: var(--lino); }
+    .cs-pista i.s-hon { background: var(--naranja); }
+    .cs-pista i.s-imp { background: var(--naranja-osc); }
+    .cs-pista i.s-gas { background: #F2A57F; }
+    .cs-pista i.s-deuda { background: var(--gris-400); }
+    .cs-final .cs-pista { height: 14px; }
+    .cs-final .cs-pista i { border-radius: 0; }
+    .cs-final .cs-pista i.s-final { border-radius: 99px 0 0 99px; }
     .cs-falta .cs-pista { background: repeating-linear-gradient(90deg, var(--gris-300) 0 6px, transparent 6px 11px); }
     .cs-falta .cs-top b { color: var(--gris-400); font-weight: 500; }
     .cs-final { padding-top: 12px; border-top: 1px dashed var(--lino); }
     .cs-final .cs-top span { color: var(--tinta); font-weight: 600; }
     .cs-final .cs-top b { color: var(--verde); font-size: 16px; }
-    .cs-final .cs-pista i { background: var(--verde); }
+    .cs-pista i.s-final { background: var(--verde); }
     .res-nota { font-size: 12.5px; margin-top: 12px; }
     .res-datos { gap: 8px; }
     .dato { background: var(--fondo); border-radius: 12px; }
@@ -692,6 +696,7 @@
       h1 { font-size: 32px; }
       .resumen { padding: 22px 20px; }
     }
+    .col.destacada .col-tit::before { background: var(--papel); }
     @media (prefers-reduced-motion: reduce) { .cs-pista i { transition: none; } }
 
     @media print {
@@ -1807,7 +1812,7 @@
 
         /* Cascada visual: del precio de venta a lo que te queda */
         (function () {
-          var tot = precio > 0 ? precio : 1, resto = precio, html = '';
+          var tot = precio > 0 ? precio : 1, resto = precio, html = '', tramos = [];
           var fila = function (et, imp, tipo, falta) {
             var izq, ancho, val;
             if (tipo === 'base') { izq = 0; ancho = 100; val = eur.format(imp); }
@@ -1817,11 +1822,12 @@
               izq = Math.max(resto - imp, 0) / tot * 100;
               ancho = Math.max(imp / tot * 100, imp > 0 ? 0.8 : 0);
               val = '\u2212' + eur.format(imp);
+              if (ancho > 0) tramos.push('<i class="s-' + tipo + '" style="left:' + izq.toFixed(2) + '%;width:' + ancho.toFixed(2) + '%"></i>');
               resto -= imp;
             }
             html += '<div class="cs-fila cs-' + tipo + (falta ? ' cs-falta' : '') + '"><div class="cs-top"><span>' + et +
-              '</span><b>' + val + '</b></div><div class="cs-pista"><i style="left:' + izq.toFixed(2) +
-              '%;width:' + ancho.toFixed(2) + '%"></i></div></div>';
+              '</span><b>' + val + '</b></div><div class="cs-pista"><i class="s-' + tipo + '" style="left:' + izq.toFixed(2) +
+              '%;width:' + ancho.toFixed(2) + '%"></i>' + (tipo === 'final' ? tramos.join('') : '') + '</div></div>';
           };
           fila('Precio de venta', precio, 'base');
           fila('Agencia (' + pct(pctEsc) + ' + IVA)', esc.total, 'hon');
