@@ -88,14 +88,15 @@
       --naranja-suave: #FCEDE4;
       --tinta: #1D1B1B;
       --gris-600: #655B53;
-      --gris-400: #978B80;
-      --gris-300: #E6DCD2;
-      --gris-100: #F3EDE7;
+      --gris-400: #7A6F65;
+      --gris-300: #D9CBBE;
+      --gris-100: #EFE6DD;
       --lino: #DACABE;
       --verde: #2F6B4F;
       --verde-suave: #EAF2EC;
       --papel: #FFFFFF;
-      --fondo: #F9F5F3;
+      --fondo: #F3ECE5;
+      --campo: #F1E8DF;
       --r: 14px;
       --sombra: 0 1px 2px rgba(26, 22, 19, .05), 0 10px 30px rgba(26, 22, 19, .07);
       --display: 'Playfair Display', Georgia, serif;
@@ -697,6 +698,32 @@
       .resumen { padding: 22px 20px; }
     }
     .col.destacada .col-tit::before { background: var(--papel); }
+    /* ── Contraste (nov-2026) ── */
+    body { background: var(--fondo); }
+    .card, .resumen { border: 1px solid #E3D6CA; }
+    .input input, .input select { background: var(--campo); border: 1.5px solid #D3C3B5; color: var(--tinta); }
+    .input input:hover, .input select:hover { border-color: #B9A796; }
+    .input input:focus, .input select:focus { background: var(--papel); border-color: var(--naranja); }
+    .input .simbolo { color: var(--gris-600); }
+    .input input::placeholder { color: #8A7E73; }
+    .segmentado, .fiscal-lineas, .dato { background: var(--campo); }
+    .seg-btn { color: var(--gris-600); }
+    .seg-btn.activo { box-shadow: 0 1px 3px rgba(29,27,27,.18); }
+    .col { border-color: #D3C3B5; }
+    .metodo { border-color: #D3C3B5; }
+    .cs-pista { background: #E9DFD5; }
+    .tip.calma { background: var(--campo); }
+    .pista, .topes, .res-nota, .fuente { color: var(--gris-600); }
+    input[type=range]::-webkit-slider-runnable-track {
+      background: linear-gradient(var(--naranja), var(--naranja)) 0/var(--fill, 50%) 100% no-repeat, #DCCFC3;
+    }
+    input[type=range]::-moz-range-track { background: #DCCFC3; }
+    .guia a { border-color: #D9CBBE; }
+    .nav { background: rgba(243,236,229,.94); }
+    @media (max-width: 940px) {
+      .wa-float { bottom: 104px !important; }
+      .barra-movil { border-color: #D3C3B5; }
+    }
     @media (prefers-reduced-motion: reduce) { .cs-pista i { transition: none; } }
 
     @media print {
